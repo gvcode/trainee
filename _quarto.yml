@@ -5,16 +5,18 @@ project:
 book:
   title: "GVCode Trainee"
   author: "GVCode"
-  date: "2024.2"
+  favicon: assets/icon.png
+  sidebar:
+    logo: assets/icon.png
   chapters:
     - index.qmd
-    - aula1-python-1.ipynb
-    - aula2-python-2.ipynb
-    - aula3-python-3.ipynb
-    - aula4-ds-processar.ipynb
-    - aula5-ds-visualizar.ipynb
-    - aula6-ds-modelar.ipynb
-    - aula7-ds-juntando.ipynb
+    - aula1-python1.ipynb
+    - aula2-python2.ipynb
+    - aula3-python3.ipynb
+    - aula4-cd-manipulacao.ipynb
+    - aula5-cd-visualizacao.ipynb
+    - aula6-cd-modelagem.ipynb
+    - aula7-cd-projetos.ipynb
     - aula8-outros.ipynb
     - references.qmd
 

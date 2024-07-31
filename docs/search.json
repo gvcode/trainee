@@ -1,10 +1,390 @@
 [
   {
+    "objectID": "aula1-python1.html",
+    "href": "aula1-python1.html",
+    "title": "1  Introdução ao Python I",
+    "section": "",
+    "text": "1.1 Sintaxe",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#sintaxe",
+    "href": "aula1-python1.html#sintaxe",
+    "title": "1  Introdução ao Python I",
+    "section": "",
+    "text": "1.1.1 Scripts\n\n\n1.1.2 Sintaxe Básica",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#variáveis",
+    "href": "aula1-python1.html#variáveis",
+    "title": "1  Introdução ao Python I",
+    "section": "1.2 Variáveis",
+    "text": "1.2 Variáveis",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#tipos-de-dados",
+    "href": "aula1-python1.html#tipos-de-dados",
+    "title": "1  Introdução ao Python I",
+    "section": "1.3 Tipos de Dados",
+    "text": "1.3 Tipos de Dados\n!! Texto pausa !!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#operadores",
+    "href": "aula1-python1.html#operadores",
+    "title": "1  Introdução ao Python I",
+    "section": "1.4 Operadores",
+    "text": "1.4 Operadores",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#control-flow",
+    "href": "aula1-python1.html#control-flow",
+    "title": "1  Introdução ao Python I",
+    "section": "1.5 Control Flow",
+    "text": "1.5 Control Flow",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#funções",
+    "href": "aula1-python1.html#funções",
+    "title": "1  Introdução ao Python I",
+    "section": "1.6 Funções",
+    "text": "1.6 Funções",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#recapitulando",
+    "href": "aula1-python1.html#recapitulando",
+    "title": "1  Introdução ao Python I",
+    "section": "Recapitulando",
+    "text": "Recapitulando",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#extras",
+    "href": "aula1-python1.html#extras",
+    "title": "1  Introdução ao Python I",
+    "section": "1.7 Extras",
+    "text": "1.7 Extras\n\n1.7.1 Tópicos Adicionais em Funções\n\n1.7.1.1 *args e **kwargs\n\n\n1.7.1.2 Environments\n\n\n\n1.7.2 Condições",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula2-python2.html",
+    "href": "aula2-python2.html",
+    "title": "2  Introdução ao Python I",
+    "section": "",
+    "text": "2.1 OOP",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula2-python2.html#coleções",
+    "href": "aula2-python2.html#coleções",
+    "title": "2  Introdução ao Python I",
+    "section": "2.2 Coleções",
+    "text": "2.2 Coleções\n\n2.2.1 Listas\n\n\n2.2.2 Tuples\n\n\n2.2.3 Dicts\n\n\n2.2.4 Sets\n!! Texto pausa !!\n\n\n2.2.5 Iteráveis\n\n2.2.5.1 Loops\n\n\n2.2.5.2 Comprehension\n\n\n2.2.5.3 Funções\nenumerate, filter, zip, e map",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula2-python2.html#recapitulando",
+    "href": "aula2-python2.html#recapitulando",
+    "title": "2  Introdução ao Python I",
+    "section": "Recapitulando",
+    "text": "Recapitulando",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula2-python2.html#extras",
+    "href": "aula2-python2.html#extras",
+    "title": "2  Introdução ao Python I",
+    "section": "2.3 Extras",
+    "text": "2.3 Extras\n\n2.3.1 Bibliotecas\n\n\n2.3.2 Funções Úteis",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula3-python3.html",
+    "href": "aula3-python3.html",
+    "title": "3  Introdução ao Python III",
+    "section": "",
+    "text": "3.1 Vetores e Dataframes",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introdução ao Python III</span>"
+    ]
+  },
+  {
+    "objectID": "aula3-python3.html#numpy",
+    "href": "aula3-python3.html#numpy",
+    "title": "3  Introdução ao Python III",
+    "section": "3.2 Numpy",
+    "text": "3.2 Numpy\n\n3.2.1 Criação e Características\n\n\n3.2.2 Subsetting\n\n\n3.2.3 Operações\n!! Texto de pausa !!",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introdução ao Python III</span>"
+    ]
+  },
+  {
+    "objectID": "aula3-python3.html#pandas",
+    "href": "aula3-python3.html#pandas",
+    "title": "3  Introdução ao Python III",
+    "section": "3.3 Pandas",
+    "text": "3.3 Pandas\n\n3.3.1 Criação e Características\n\n\n3.3.2 Subset\n\n\n3.3.3 Operate\n\n\n3.3.4 Reshape\n\n\n3.3.5 Combine\n\n\n3.3.6 Aggregate",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introdução ao Python III</span>"
+    ]
+  },
+  {
+    "objectID": "aula3-python3.html#recapitulando",
+    "href": "aula3-python3.html#recapitulando",
+    "title": "3  Introdução ao Python III",
+    "section": "3.4 Recapitulando",
+    "text": "3.4 Recapitulando",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introdução ao Python III</span>"
+    ]
+  },
+  {
+    "objectID": "aula3-python3.html#extras",
+    "href": "aula3-python3.html#extras",
+    "title": "3  Introdução ao Python III",
+    "section": "3.5 Extras",
+    "text": "3.5 Extras\n\n3.5.1 Temas Avançados em Numpy\n\n\n3.5.2 Temas Avançados em Pandas",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introdução ao Python III</span>"
+    ]
+  },
+  {
+    "objectID": "aula4-cd-manipulacao.html",
+    "href": "aula4-cd-manipulacao.html",
+    "title": "4  CD: Manipulação",
+    "section": "",
+    "text": "4.1 Ciência de Dados",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CD: Manipulação</span>"
+    ]
+  },
+  {
+    "objectID": "aula4-cd-manipulacao.html#ciência-de-dados",
+    "href": "aula4-cd-manipulacao.html#ciência-de-dados",
+    "title": "4  CD: Manipulação",
+    "section": "",
+    "text": "4.1.1 Introdução e Projetos\n\n\n4.1.2 Data Wrangle e Tidy Data\n!! Texto de pausa !!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CD: Manipulação</span>"
+    ]
+  },
+  {
+    "objectID": "aula4-cd-manipulacao.html#data-wrangle-com-pandas",
+    "href": "aula4-cd-manipulacao.html#data-wrangle-com-pandas",
+    "title": "4  CD: Manipulação",
+    "section": "4.2 Data Wrangle com Pandas",
+    "text": "4.2 Data Wrangle com Pandas\n!! vide o PPT !!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CD: Manipulação</span>"
+    ]
+  },
+  {
+    "objectID": "aula4-cd-manipulacao.html#recapitulando",
+    "href": "aula4-cd-manipulacao.html#recapitulando",
+    "title": "4  CD: Manipulação",
+    "section": "Recapitulando",
+    "text": "Recapitulando",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CD: Manipulação</span>"
+    ]
+  },
+  {
+    "objectID": "aula5-cd-visualizacao.html",
+    "href": "aula5-cd-visualizacao.html",
+    "title": "5  CD: Visualização",
+    "section": "",
+    "text": "5.1 Sumarização com Pandas",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>CD: Visualização</span>"
+    ]
+  },
+  {
+    "objectID": "aula5-cd-visualizacao.html#sumarização-com-pandas",
+    "href": "aula5-cd-visualizacao.html#sumarização-com-pandas",
+    "title": "5  CD: Visualização",
+    "section": "",
+    "text": "5.1.1 Sumarizando Dataframes\n\n\n5.1.2 Sumarizando Variáveis Categóricas\n\n\n5.1.3 Sumarizando Variáveis Contínuas\n\n\n5.1.4 Analisando Grupos nos Dados\n!! Texto de pausa !!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>CD: Visualização</span>"
+    ]
+  },
+  {
+    "objectID": "aula5-cd-visualizacao.html#gráficos-com-o-matplotlib",
+    "href": "aula5-cd-visualizacao.html#gráficos-com-o-matplotlib",
+    "title": "5  CD: Visualização",
+    "section": "5.2 Gráficos com o Matplotlib",
+    "text": "5.2 Gráficos com o Matplotlib\n\n5.2.1 Anatomia e Estilo de Programação\n\n\n5.2.2 Plots\n\n\n5.2.3 Estéticas\n\n\n5.2.4 Tema\n\n\n5.2.5 Plots Combinados",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>CD: Visualização</span>"
+    ]
+  },
+  {
+    "objectID": "aula5-cd-visualizacao.html#recapitulando",
+    "href": "aula5-cd-visualizacao.html#recapitulando",
+    "title": "5  CD: Visualização",
+    "section": "Recapitulando",
+    "text": "Recapitulando",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>CD: Visualização</span>"
+    ]
+  },
+  {
+    "objectID": "aula5-cd-visualizacao.html#extras",
+    "href": "aula5-cd-visualizacao.html#extras",
+    "title": "5  CD: Visualização",
+    "section": "5.3 Extras",
+    "text": "5.3 Extras\n\n5.3.1 Outras Bibliotecas Gráficas",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>CD: Visualização</span>"
+    ]
+  },
+  {
+    "objectID": "aula6-cd-modelagem.html",
+    "href": "aula6-cd-modelagem.html",
+    "title": "6  CD: Modelagem",
+    "section": "",
+    "text": "6.1 Modelagem\n!! Vide o ppt !!",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>CD: Modelagem</span>"
+    ]
+  },
+  {
+    "objectID": "aula6-cd-modelagem.html#recapitulando",
+    "href": "aula6-cd-modelagem.html#recapitulando",
+    "title": "6  CD: Modelagem",
+    "section": "Recapitulando",
+    "text": "Recapitulando",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>CD: Modelagem</span>"
+    ]
+  },
+  {
+    "objectID": "aula6-cd-modelagem.html#extras",
+    "href": "aula6-cd-modelagem.html#extras",
+    "title": "6  CD: Modelagem",
+    "section": "6.2 Extras",
+    "text": "6.2 Extras\n\n6.2.1 Detalhamento dos Modelos e Seus Hiperparâmetros",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>CD: Modelagem</span>"
+    ]
+  },
+  {
+    "objectID": "aula7-cd-projetos.html",
+    "href": "aula7-cd-projetos.html",
+    "title": "7  CD: Projetos",
+    "section": "",
+    "text": "7.1 Organização de um Script",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>CD: Projetos</span>"
+    ]
+  },
+  {
+    "objectID": "aula7-cd-projetos.html#exemplo-de-script",
+    "href": "aula7-cd-projetos.html#exemplo-de-script",
+    "title": "7  CD: Projetos",
+    "section": "7.2 Exemplo de Script",
+    "text": "7.2 Exemplo de Script",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>CD: Projetos</span>"
+    ]
+  },
+  {
+    "objectID": "aula7-cd-projetos.html#recapitulando",
+    "href": "aula7-cd-projetos.html#recapitulando",
+    "title": "7  CD: Projetos",
+    "section": "Recapitulando",
+    "text": "Recapitulando",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>CD: Projetos</span>"
+    ]
+  },
+  {
+    "objectID": "aula8-outros.html",
+    "href": "aula8-outros.html",
+    "title": "8  Outros Tópicos",
+    "section": "",
+    "text": "8.1 Git e Github",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Outros Tópicos</span>"
+    ]
+  },
+  {
+    "objectID": "aula8-outros.html#boas-práticas-de-programação",
+    "href": "aula8-outros.html#boas-práticas-de-programação",
+    "title": "8  Outros Tópicos",
+    "section": "8.2 Boas Práticas de Programação",
+    "text": "8.2 Boas Práticas de Programação",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Outros Tópicos</span>"
+    ]
+  },
+  {
+    "objectID": "aula8-outros.html#o-campo-da-programação",
+    "href": "aula8-outros.html#o-campo-da-programação",
+    "title": "8  Outros Tópicos",
+    "section": "8.3 O Campo da Programação",
+    "text": "8.3 O Campo da Programação",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Outros Tópicos</span>"
+    ]
+  },
+  {
+    "objectID": "aula8-outros.html#extras",
+    "href": "aula8-outros.html#extras",
+    "title": "8  Outros Tópicos",
+    "section": "8.4 Extras",
+    "text": "8.4 Extras\n\n8.4.1 REGEX\n\n\n8.4.2 Web Scrapping",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Outros Tópicos</span>"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "GVCode Trainee",
     "section": "",
     "text": "Bem Vindos!\nEste é o material do curso de Trainee da GVCode. Cada capítulo está associado a uma aula presencial.\nEsse material foi 100% escrito pelos veteranos da entidade, e está sendo otimizado desde 2020! Ao final, temos algumas das bibliografias utilizadas em sua confecção.",
+    "crumbs": [
+      "Bem Vindos!"
+    ]
+  },
+  {
+    "objectID": "index.html#aulas",
+    "href": "index.html#aulas",
+    "title": "GVCode Trainee",
+    "section": "Aulas",
+    "text": "Aulas\nIntrodução ao Python I (30/set a 4/out)\n\nO que é um script; sintaxe; variáveis; tipos de dados.\nOperadores; control flow; funções.\nExtra: *args; condições (try except).\n\nIntrodução ao Python II (7/out a 11/out)\n\nProgramação orientada ao objeto.\nColeções (list, dict, tuple, set); subsetting e métodos.\nIteráveis loops, comprehension, e enumerate, filter, zip, e map.\nExtra: funções úteis, f-strings\n\nIntrodução ao Python III (14/out a 18/out)\n\nNumpy: arrays e vetorização; operações e subsetting.\nPandas: dataframes; operações.\nExtra: tópicos avançados em Numpy e Pandas.\n\nCiência de Dados: Manipulação (21/out a 25/out)\n\nIntrodução à ciência de dados; o que é processamento de dados.\nComo arrumar dados com Pandas.\n\nCiência de Dados: Visualização (28/out a 1/nov)\n\nO que é visualização de dados.\nSumarização com Pandas; Gráficos com o Matplotlib.\nExtra: seaborn e outras bibliotecas; gráficos avançados.\n\nCiência de Dados: Modelagem (4/nov a 8/nov)\n\nO que é modelagem de dados.\nAula teórica sobre modelos de machine learning.\n\nCiência de Dados: Projetos (11/nov a 15/nov)\n\nEtapas e exemplo de um script de ciência de dados.\nFunções de modelagem.\nExtra: apresentar trabalho.\n\nOutros Temas em Programação (18/nov a 22/nov)\n\nGit e Github.\nBoas práticas de programação (python’s pep8).\nExtra: regex; web scrapping.",
     "crumbs": [
       "Bem Vindos!"
     ]
