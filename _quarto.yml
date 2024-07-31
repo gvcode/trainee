@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "GVCode Trainee"
+  author: "GVCode"
+  date: "2024.2"
+  chapters:
+    - index.qmd
+    - aula1-python-1.ipynb
+    - aula2-python-2.ipynb
+    - aula3-python-3.ipynb
+    - aula4-ds-processar.ipynb
+    - aula5-ds-visualizar.ipynb
+    - aula6-ds-modelar.ipynb
+    - aula7-ds-juntando.ipynb
+    - aula8-outros.ipynb
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: pulse
+# Other themes: quartz, vapor
