@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Livro Quarto do curso de trainee da GVCode">
 
 <title>1&nbsp; Introdução ao Python I – GVCode Trainee</title>
 <style>
@@ -135,6 +136,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">GVCode Trainee</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/gvcode/trainee" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -159,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aula2-python2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao Python I</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao Python II</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -232,25 +236,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#operadores-aritiméticos" id="toc-operadores-aritiméticos" class="nav-link" data-scroll-target="#operadores-aritiméticos"><span class="header-section-number">1.5.1</span> Operadores Aritiméticos</a></li>
   <li><a href="#operadores-lógicos" id="toc-operadores-lógicos" class="nav-link" data-scroll-target="#operadores-lógicos"><span class="header-section-number">1.5.2</span> Operadores lógicos</a></li>
+  <li><a href="#operadores-de-atribuição" id="toc-operadores-de-atribuição" class="nav-link" data-scroll-target="#operadores-de-atribuição"><span class="header-section-number">1.5.3</span> Operadores de Atribuição</a></li>
   </ul></li>
-  <li><a href="#operadores-de-atribuição" id="toc-operadores-de-atribuição" class="nav-link" data-scroll-target="#operadores-de-atribuição"><span class="header-section-number">1.6</span> Operadores de Atribuição</a></li>
-  <li><a href="#control-flow" id="toc-control-flow" class="nav-link" data-scroll-target="#control-flow"><span class="header-section-number">1.7</span> Control Flow</a>
+  <li><a href="#control-flow" id="toc-control-flow" class="nav-link" data-scroll-target="#control-flow"><span class="header-section-number">1.6</span> Control Flow</a>
   <ul class="collapse">
-  <li><a href="#condicionais" id="toc-condicionais" class="nav-link" data-scroll-target="#condicionais"><span class="header-section-number">1.7.1</span> Condicionais</a></li>
-  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">1.7.2</span> Loops</a></li>
-  <li><a href="#keywords" id="toc-keywords" class="nav-link" data-scroll-target="#keywords"><span class="header-section-number">1.7.3</span> Keywords</a></li>
+  <li><a href="#condicionais" id="toc-condicionais" class="nav-link" data-scroll-target="#condicionais"><span class="header-section-number">1.6.1</span> Condicionais</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">1.6.2</span> Loops</a></li>
+  <li><a href="#keywords" id="toc-keywords" class="nav-link" data-scroll-target="#keywords"><span class="header-section-number">1.6.3</span> Keywords</a></li>
   </ul></li>
-  <li><a href="#funções" id="toc-funções" class="nav-link" data-scroll-target="#funções"><span class="header-section-number">1.8</span> Funções</a>
+  <li><a href="#funções" id="toc-funções" class="nav-link" data-scroll-target="#funções"><span class="header-section-number">1.7</span> Funções</a>
   <ul class="collapse">
-  <li><a href="#sintaxe-e-definição" id="toc-sintaxe-e-definição" class="nav-link" data-scroll-target="#sintaxe-e-definição"><span class="header-section-number">1.8.1</span> Sintaxe e Definição</a></li>
-  <li><a href="#argumentos" id="toc-argumentos" class="nav-link" data-scroll-target="#argumentos"><span class="header-section-number">1.8.2</span> Argumentos</a></li>
-  <li><a href="#funções-anônimas" id="toc-funções-anônimas" class="nav-link" data-scroll-target="#funções-anônimas"><span class="header-section-number">1.8.3</span> Funções Anônimas</a></li>
+  <li><a href="#sintaxe-e-definição" id="toc-sintaxe-e-definição" class="nav-link" data-scroll-target="#sintaxe-e-definição"><span class="header-section-number">1.7.1</span> Sintaxe e Definição</a></li>
+  <li><a href="#argumentos" id="toc-argumentos" class="nav-link" data-scroll-target="#argumentos"><span class="header-section-number">1.7.2</span> Argumentos</a></li>
+  <li><a href="#funções-anônimas" id="toc-funções-anônimas" class="nav-link" data-scroll-target="#funções-anônimas"><span class="header-section-number">1.7.3</span> Funções Anônimas</a></li>
   </ul></li>
   <li><a href="#recapitulando" id="toc-recapitulando" class="nav-link" data-scroll-target="#recapitulando">Recapitulando</a></li>
-  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">1.9</span> Extras</a>
+  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">1.8</span> Extras</a>
   <ul class="collapse">
-  <li><a href="#tópicos-adicionais-em-funções" id="toc-tópicos-adicionais-em-funções" class="nav-link" data-scroll-target="#tópicos-adicionais-em-funções"><span class="header-section-number">1.9.1</span> Tópicos Adicionais em Funções</a></li>
-  <li><a href="#errosexceções" id="toc-errosexceções" class="nav-link" data-scroll-target="#errosexceções"><span class="header-section-number">1.9.2</span> Erros/Exceções</a></li>
+  <li><a href="#tópicos-adicionais-em-funções" id="toc-tópicos-adicionais-em-funções" class="nav-link" data-scroll-target="#tópicos-adicionais-em-funções"><span class="header-section-number">1.8.1</span> Tópicos Adicionais em Funções</a></li>
+  <li><a href="#errosexceções" id="toc-errosexceções" class="nav-link" data-scroll-target="#errosexceções"><span class="header-section-number">1.8.2</span> Erros/Exceções</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -299,13 +303,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="sintaxe-básica"><span class="header-section-number">1.2.2</span> Sintaxe Básica</h3>
 <p>A sintaxe dentro do Python é muito semelhante com a linguagem humana. O programa “lê” de cima para baixo, da esqueda para a direita de forma sequencial!</p>
 <p>Note ao longo dos programas: espaços, quebras de linha, tabs, comentários…</p>
-<div id="cell-9" class="cell">
+<div id="cell-9" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Vamos fazer essa soma!</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> <span class="co"># soma bem facil...</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>soma2<span class="op">=</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soma, soma2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4 4</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -316,6 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>x = "julia"  #toda vez que o programa ler x, lerá a string julia
 y = 5        #toda vez que o programa ler y, lerá o número inteiro 5
 z = 2.5      #toda vez que o programa ler z, lerá o número float 2,5</code></pre>
+<p>Variáveis são um nome, associado à um valor, que mora na memória do computador.</p>
 <p>Tenha em mente ao nomear uma variável que: - Não se pode usar os termos reservados;</p>
 <ul>
 <li><p>Nomes de variáveis podem conter apenas letras, números e underscores(_). Podem começar com uma letra ou um underscore, mas não com um número;</p></li>
@@ -379,37 +387,60 @@ falso = False</code></pre>
 <figcaption>image.png</figcaption>
 </figure>
 </div>
-<div id="cell-19" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-19" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4</code></pre>
 </div>
-<div id="cell-20" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span><span class="op">*</span><span class="dv">5</span> <span class="op">-</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-21" class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">4</span><span class="op">%</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-20" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span><span class="op">*</span><span class="dv">5</span> <span class="op">-</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3</code></pre>
 </div>
-<div id="cell-22" class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span><span class="op">%</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-23" class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>divisao_inteira <span class="op">=</span> <span class="dv">10</span> <span class="op">//</span> <span class="dv">6</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(divisao_inteira, <span class="dv">10</span><span class="op">/</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-21" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">4</span><span class="op">%</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0</code></pre>
+</div>
+</div>
+<div id="cell-22" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span><span class="op">%</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1</code></pre>
+</div>
+</div>
+<div id="cell-23" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>divisao_inteira <span class="op">=</span> <span class="dv">10</span> <span class="op">//</span> <span class="dv">6</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(divisao_inteira, <span class="dv">10</span><span class="op">/</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 1.6666666666666667</code></pre>
+</div>
 </div>
 <section id="ordem-de-precedência" class="level4" data-number="1.5.1.1">
 <h4 data-number="1.5.1.1" class="anchored" data-anchor-id="ordem-de-precedência"><span class="header-section-number">1.5.1.1</span> Ordem de Precedência</h4>
-<div id="cell-25" class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parenteses</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>expressao_1 <span class="op">=</span> ((<span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span>) <span class="op">*</span> <span class="dv">3</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expressao_1)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>expressao_2 <span class="op">=</span> (<span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">3</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expressao_2)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>expressao_3 <span class="op">=</span> (<span class="dv">1</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">**</span> <span class="dv">2</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expressao_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-25" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parenteses</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>expressao_1 <span class="op">=</span> ((<span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span>) <span class="op">*</span> <span class="dv">3</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expressao_1)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>expressao_2 <span class="op">=</span> (<span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">3</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expressao_2)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>expressao_3 <span class="op">=</span> (<span class="dv">1</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expressao_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>21
+17
+26</code></pre>
 </div>
-<div id="cell-26" class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(((<span class="dv">2</span><span class="op">*</span><span class="dv">3</span>)<span class="op">**</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-26" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(((<span class="dv">2</span><span class="op">*</span><span class="dv">3</span>)<span class="op">**</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>30.857142857142858</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -430,204 +461,263 @@ falso = False</code></pre>
 <!--Salvar como imagem em assets/img (falar com Júlia)-->
 <p><img src="https://drive.google.com/uc?export=view&amp;id=10rpCSX6FZSa4BBITTRQWBmIdLITWDy4f.png" class="img-fluid"></p>
 </section>
-</section>
-<section id="operadores-de-atribuição" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="operadores-de-atribuição"><span class="header-section-number">1.6</span> Operadores de Atribuição</h2>
+<section id="operadores-de-atribuição" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="operadores-de-atribuição"><span class="header-section-number">1.5.3</span> Operadores de Atribuição</h3>
 <p>Os operadores de atribuição são usados para atibuir valores a variáveis</p>
 <!--Salvar como imagem em assets/img (falar com Júlia)-->
 <p><img src="https://drive.google.com/uc?export=view&amp;id=1dnY-zyCocTLguH1rL0hxd--M1_lzAx6R.png" class="img-fluid"></p>
-<div id="cell-36" class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-36" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>6</code></pre>
 </div>
-<div id="cell-37" class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">-=</span> <span class="dv">1</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-38" class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">7</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">*=</span> <span class="dv">5</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-37" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2</code></pre>
 </div>
-<div id="cell-39" class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">9</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">/=</span> <span class="dv">5</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-40" class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">%=</span> <span class="dv">2</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-38" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">*=</span> <span class="dv">5</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>35</code></pre>
+</div>
+</div>
+<div id="cell-39" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">9</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">/=</span> <span class="dv">5</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.8</code></pre>
+</div>
+</div>
+<div id="cell-40" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">%=</span> <span class="dv">2</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1</code></pre>
+</div>
 </div>
 <!--Escolha uma frase remetendo pausa e tire print de alguma arte dela em https://patorjk.com/software/taag/. Exemplo:-->
+<hr>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pause/georgia11.png" class="img-fluid figure-img"></p>
-<figcaption>Imagem da pausa</figcaption>
+<figcaption>😎</figcaption>
 </figure>
 </div>
+<hr>
 </section>
-<section id="control-flow" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="control-flow"><span class="header-section-number">1.7</span> Control Flow</h2>
+</section>
+<section id="control-flow" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="control-flow"><span class="header-section-number">1.6</span> Control Flow</h2>
 <!--texto introdutório de o que é control flow-->
 <!--o conteúdo da aula antiga são bons, mas podem ser reorganizados de uma maneira mais direta na estrutura abaixo. busque fazer melhorias do _flow_ de ensino, e checar se nenhum tema importante está sendo deixado de lado-->
-<section id="condicionais" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="condicionais"><span class="header-section-number">1.7.1</span> Condicionais</h3>
-<section id="if" class="level4" data-number="1.7.1.1">
-<h4 data-number="1.7.1.1" class="anchored" data-anchor-id="if"><span class="header-section-number">1.7.1.1</span> if</h4>
+<section id="condicionais" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="condicionais"><span class="header-section-number">1.6.1</span> Condicionais</h3>
+<section id="if" class="level4" data-number="1.6.1.1">
+<h4 data-number="1.6.1.1" class="anchored" data-anchor-id="if"><span class="header-section-number">1.6.1.1</span> if</h4>
 </section>
-<section id="if-else" class="level4" data-number="1.7.1.2">
-<h4 data-number="1.7.1.2" class="anchored" data-anchor-id="if-else"><span class="header-section-number">1.7.1.2</span> if else</h4>
+<section id="if-else" class="level4" data-number="1.6.1.2">
+<h4 data-number="1.6.1.2" class="anchored" data-anchor-id="if-else"><span class="header-section-number">1.6.1.2</span> if else</h4>
 </section>
-<section id="if-elif-else" class="level4" data-number="1.7.1.3">
-<h4 data-number="1.7.1.3" class="anchored" data-anchor-id="if-elif-else"><span class="header-section-number">1.7.1.3</span> if elif else</h4>
-</section>
-</section>
-<section id="loops" class="level3" data-number="1.7.2">
-<h3 data-number="1.7.2" class="anchored" data-anchor-id="loops"><span class="header-section-number">1.7.2</span> Loops</h3>
-<section id="while" class="level4" data-number="1.7.2.1">
-<h4 data-number="1.7.2.1" class="anchored" data-anchor-id="while"><span class="header-section-number">1.7.2.1</span> while</h4>
-</section>
-<section id="for" class="level4" data-number="1.7.2.2">
-<h4 data-number="1.7.2.2" class="anchored" data-anchor-id="for"><span class="header-section-number">1.7.2.2</span> for</h4>
+<section id="if-elif-else" class="level4" data-number="1.6.1.3">
+<h4 data-number="1.6.1.3" class="anchored" data-anchor-id="if-elif-else"><span class="header-section-number">1.6.1.3</span> if elif else</h4>
 </section>
 </section>
-<section id="keywords" class="level3" data-number="1.7.3">
-<h3 data-number="1.7.3" class="anchored" data-anchor-id="keywords"><span class="header-section-number">1.7.3</span> Keywords</h3>
-<section id="break" class="level4" data-number="1.7.3.1">
-<h4 data-number="1.7.3.1" class="anchored" data-anchor-id="break"><span class="header-section-number">1.7.3.1</span> break</h4>
+<section id="loops" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="loops"><span class="header-section-number">1.6.2</span> Loops</h3>
+<section id="while" class="level4" data-number="1.6.2.1">
+<h4 data-number="1.6.2.1" class="anchored" data-anchor-id="while"><span class="header-section-number">1.6.2.1</span> while</h4>
 </section>
-<section id="continue" class="level4" data-number="1.7.3.2">
-<h4 data-number="1.7.3.2" class="anchored" data-anchor-id="continue"><span class="header-section-number">1.7.3.2</span> continue</h4>
+<section id="for" class="level4" data-number="1.6.2.2">
+<h4 data-number="1.6.2.2" class="anchored" data-anchor-id="for"><span class="header-section-number">1.6.2.2</span> for</h4>
+</section>
+</section>
+<section id="keywords" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="keywords"><span class="header-section-number">1.6.3</span> Keywords</h3>
+<section id="break" class="level4" data-number="1.6.3.1">
+<h4 data-number="1.6.3.1" class="anchored" data-anchor-id="break"><span class="header-section-number">1.6.3.1</span> break</h4>
+</section>
+<section id="continue" class="level4" data-number="1.6.3.2">
+<h4 data-number="1.6.3.2" class="anchored" data-anchor-id="continue"><span class="header-section-number">1.6.3.2</span> continue</h4>
 </section>
 </section>
 </section>
-<section id="funções" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="funções"><span class="header-section-number">1.8</span> Funções</h2>
+<section id="funções" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="funções"><span class="header-section-number">1.7</span> Funções</h2>
 <!--texto introdutório de o que são funções-->
 <!--o conteúdo da aula antiga são bons, mas podem ser reorganizados de uma maneira mais direta na estrutura abaixo. busque fazer melhorias do _flow_ de ensino, e checar se nenhum tema importante está sendo deixado de lado-->
-<section id="sintaxe-e-definição" class="level3" data-number="1.8.1">
-<h3 data-number="1.8.1" class="anchored" data-anchor-id="sintaxe-e-definição"><span class="header-section-number">1.8.1</span> Sintaxe e Definição</h3>
+<section id="sintaxe-e-definição" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="sintaxe-e-definição"><span class="header-section-number">1.7.1</span> Sintaxe e Definição</h3>
 </section>
-<section id="argumentos" class="level3" data-number="1.8.2">
-<h3 data-number="1.8.2" class="anchored" data-anchor-id="argumentos"><span class="header-section-number">1.8.2</span> Argumentos</h3>
+<section id="argumentos" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="argumentos"><span class="header-section-number">1.7.2</span> Argumentos</h3>
 <!--básico, argumentos posicionais, e argumentos padrão-->
 <!--Podemos passar praticamente qualquer coisa como argumentos para funções em Python. Isso inclui, mas não está limitado a, números, strings, coleções de dados, e até mesmo outras funções + exemplo-->
 </section>
-<section id="funções-anônimas" class="level3" data-number="1.8.3">
-<h3 data-number="1.8.3" class="anchored" data-anchor-id="funções-anônimas"><span class="header-section-number">1.8.3</span> Funções Anônimas</h3>
+<section id="funções-anônimas" class="level3" data-number="1.7.3">
+<h3 data-number="1.7.3" class="anchored" data-anchor-id="funções-anônimas"><span class="header-section-number">1.7.3</span> Funções Anônimas</h3>
 </section>
 </section>
 <section id="recapitulando" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="recapitulando">Recapitulando</h2>
 </section>
-<section id="extras" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="extras"><span class="header-section-number">1.9</span> Extras</h2>
+<section id="extras" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="extras"><span class="header-section-number">1.8</span> Extras</h2>
 <!--Realizar melhorias nessa seção é secundário-->
-<section id="tópicos-adicionais-em-funções" class="level3" data-number="1.9.1">
-<h3 data-number="1.9.1" class="anchored" data-anchor-id="tópicos-adicionais-em-funções"><span class="header-section-number">1.9.1</span> Tópicos Adicionais em Funções</h3>
-<section id="args-e-kwargs" class="level4" data-number="1.9.1.1">
-<h4 data-number="1.9.1.1" class="anchored" data-anchor-id="args-e-kwargs"><span class="header-section-number">1.9.1.1</span> *args e **kwargs</h4>
+<section id="tópicos-adicionais-em-funções" class="level3" data-number="1.8.1">
+<h3 data-number="1.8.1" class="anchored" data-anchor-id="tópicos-adicionais-em-funções"><span class="header-section-number">1.8.1</span> Tópicos Adicionais em Funções</h3>
+<section id="args-e-kwargs" class="level4" data-number="1.8.1.1">
+<h4 data-number="1.8.1.1" class="anchored" data-anchor-id="args-e-kwargs"><span class="header-section-number">1.8.1.1</span> *args e **kwargs</h4>
 <!--Esse é um tópico difícil, talvez dê para apresentá-lo de uma maneira mais simples e didática-->
 <p>O operador * e ** são operadores de “desempacotamento”. Transformam uma lista em vários argumentos “soltos”. Suponha que você tenha uma lista de argumentos que quer passar para uma função, no lugar de pegar cada elemento da lista individualmente, você pode usar *:</p>
-<div id="cell-63" class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="co">#resultado quisto</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args[<span class="dv">0</span>], args[<span class="dv">1</span>], args[<span class="dv">2</span>]) <span class="co">#pior</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">*</span>args) <span class="co">#melhor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-63" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="co">#resultado quisto</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args[<span class="dv">0</span>], args[<span class="dv">1</span>], args[<span class="dv">2</span>]) <span class="co">#pior</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">*</span>args) <span class="co">#melhor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 2 3
+1 2 3
+1 2 3</code></pre>
+</div>
 </div>
 <p>O operador <code>**</code> é similar, mas transforma um dicionário em vários argumentos nomeados:</p>
-<div id="cell-65" class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>kwargs <span class="op">=</span> {<span class="st">'sep'</span>: <span class="st">'-'</span>, <span class="st">'end'</span>: <span class="st">'!</span><span class="ch">\n</span><span class="st">'</span>}</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, sep <span class="op">=</span> <span class="st">'-'</span>, end <span class="op">=</span> <span class="st">'!</span><span class="ch">\n</span><span class="st">'</span>) <span class="co">#resultado quisto</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args[<span class="dv">0</span>], args[<span class="dv">1</span>], args[<span class="dv">2</span>], sep <span class="op">=</span> kwargs[<span class="st">'sep'</span>], end <span class="op">=</span> kwargs[<span class="st">'end'</span>]) <span class="co">#pior</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">*</span>args, <span class="op">**</span>kwargs) <span class="co">#melhor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-65" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>kwargs <span class="op">=</span> {<span class="st">'sep'</span>: <span class="st">'-'</span>, <span class="st">'end'</span>: <span class="st">'!</span><span class="ch">\n</span><span class="st">'</span>}</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, sep <span class="op">=</span> <span class="st">'-'</span>, end <span class="op">=</span> <span class="st">'!</span><span class="ch">\n</span><span class="st">'</span>) <span class="co">#resultado quisto</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(args[<span class="dv">0</span>], args[<span class="dv">1</span>], args[<span class="dv">2</span>], sep <span class="op">=</span> kwargs[<span class="st">'sep'</span>], end <span class="op">=</span> kwargs[<span class="st">'end'</span>]) <span class="co">#pior</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">*</span>args, <span class="op">**</span>kwargs) <span class="co">#melhor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1-2-3!
+1-2-3!
+1-2-3!</code></pre>
+</div>
 </div>
 <p>Também podemos fazer a operação inversa, criar uma função que receba um número desconhecido de argumentos (soltos/desempacotados). Podemos preceder qualquer nome de argumento com <code>*</code> ou <code>**</code>, e eles coletarão argumentos não utilizados, e os empacotarão em uma tuple e dicionário, respectivamente.</p>
-<div id="cell-67" class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(a, <span class="op">*</span>args):</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(args)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)) <span class="co"># a = 4 !!!</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(a, <span class="op">**</span>kwargs):</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(kwargs)</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>g(<span class="dv">4</span>, um <span class="op">=</span> <span class="dv">1</span>, dois <span class="op">=</span> <span class="dv">2</span>, tres <span class="op">=</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-67" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(a, <span class="op">*</span>args):</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(args)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)) <span class="co"># a = 4 !!!</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(a, <span class="op">**</span>kwargs):</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(kwargs)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>g(<span class="dv">4</span>, um <span class="op">=</span> <span class="dv">1</span>, dois <span class="op">=</span> <span class="dv">2</span>, tres <span class="op">=</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(1, 2, 3)
+None
+{'um': 1, 'dois': 2, 'tres': 3}</code></pre>
+</div>
 </div>
 <p>Isso é útil porque a partir disso, podemos utilizar esses argumetos com base nos métodos de dicionário e tuples. Ou, podemos desempacotar e passá-los diretamente à outras funções:</p>
-<div id="cell-69" class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_sum(<span class="op">*</span>args):</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> args:</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> x</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>my_sum(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_print(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>my_print(<span class="st">'oi'</span>, <span class="st">'olá'</span>, sep <span class="op">=</span> <span class="st">', '</span>, end <span class="op">=</span> <span class="st">'!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-69" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_sum(<span class="op">*</span>args):</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> args:</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> x</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>my_sum(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_print(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>my_print(<span class="st">'oi'</span>, <span class="st">'olá'</span>, sep <span class="op">=</span> <span class="st">', '</span>, end <span class="op">=</span> <span class="st">'!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>21
+oi, olá!</code></pre>
 </div>
-<div id="cell-70" class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_imc(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    resultados <span class="op">=</span> []</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, pessoa <span class="kw">in</span> <span class="bu">enumerate</span>(args):</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        peso <span class="op">=</span> kwargs.get(<span class="ss">f'peso</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>, <span class="va">None</span>)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        altura <span class="op">=</span> kwargs.get(<span class="ss">f'altura</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>, <span class="va">None</span>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> peso <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> altura <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Faltam dados para a pessoa </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">. Peso e altura são necessários."</span>)</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> peso <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> altura <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Valores inválidos para a pessoa </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">. Peso e altura devem ser positivos."</span>)</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>        imc <span class="op">=</span> peso <span class="op">/</span> (altura <span class="op">**</span> <span class="dv">2</span>)</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>        resultados.append(imc)</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultados</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>imcs <span class="op">=</span> calcular_imc(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>, peso0<span class="op">=</span><span class="dv">60</span>, altura0<span class="op">=</span><span class="fl">1.7</span>, peso1<span class="op">=</span><span class="dv">70</span>, altura1<span class="op">=</span><span class="fl">1.75</span>, peso2<span class="op">=</span><span class="dv">80</span>, altura2<span class="op">=</span><span class="fl">1.8</span>)</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(imcs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-70" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_imc(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    resultados <span class="op">=</span> []</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, pessoa <span class="kw">in</span> <span class="bu">enumerate</span>(args):</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>        peso <span class="op">=</span> kwargs.get(<span class="ss">f'peso</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>, <span class="va">None</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>        altura <span class="op">=</span> kwargs.get(<span class="ss">f'altura</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>, <span class="va">None</span>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> peso <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> altura <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Faltam dados para a pessoa </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">. Peso e altura são necessários."</span>)</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> peso <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> altura <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Valores inválidos para a pessoa </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">. Peso e altura devem ser positivos."</span>)</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>        imc <span class="op">=</span> peso <span class="op">/</span> (altura <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>        resultados.append(imc)</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultados</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>imcs <span class="op">=</span> calcular_imc(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>, peso0<span class="op">=</span><span class="dv">60</span>, altura0<span class="op">=</span><span class="fl">1.7</span>, peso1<span class="op">=</span><span class="dv">70</span>, altura1<span class="op">=</span><span class="fl">1.75</span>, peso2<span class="op">=</span><span class="dv">80</span>, altura2<span class="op">=</span><span class="fl">1.8</span>)</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(imcs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[20.761245674740486, 22.857142857142858, 24.691358024691358]</code></pre>
+</div>
 </div>
 </section>
-<section id="ambientes-e-busca-de-valores" class="level4" data-number="1.9.1.2">
-<h4 data-number="1.9.1.2" class="anchored" data-anchor-id="ambientes-e-busca-de-valores"><span class="header-section-number">1.9.1.2</span> Ambientes e Busca de Valores</h4>
+<section id="ambientes-e-busca-de-valores" class="level4" data-number="1.8.1.2">
+<h4 data-number="1.8.1.2" class="anchored" data-anchor-id="ambientes-e-busca-de-valores"><span class="header-section-number">1.8.1.2</span> Ambientes e Busca de Valores</h4>
 <!--texto explicativo sobre variáveis locais e globais, e como funções buscam por valores que precisam utilizar (com base nos exemplos abaixo)-->
-<div id="cell-72" class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(a, <span class="op">**</span>kargs):</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [a, b, c, d]</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>fun(a <span class="op">=</span> <span class="dv">10</span>, c <span class="op">=</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-72" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(a, <span class="op">**</span>kwargs):</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [a, b, c, d]</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>fun(a <span class="op">=</span> <span class="dv">10</span>, c <span class="op">=</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>[10, 20, 3, 4]</code></pre>
 </div>
-<div id="cell-73" class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(a, <span class="op">**</span>kargs):</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [a, b, c, d, e]</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>fun(a <span class="op">=</span> <span class="dv">10</span>, c <span class="op">=</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-73" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(a, <span class="op">**</span>kwargs):</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [a, b, c, d, e]</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>fun(a <span class="op">=</span> <span class="dv">10</span>, c <span class="op">=</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[45], line 5</span>
+<span class="ansi-green-fg">      2</span>     b <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(98,98,98)">20</span>
+<span class="ansi-green-fg">      3</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> [a, b, c, d, e]
+<span class="ansi-green-fg ansi-bold">----&gt; 5</span> <span class="ansi-yellow-bg">fun</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">10</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">c</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">30</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg ansi-bold">In[45], line 3</span>, in <span class="ansi-cyan-fg">fun</span><span class="ansi-blue-fg ansi-bold">(a, **kwargs)</span>
+<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">fun</span>(a, <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>kwargs):
+<span class="ansi-green-fg">      2</span>     b <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(98,98,98)">20</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 3</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> [a, b, c, d, <span class="ansi-yellow-bg">e</span>]
+
+<span class="ansi-red-fg ansi-bold">NameError</span>: name 'e' is not defined</pre>
+</div>
+</div>
 </div>
 </section>
 </section>
-<section id="errosexceções" class="level3" data-number="1.9.2">
-<h3 data-number="1.9.2" class="anchored" data-anchor-id="errosexceções"><span class="header-section-number">1.9.2</span> Erros/Exceções</h3>
-<section id="tipos-de-exceções" class="level5" data-number="1.9.2.0.1">
-<h5 data-number="1.9.2.0.1" class="anchored" data-anchor-id="tipos-de-exceções"><span class="header-section-number">1.9.2.0.1</span> Tipos de exceções</h5>
+<section id="errosexceções" class="level3" data-number="1.8.2">
+<h3 data-number="1.8.2" class="anchored" data-anchor-id="errosexceções"><span class="header-section-number">1.8.2</span> Erros/Exceções</h3>
+<section id="tipos-de-exceções" class="level5" data-number="1.8.2.0.1">
+<h5 data-number="1.8.2.0.1" class="anchored" data-anchor-id="tipos-de-exceções"><span class="header-section-number">1.8.2.0.1</span> Tipos de exceções</h5>
 <p>Referência: https://docs.python.org/3/library/warnings.html, https://www.tutorialsteacher.com/python/error-types-in-python</p>
 <p>Existem vários motivos diferentes para um script não rodar, é importante saber os mais comuns para ajudar na hora de investigar o que está de errado com um código.</p>
 <ul>
@@ -640,34 +730,34 @@ falso = False</code></pre>
 <li>Avisos: não interrompem o código, mas indicam que algo pode estar errado</li>
 </ul>
 </section>
-<section id="como-lidar-com-exceções" class="level5" data-number="1.9.2.0.2">
-<h5 data-number="1.9.2.0.2" class="anchored" data-anchor-id="como-lidar-com-exceções"><span class="header-section-number">1.9.2.0.2</span> Como lidar com exceções?</h5>
+<section id="como-lidar-com-exceções" class="level5" data-number="1.8.2.0.2">
+<h5 data-number="1.8.2.0.2" class="anchored" data-anchor-id="como-lidar-com-exceções"><span class="header-section-number">1.8.2.0.2</span> Como lidar com exceções?</h5>
 <p>Referência: https://www.w3schools.com/python/python_try_except.asp</p>
 <p>Avisar ao utilizador do código que houve algum erro específico:</p>
 <div id="cell-77" class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    juros <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual a taxa de juros desejada? "</span>))</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A taxa escolhida foi </span><span class="sc">{0}</span><span class="st">%."</span>.<span class="bu">format</span>(juros))</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A taxa de juros deve ser um número"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    juros <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Qual a taxa de juros desejada? "</span>))</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A taxa escolhida foi </span><span class="sc">{0}</span><span class="st">%."</span>.<span class="bu">format</span>(juros))</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A taxa de juros deve ser um número"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Em um loop, indicar que um dos itens não funcionou, mas realizar a operação para o resto dos itens:</p>
 <div id="cell-79" class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>paginas <span class="op">=</span> []</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>urlList <span class="op">=</span> [<span class="st">'https://finance.yahoo.com/quote/PETR4.SA'</span>, <span class="st">'urlquebrado.com'</span>, <span class="st">'https://finance.yahoo.com/quote/VALE3.SA'</span>]</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> url <span class="kw">in</span> urlList:</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        request <span class="op">=</span> requests.get(url)</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="ss">f"result - </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">"</span> <span class="co">#algo com os dados da página</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        paginas.append(result)</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>        paginas.append(<span class="st">"NA"</span>)</span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"A página </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss"> não pode ser lida"</span>)</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>paginas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>paginas <span class="op">=</span> []</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>urlList <span class="op">=</span> [<span class="st">'https://finance.yahoo.com/quote/PETR4.SA'</span>, <span class="st">'urlquebrado.com'</span>, <span class="st">'https://finance.yahoo.com/quote/VALE3.SA'</span>]</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> url <span class="kw">in</span> urlList:</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>        request <span class="op">=</span> requests.get(url)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="ss">f"result - </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">"</span> <span class="co">#algo com os dados da página</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>        paginas.append(result)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>        paginas.append(<span class="st">"NA"</span>)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"A página </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss"> não pode ser lida"</span>)</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>paginas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -768,7 +858,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/gvcode\.github\.io\/trainee\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1103,8 +1193,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aula2-python2.html" class="pagination-link" aria-label="Introdução ao Python I">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao Python I</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./aula2-python2.html" class="pagination-link" aria-label="Introdução ao Python II">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao Python II</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
