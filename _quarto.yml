@@ -6,6 +6,10 @@ book:
   title: "GVCode Trainee"
   author: "GVCode"
   favicon: assets/icon.png
+  description: Livro Quarto do curso de trainee da GVCode
+  site-url: https://gvcode.github.io/trainee/
+  repo-url: https://github.com/gvcode/trainee
+  repo-branch: main
   sidebar:
     logo: assets/icon.png
   chapters:
@@ -24,5 +28,8 @@ bibliography: assets/references.bib
 
 format:
   html:
-    theme: pulse
-# Other themes: quartz, vapor
+    theme: pulse # Other themes: quartz, vapor
+    code-link: true
+
+execute:
+  cache: true
