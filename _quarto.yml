@@ -30,6 +30,10 @@ format:
   html:
     theme: pulse # Other themes: quartz, vapor
     code-link: true
+    css: assets/style.css
 
 execute:
   cache: true
+
+filters:
+  - assets/view_html_comments.lua # deixar visível os comentários para professores. Renderizar o livro sem isso quando o trainee começar
