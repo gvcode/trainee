@@ -21,10 +21,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -70,6 +104,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="assets/style.css">
@@ -185,25 +222,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sumarização-com-pandas" id="toc-sumarização-com-pandas" class="nav-link active" data-scroll-target="#sumarização-com-pandas"><span class="header-section-number">5.1</span> Sumarização com Pandas</a>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">6</span> Introdução</a>
   <ul class="collapse">
-  <li><a href="#sumarizando-dataframes" id="toc-sumarizando-dataframes" class="nav-link" data-scroll-target="#sumarizando-dataframes"><span class="header-section-number">5.1.1</span> Sumarizando Dataframes</a></li>
-  <li><a href="#sumarizando-variáveis-categóricas" id="toc-sumarizando-variáveis-categóricas" class="nav-link" data-scroll-target="#sumarizando-variáveis-categóricas"><span class="header-section-number">5.1.2</span> Sumarizando Variáveis Categóricas</a></li>
-  <li><a href="#sumarizando-variáveis-contínuas" id="toc-sumarizando-variáveis-contínuas" class="nav-link" data-scroll-target="#sumarizando-variáveis-contínuas"><span class="header-section-number">5.1.3</span> Sumarizando Variáveis Contínuas</a></li>
-  <li><a href="#analisando-grupos-nos-dados" id="toc-analisando-grupos-nos-dados" class="nav-link" data-scroll-target="#analisando-grupos-nos-dados"><span class="header-section-number">5.1.4</span> Analisando Grupos nos Dados</a></li>
+  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualização-de-dados"><span class="header-section-number">6.1</span> Visualização de Dados</a></li>
+  <li><a href="#sumarização-com-pandas" id="toc-sumarização-com-pandas" class="nav-link" data-scroll-target="#sumarização-com-pandas"><span class="header-section-number">6.2</span> Sumarização com Pandas</a>
+  <ul class="collapse">
+  <li><a href="#sumarisando-o-dataframe-como-um-todo" id="toc-sumarisando-o-dataframe-como-um-todo" class="nav-link" data-scroll-target="#sumarisando-o-dataframe-como-um-todo"><span class="header-section-number">6.2.1</span> Sumarisando o dataframe como um todo</a></li>
+  <li><a href="#sumarisando-variáveis-categóricas" id="toc-sumarisando-variáveis-categóricas" class="nav-link" data-scroll-target="#sumarisando-variáveis-categóricas"><span class="header-section-number">6.2.2</span> Sumarisando variáveis categóricas</a></li>
+  <li><a href="#sumarisando-variáveis-contínuas" id="toc-sumarisando-variáveis-contínuas" class="nav-link" data-scroll-target="#sumarisando-variáveis-contínuas"><span class="header-section-number">6.2.3</span> Sumarisando variáveis contínuas</a></li>
+  <li><a href="#analisando-grupos-nos-dados" id="toc-analisando-grupos-nos-dados" class="nav-link" data-scroll-target="#analisando-grupos-nos-dados"><span class="header-section-number">6.2.4</span> Analisando grupos nos dados</a></li>
   </ul></li>
-  <li><a href="#gráficos-com-o-matplotlib" id="toc-gráficos-com-o-matplotlib" class="nav-link" data-scroll-target="#gráficos-com-o-matplotlib"><span class="header-section-number">5.2</span> Gráficos com o Matplotlib</a>
+  <li><a href="#gráficos-com-o-matplotlib" id="toc-gráficos-com-o-matplotlib" class="nav-link" data-scroll-target="#gráficos-com-o-matplotlib"><span class="header-section-number">6.3</span> Gráficos com o Matplotlib</a>
   <ul class="collapse">
-  <li><a href="#anatomia-e-estilo-de-programação" id="toc-anatomia-e-estilo-de-programação" class="nav-link" data-scroll-target="#anatomia-e-estilo-de-programação"><span class="header-section-number">5.2.1</span> Anatomia e Estilo de Programação</a></li>
-  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots"><span class="header-section-number">5.2.2</span> Plots</a></li>
-  <li><a href="#estéticas" id="toc-estéticas" class="nav-link" data-scroll-target="#estéticas"><span class="header-section-number">5.2.3</span> Estéticas</a></li>
-  <li><a href="#tema" id="toc-tema" class="nav-link" data-scroll-target="#tema"><span class="header-section-number">5.2.4</span> Tema</a></li>
-  <li><a href="#plots-combinados" id="toc-plots-combinados" class="nav-link" data-scroll-target="#plots-combinados"><span class="header-section-number">5.2.5</span> Plots Combinados</a></li>
+  <li><a href="#anatomia-e-estilo-de-programação" id="toc-anatomia-e-estilo-de-programação" class="nav-link" data-scroll-target="#anatomia-e-estilo-de-programação"><span class="header-section-number">6.3.1</span> Anatomia e Estilo de Programação</a></li>
+  <li><a href="#anatomia-de-uma-figura" id="toc-anatomia-de-uma-figura" class="nav-link" data-scroll-target="#anatomia-de-uma-figura"><span class="header-section-number">6.3.2</span> Anatomia de uma figura</a></li>
+  <li><a href="#o-estilo-da-programação" id="toc-o-estilo-da-programação" class="nav-link" data-scroll-target="#o-estilo-da-programação"><span class="header-section-number">6.3.3</span> O estilo da programação</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots"><span class="header-section-number">6.3.4</span> Plots</a></li>
+  <li><a href="#estéticas" id="toc-estéticas" class="nav-link" data-scroll-target="#estéticas"><span class="header-section-number">6.3.5</span> Estéticas</a></li>
+  <li><a href="#tema" id="toc-tema" class="nav-link" data-scroll-target="#tema"><span class="header-section-number">6.3.6</span> Tema</a></li>
+  <li><a href="#plots-combinados" id="toc-plots-combinados" class="nav-link" data-scroll-target="#plots-combinados"><span class="header-section-number">6.3.7</span> Plots Combinados</a></li>
   </ul></li>
   <li><a href="#recapitulando" id="toc-recapitulando" class="nav-link" data-scroll-target="#recapitulando">Recapitulando</a></li>
-  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">5.3</span> Extras</a>
+  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">6.4</span> Extras</a>
   <ul class="collapse">
-  <li><a href="#outras-bibliotecas-gráficas" id="toc-outras-bibliotecas-gráficas" class="nav-link" data-scroll-target="#outras-bibliotecas-gráficas"><span class="header-section-number">5.3.1</span> Outras Bibliotecas Gráficas</a></li>
+  <li><a href="#outras-bibliotecas-gráficas" id="toc-outras-bibliotecas-gráficas" class="nav-link" data-scroll-target="#outras-bibliotecas-gráficas"><span class="header-section-number">6.4.1</span> Outras Bibliotecas Gráficas</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -230,50 +273,561 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>!! Introdução da aula !!</p>
-<section id="sumarização-com-pandas" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="sumarização-com-pandas"><span class="header-section-number">5.1</span> Sumarização com Pandas</h2>
-<section id="sumarizando-dataframes" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="sumarizando-dataframes"><span class="header-section-number">5.1.1</span> Sumarizando Dataframes</h3>
+<section id="introdução" class="level1 unumbered" data-number="6">
+<h1 class="unumbered" data-number="6"><span class="header-section-number">6</span> Introdução</h1>
+<p><strong>Adicionar/Editar:</strong> Motivação da aula</p>
+<p><strong>Adicionar/Editar:</strong> TOC dos temas da aula (pra ajudar os alunos a se acharem na aula)</p>
+<p><strong>Adicionar/Editar:</strong> Texto (enxuto, objetivo) com os objetivos de aprendizagem principais (o que, principalmente, os alunos tem que sair dessa aula sabendo)</p>
+<p><strong>Adicionar/Editar:</strong> Ao longo da aula: adicionar mais referências, especialmente sobre onde expandir os conhecimentos sobre cada tema</p>
+<p><strong>Adicionar/Editar:</strong> Na mesma ideia das aulas passadas, vamos explicar teoricamente o que é uma visualização (tanto como tabela ou gráfico), e depois falar sobre os "tipos" de visualizações que queremos criar</p>
+<section id="visualização-de-dados" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="visualização-de-dados"><span class="header-section-number">6.1</span> Visualização de Dados</h2>
+<p><strong>Adicionar/Editar:</strong> explicar o objetivo. brevemente falar sobre tabelas de sumarização (e seus componentes) e gráficos (e seus componentes)</p>
 </section>
-<section id="sumarizando-variáveis-categóricas" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="sumarizando-variáveis-categóricas"><span class="header-section-number">5.1.2</span> Sumarizando Variáveis Categóricas</h3>
+<section id="sumarização-com-pandas" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sumarização-com-pandas"><span class="header-section-number">6.2</span> Sumarização com Pandas</h2>
+<p>Uma maneira de visualizar dados é criar resumos, calcular estatísticas descritivas que contem informações chave sobre os dados, de maneira concisa.</p>
+<p>Estes links tem alguns tutoriais interessantes:</p>
+<ul>
+<li>https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html</li>
+<li>https://www.geeksforgeeks.org/pandas-groupby-summarising-aggregating-and-grouping-data-in-python/</li>
+</ul>
+<p>Vamos começar carregando dados:</p>
+<div id="cell-6" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Adicionar/Editar:</strong> salvar o dataframe em assets/materials</p>
+<div id="cell-8" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://drive.google.com/uc?id=1u2MEH_DTBMyG3clVKA4Q5FEpntLZNKeE"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Location</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Kilometers_Driven</th>
+<th data-quarto-table-cell-role="th">Fuel_Type</th>
+<th data-quarto-table-cell-role="th">Transmission</th>
+<th data-quarto-table-cell-role="th">Owner_Type</th>
+<th data-quarto-table-cell-role="th">Mileage</th>
+<th data-quarto-table-cell-role="th">Engine</th>
+<th data-quarto-table-cell-role="th">Power</th>
+<th data-quarto-table-cell-role="th">Seats</th>
+<th data-quarto-table-cell-role="th">New_Price</th>
+<th data-quarto-table-cell-role="th">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>Maruti Wagon R LXI CNG</td>
+<td>Mumbai</td>
+<td>2010</td>
+<td>72000</td>
+<td>CNG</td>
+<td>Manual</td>
+<td>First</td>
+<td>26.6 km/kg</td>
+<td>998 CC</td>
+<td>58.16 bhp</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>1.75</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>Hyundai Creta 1.6 CRDi SX Option</td>
+<td>Pune</td>
+<td>2015</td>
+<td>41000</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>First</td>
+<td>19.67 kmpl</td>
+<td>1582 CC</td>
+<td>126.2 bhp</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>12.50</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>Honda Jazz V</td>
+<td>Chennai</td>
+<td>2011</td>
+<td>46000</td>
+<td>Petrol</td>
+<td>Manual</td>
+<td>First</td>
+<td>18.2 kmpl</td>
+<td>1199 CC</td>
+<td>88.7 bhp</td>
+<td>5.0</td>
+<td>8.61 Lakh</td>
+<td>4.50</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>Maruti Ertiga VDI</td>
+<td>Chennai</td>
+<td>2012</td>
+<td>87000</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>First</td>
+<td>20.77 kmpl</td>
+<td>1248 CC</td>
+<td>88.76 bhp</td>
+<td>7.0</td>
+<td>NaN</td>
+<td>6.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>Audi A4 New 2.0 TDI Multitronic</td>
+<td>Coimbatore</td>
+<td>2013</td>
+<td>40670</td>
+<td>Diesel</td>
+<td>Automatic</td>
+<td>Second</td>
+<td>15.2 kmpl</td>
+<td>1968 CC</td>
+<td>140.8 bhp</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>17.74</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6014</td>
+<td>6014</td>
+<td>Maruti Swift VDI</td>
+<td>Delhi</td>
+<td>2014</td>
+<td>27365</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>First</td>
+<td>28.4 kmpl</td>
+<td>1248 CC</td>
+<td>74 bhp</td>
+<td>5.0</td>
+<td>7.88 Lakh</td>
+<td>4.75</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6015</td>
+<td>6015</td>
+<td>Hyundai Xcent 1.1 CRDi S</td>
+<td>Jaipur</td>
+<td>2015</td>
+<td>100000</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>First</td>
+<td>24.4 kmpl</td>
+<td>1120 CC</td>
+<td>71 bhp</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>4.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6016</td>
+<td>6016</td>
+<td>Mahindra Xylo D4 BSIV</td>
+<td>Jaipur</td>
+<td>2012</td>
+<td>55000</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>Second</td>
+<td>14.0 kmpl</td>
+<td>2498 CC</td>
+<td>112 bhp</td>
+<td>8.0</td>
+<td>NaN</td>
+<td>2.90</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6017</td>
+<td>6017</td>
+<td>Maruti Wagon R VXI</td>
+<td>Kolkata</td>
+<td>2013</td>
+<td>46000</td>
+<td>Petrol</td>
+<td>Manual</td>
+<td>First</td>
+<td>18.9 kmpl</td>
+<td>998 CC</td>
+<td>67.1 bhp</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>2.65</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6018</td>
+<td>6018</td>
+<td>Chevrolet Beat Diesel</td>
+<td>Hyderabad</td>
+<td>2011</td>
+<td>47000</td>
+<td>Diesel</td>
+<td>Manual</td>
+<td>First</td>
+<td>25.44 kmpl</td>
+<td>936 CC</td>
+<td>57.6 bhp</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>2.50</td>
+</tr>
+</tbody>
+</table>
+
+<p>6019 rows × 14 columns</p>
+</div>
+</div>
+</div>
+<section id="sumarisando-o-dataframe-como-um-todo" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="sumarisando-o-dataframe-como-um-todo"><span class="header-section-number">6.2.1</span> Sumarisando o dataframe como um todo</h3>
+<p>Existem algumas funções que combinam várias informações sobre todas as variáveis ao mesmo tempo.</p>
+<div id="cell-10" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 6019 entries, 0 to 6018
+Data columns (total 14 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   Unnamed: 0         6019 non-null   int64  
+ 1   Name               6019 non-null   object 
+ 2   Location           6019 non-null   object 
+ 3   Year               6019 non-null   int64  
+ 4   Kilometers_Driven  6019 non-null   int64  
+ 5   Fuel_Type          6019 non-null   object 
+ 6   Transmission       6019 non-null   object 
+ 7   Owner_Type         6019 non-null   object 
+ 8   Mileage            6017 non-null   object 
+ 9   Engine             5983 non-null   object 
+ 10  Power              5983 non-null   object 
+ 11  Seats              5977 non-null   float64
+ 12  New_Price          824 non-null    object 
+ 13  Price              6019 non-null   float64
+dtypes: float64(2), int64(3), object(9)
+memory usage: 658.5+ KB</code></pre>
+</div>
+</div>
+<div id="cell-11" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Kilometers_Driven</th>
+<th data-quarto-table-cell-role="th">Seats</th>
+<th data-quarto-table-cell-role="th">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>6019.000000</td>
+<td>6019.000000</td>
+<td>6.019000e+03</td>
+<td>5977.000000</td>
+<td>6019.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>3009.000000</td>
+<td>2013.358199</td>
+<td>5.873838e+04</td>
+<td>5.278735</td>
+<td>9.479468</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>1737.679967</td>
+<td>3.269742</td>
+<td>9.126884e+04</td>
+<td>0.808840</td>
+<td>11.187917</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>0.000000</td>
+<td>1998.000000</td>
+<td>1.710000e+02</td>
+<td>0.000000</td>
+<td>0.440000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>1504.500000</td>
+<td>2011.000000</td>
+<td>3.400000e+04</td>
+<td>5.000000</td>
+<td>3.500000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>3009.000000</td>
+<td>2014.000000</td>
+<td>5.300000e+04</td>
+<td>5.000000</td>
+<td>5.640000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>4513.500000</td>
+<td>2016.000000</td>
+<td>7.300000e+04</td>
+<td>5.000000</td>
+<td>9.950000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>6018.000000</td>
+<td>2019.000000</td>
+<td>6.500000e+06</td>
+<td>10.000000</td>
+<td>160.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
-<section id="sumarizando-variáveis-contínuas" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="sumarizando-variáveis-contínuas"><span class="header-section-number">5.1.3</span> Sumarizando Variáveis Contínuas</h3>
+<section id="sumarisando-variáveis-categóricas" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="sumarisando-variáveis-categóricas"><span class="header-section-number">6.2.2</span> Sumarisando variáveis categóricas</h3>
+<p>Para variáveis categóricas, podemos ver a frequência de cada categoria.</p>
+<div id="cell-13" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> df[<span class="st">'Fuel_Type'</span>].value_counts(normalize <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(counts)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>counts.plot(kind <span class="op">=</span> <span class="st">"bar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fuel_Type
+Diesel      0.532480
+Petrol      0.456222
+CNG         0.009304
+LPG         0.001661
+Electric    0.000332
+Name: proportion, dtype: float64</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="aula5-cd-visualizacao_files/figure-html/cell-6-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="analisando-grupos-nos-dados" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="analisando-grupos-nos-dados"><span class="header-section-number">5.1.4</span> Analisando Grupos nos Dados</h3>
-<p>!! Texto de pausa !!</p>
+<section id="sumarisando-variáveis-contínuas" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="sumarisando-variáveis-contínuas"><span class="header-section-number">6.2.3</span> Sumarisando variáveis contínuas</h3>
+<p>As estatísticas descritivas principais estão na tabela “describe”, mas também podem ser obtidas individualmente.</p>
+<div id="cell-15" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'Price'</span>].mean()) <span class="co"># Também existe .sum(), .min(), etc.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Price'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9.47946835022429</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>count    6019.000000
+mean        9.479468
+std        11.187917
+min         0.440000
+25%         3.500000
+50%         5.640000
+75%         9.950000
+max       160.000000
+Name: Price, dtype: float64</code></pre>
+</div>
+</div>
+<p>De modo mais geral, mas menos mensurável, podemos olhar para a distribuição da variável como um todo, e uma visualização simplificada com boxplots.</p>
+<div id="cell-17" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Price'</span>].plot.density()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="aula5-cd-visualizacao_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-18" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Price'</span>].plot.box()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="aula5-cd-visualizacao_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="analisando-grupos-nos-dados" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="analisando-grupos-nos-dados"><span class="header-section-number">6.2.4</span> Analisando grupos nos dados</h3>
+<p><strong>Adicionar/Editar:</strong> falar bem mais, falar das funções de aggregate que não falamos na aula 3</p>
+<p>Podemos estar interessado em fazer esses resumos mas utilizando grupos nos dados. Veja <a href="https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/">este tutorial</a> para mais informações.</p>
+<div id="cell-20" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'Fuel_Type'</span>)[<span class="st">'Price'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>Fuel_Type
+CNG           196.94
+Diesel      41154.14
+Electric       25.75
+LPG            24.87
+Petrol      15655.22
+Name: Price, dtype: float64</code></pre>
+</div>
+</div>
+<div id="cell-21" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df.plot.box(column <span class="op">=</span> <span class="st">'Price'</span>, by <span class="op">=</span> <span class="st">'Fuel_Type'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>Price    Axes(0.125,0.11;0.775x0.77)
+dtype: object</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="aula5-cd-visualizacao_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Adicionar/Editar:</strong> Escolha uma frase remetendo pausa e tire print de alguma arte dela em https://patorjk.com/software/taag/. Exemplo:</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/pause/georgia11.png" class="img-fluid figure-img"></p>
+<figcaption>😎</figcaption>
+</figure>
+</div>
+<hr>
 </section>
 </section>
-<section id="gráficos-com-o-matplotlib" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="gráficos-com-o-matplotlib"><span class="header-section-number">5.2</span> Gráficos com o Matplotlib</h2>
-<section id="anatomia-e-estilo-de-programação" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="anatomia-e-estilo-de-programação"><span class="header-section-number">5.2.1</span> Anatomia e Estilo de Programação</h3>
+<section id="gráficos-com-o-matplotlib" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="gráficos-com-o-matplotlib"><span class="header-section-number">6.3</span> Gráficos com o Matplotlib</h2>
+<p><strong>Adicionar/Editar:</strong> cuidado pra não deixar a aula muito expositiva/densa. conteúdos de decoreba, mova para a seção de Extras</p>
+<section id="anatomia-e-estilo-de-programação" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="anatomia-e-estilo-de-programação"><span class="header-section-number">6.3.1</span> Anatomia e Estilo de Programação</h3>
+<p><strong>Adicionar/Editar:</strong> Falar mais sobre os componentes de um gráfico, para setar o contexto para dividir as funções do matplotlib em "caixinhas"</p>
+<p>O Matplotlib exibe seus dados em Figuras (por exemplo, janelas, widgets Jupyter, etc.), cada uma das quais pode conter um ou mais Eixos, uma área onde pontos podem ser especificados em termos de coordenadas x-y (ou theta-r em um gráfico polar, x-y-z em um gráfico 3D, etc.). A maneira mais simples de criar uma Figura com um Eixo é usando pyplot.subplots.</p>
+<p>Alguns links úteis:</p>
+<ul>
+<li>https://matplotlib.org/stable/users/explain/quick_start.html.</li>
+<li>https://matplotlib.org/3.8.3/users/index.html.</li>
+<li>https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png.</li>
+<li>https://matplotlib.org/3.8.3/index.html.</li>
+<li>https://matplotlib.org/3.8.3/api/index.html.</li>
+</ul>
 </section>
-<section id="plots" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="plots"><span class="header-section-number">5.2.2</span> Plots</h3>
+<section id="anatomia-de-uma-figura" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="anatomia-de-uma-figura"><span class="header-section-number">6.3.2</span> Anatomia de uma figura</h3>
+<p><img src="https://matplotlib.org/stable/_images/anatomy.png" width="300"></p>
 </section>
-<section id="estéticas" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="estéticas"><span class="header-section-number">5.2.3</span> Estéticas</h3>
+<section id="o-estilo-da-programação" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="o-estilo-da-programação"><span class="header-section-number">6.3.3</span> O estilo da programação</h3>
+<div id="cell-28" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">100</span>)  <span class="co"># Sample data.</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that even in the OO-style, we use `.pyplot.figure` to create the Figure.</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="fl">2.7</span>), layout<span class="op">=</span><span class="st">'constrained'</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>ax.plot(x, x, label<span class="op">=</span><span class="st">'linear'</span>)  <span class="co"># Plot some data on the axes.</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>ax.plot(x, x<span class="op">**</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'quadratic'</span>)  <span class="co"># Plot more data on the axes...</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>ax.plot(x, x<span class="op">**</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">'cubic'</span>)  <span class="co"># ... and some more.</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'x label'</span>)  <span class="co"># Add an x-label to the axes.</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'y label'</span>)  <span class="co"># Add a y-label to the axes.</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Simple Plot"</span>)  <span class="co"># Add a title to the axes.</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>ax.legend()  <span class="co"># Add a legend.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="aula5-cd-visualizacao_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="tema" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="tema"><span class="header-section-number">5.2.4</span> Tema</h3>
+<section id="plots" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="plots"><span class="header-section-number">6.3.4</span> Plots</h3>
+<p><strong>Adicionar/Editar:</strong> Falar os tipos de plots quistos, e citar as funções que os criam. scatterplot, line plot, bar/colplot, histograms/violinplot, boxplot, pieplot, o que mais?</p>
 </section>
-<section id="plots-combinados" class="level3" data-number="5.2.5">
-<h3 data-number="5.2.5" class="anchored" data-anchor-id="plots-combinados"><span class="header-section-number">5.2.5</span> Plots Combinados</h3>
+<section id="estéticas" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="estéticas"><span class="header-section-number">6.3.5</span> Estéticas</h3>
+<p><strong>Adicionar/Editar:</strong> estéticas são os componentes visuais que tem relação direta com os dados cores, fills, markers, linetypes, etc.</p>
+<p><strong>Adicionar/Editar:</strong> é nessa seção que deve-se ensinar a fazer plots com dados separados com uma legenda, pra várias estéticas diferentes</p>
+</section>
+<section id="tema" class="level3" data-number="6.3.6">
+<h3 data-number="6.3.6" class="anchored" data-anchor-id="tema"><span class="header-section-number">6.3.6</span> Tema</h3>
+<p><strong>Adicionar/Editar:</strong> temas são os componentes visuais que não tem relação com os dados: títulos, grade, cores de fundo, etc.</p>
+</section>
+<section id="plots-combinados" class="level3" data-number="6.3.7">
+<h3 data-number="6.3.7" class="anchored" data-anchor-id="plots-combinados"><span class="header-section-number">6.3.7</span> Plots Combinados</h3>
+<p><strong>Adicionar/Editar:</strong> ensinar</p>
+<div class="double-hrule">
+
+</div>
 </section>
 </section>
 <section id="recapitulando" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="recapitulando">Recapitulando</h2>
+<p><strong>Adicionar/Editar:</strong> Adicionar texto de recapitulando. Em parágrafos, primeiro sobre os principais objetivos de aprendizagem, depois sobre os conceitos teóricos aprendidos, e por fim, dos conceitos "decoreba" aprendidos</p>
 </section>
-<section id="extras" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="extras"><span class="header-section-number">5.3</span> Extras</h2>
-<section id="outras-bibliotecas-gráficas" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="outras-bibliotecas-gráficas"><span class="header-section-number">5.3.1</span> Outras Bibliotecas Gráficas</h3>
+<section id="extras" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="extras"><span class="header-section-number">6.4</span> Extras</h2>
+<p><strong>Adicionar/Editar:</strong> colocar as partes muito decorebas aqui</p>
+<section id="outras-bibliotecas-gráficas" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="outras-bibliotecas-gráficas"><span class="header-section-number">6.4.1</span> Outras Bibliotecas Gráficas</h3>
+<p><strong>Adicionar/Editar:</strong> falar que existem, e suas diferenças com o matplot</p>
 
 
+</section>
 </section>
 </section>
 

@@ -21,10 +21,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -70,6 +104,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="assets/style.css">
@@ -185,27 +222,39 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#vetores-e-dataframes" id="toc-vetores-e-dataframes" class="nav-link active" data-scroll-target="#vetores-e-dataframes"><span class="header-section-number">3.1</span> Vetores e Dataframes</a></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#vetores-e-dataframes" id="toc-vetores-e-dataframes" class="nav-link" data-scroll-target="#vetores-e-dataframes"><span class="header-section-number">3.1</span> Vetores e Dataframes</a>
+  <ul class="collapse">
+  <li><a href="#o-problema" id="toc-o-problema" class="nav-link" data-scroll-target="#o-problema"><span class="header-section-number">3.1.1</span> O Problema</a></li>
+  <li><a href="#vetores" id="toc-vetores" class="nav-link" data-scroll-target="#vetores"><span class="header-section-number">3.1.2</span> Vetores</a></li>
+  <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes"><span class="header-section-number">3.1.3</span> Dataframes</a></li>
+  </ul></li>
   <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy"><span class="header-section-number">3.2</span> Numpy</a>
   <ul class="collapse">
   <li><a href="#criação-e-características" id="toc-criação-e-características" class="nav-link" data-scroll-target="#criação-e-características"><span class="header-section-number">3.2.1</span> Criação e Características</a></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">3.2.2</span> Subsetting</a></li>
-  <li><a href="#operações" id="toc-operações" class="nav-link" data-scroll-target="#operações"><span class="header-section-number">3.2.3</span> Operações</a></li>
+  <li><a href="#tipos-de-arrays" id="toc-tipos-de-arrays" class="nav-link" data-scroll-target="#tipos-de-arrays"><span class="header-section-number">3.2.2</span> Tipos de arrays</a></li>
+  <li><a href="#operações-vetorizadas" id="toc-operações-vetorizadas" class="nav-link" data-scroll-target="#operações-vetorizadas"><span class="header-section-number">3.2.3</span> Operações Vetorizadas</a></li>
+  <li><a href="#subset" id="toc-subset" class="nav-link" data-scroll-target="#subset"><span class="header-section-number">3.2.4</span> Subset</a></li>
+  <li><a href="#repeated-operations" id="toc-repeated-operations" class="nav-link" data-scroll-target="#repeated-operations"><span class="header-section-number">3.2.5</span> Repeated Operations</a></li>
   </ul></li>
   <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas"><span class="header-section-number">3.3</span> Pandas</a>
   <ul class="collapse">
   <li><a href="#criação-e-características-1" id="toc-criação-e-características-1" class="nav-link" data-scroll-target="#criação-e-características-1"><span class="header-section-number">3.3.1</span> Criação e Características</a></li>
-  <li><a href="#subset" id="toc-subset" class="nav-link" data-scroll-target="#subset"><span class="header-section-number">3.3.2</span> Subset</a></li>
-  <li><a href="#operate" id="toc-operate" class="nav-link" data-scroll-target="#operate"><span class="header-section-number">3.3.3</span> Operate</a></li>
-  <li><a href="#reshape" id="toc-reshape" class="nav-link" data-scroll-target="#reshape"><span class="header-section-number">3.3.4</span> Reshape</a></li>
-  <li><a href="#combine" id="toc-combine" class="nav-link" data-scroll-target="#combine"><span class="header-section-number">3.3.5</span> Combine</a></li>
-  <li><a href="#aggregate" id="toc-aggregate" class="nav-link" data-scroll-target="#aggregate"><span class="header-section-number">3.3.6</span> Aggregate</a></li>
+  <li><a href="#subset-1" id="toc-subset-1" class="nav-link" data-scroll-target="#subset-1"><span class="header-section-number">3.3.2</span> Subset</a></li>
+  <li><a href="#operatecreate" id="toc-operatecreate" class="nav-link" data-scroll-target="#operatecreate"><span class="header-section-number">3.3.3</span> Operate/Create</a></li>
+  <li><a href="#reorder" id="toc-reorder" class="nav-link" data-scroll-target="#reorder"><span class="header-section-number">3.3.4</span> Reorder</a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="header-section-number">3.3.5</span> Rename</a></li>
+  <li><a href="#repeated-operations-1" id="toc-repeated-operations-1" class="nav-link" data-scroll-target="#repeated-operations-1"><span class="header-section-number">3.3.6</span> Repeated Operations</a></li>
   </ul></li>
-  <li><a href="#recapitulando" id="toc-recapitulando" class="nav-link" data-scroll-target="#recapitulando"><span class="header-section-number">3.4</span> Recapitulando</a></li>
-  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">3.5</span> Extras</a>
+  <li><a href="#recapitulando" id="toc-recapitulando" class="nav-link" data-scroll-target="#recapitulando">Recapitulando</a></li>
+  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">3.4</span> Extras</a>
   <ul class="collapse">
-  <li><a href="#temas-avançados-em-numpy" id="toc-temas-avançados-em-numpy" class="nav-link" data-scroll-target="#temas-avançados-em-numpy"><span class="header-section-number">3.5.1</span> Temas Avançados em Numpy</a></li>
-  <li><a href="#temas-avançados-em-pandas" id="toc-temas-avançados-em-pandas" class="nav-link" data-scroll-target="#temas-avançados-em-pandas"><span class="header-section-number">3.5.2</span> Temas Avançados em Pandas</a></li>
+  <li><a href="#numpy-criação-de-vetores" id="toc-numpy-criação-de-vetores" class="nav-link" data-scroll-target="#numpy-criação-de-vetores"><span class="header-section-number">3.4.1</span> Numpy: Criação de Vetores</a></li>
+  <li><a href="#numpy-mais-sobre-tipos" id="toc-numpy-mais-sobre-tipos" class="nav-link" data-scroll-target="#numpy-mais-sobre-tipos"><span class="header-section-number">3.4.2</span> Numpy: Mais Sobre Tipos</a></li>
+  <li><a href="#numpy-operações-vetorizadas" id="toc-numpy-operações-vetorizadas" class="nav-link" data-scroll-target="#numpy-operações-vetorizadas"><span class="header-section-number">3.4.3</span> Numpy: Operações Vetorizadas</a></li>
+  <li><a href="#numpy-outros-tipos-de-operações" id="toc-numpy-outros-tipos-de-operações" class="nav-link" data-scroll-target="#numpy-outros-tipos-de-operações"><span class="header-section-number">3.4.4</span> Numpy: Outros Tipos de Operações</a></li>
+  <li><a href="#numpy-funções-universais" id="toc-numpy-funções-universais" class="nav-link" data-scroll-target="#numpy-funções-universais"><span class="header-section-number">3.4.5</span> Numpy: Funções Universais</a></li>
+  <li><a href="#pandas-outros-tipos-de-operações" id="toc-pandas-outros-tipos-de-operações" class="nav-link" data-scroll-target="#pandas-outros-tipos-de-operações"><span class="header-section-number">3.4.6</span> Pandas: Outros Tipos de Operações</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -232,56 +281,986 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>!! Introdução da aula !!</p>
+<section id="introdução" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introdução">Introdução</h2>
+<p><strong>Adicionar/Editar:</strong> Motivação da aula</p>
+<p><strong>Adicionar/Editar:</strong> TOC dos temas da aula (pra ajudar os alunos a se acharem na aula)</p>
+<p><strong>Adicionar/Editar:</strong> Texto (enxuto, objetivo) com os objetivos de aprendizagem principais (o que, principalmente, os alunos tem que sair dessa aula sabendo)</p>
+<p><strong>Adicionar/Editar:</strong> Adiantando: Em termos simplistas, vamos apresentar dois novos tipos de dados, os vetores e os dataframes (e como utilizá-los); Adicionalmente, estudaremos as funções para vetores/dataframes separados pelos "tipos de operações", entender essa lógica ajuda a pegar o big picture dos pacotes</p>
+<p><strong>Adicionar/Editar:</strong> Ao longo da aula: adicionar mais referências, especialmente sobre onde expandir os conhecimentos sobre cada tema</p>
+</section>
 <section id="vetores-e-dataframes" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="vetores-e-dataframes"><span class="header-section-number">3.1</span> Vetores e Dataframes</h2>
+<p><strong>Adicionar/Editar:</strong> Motivar teoricamente porque estamos interessados em aprender outros tipos de (coleções de) dados, além da lista. O texto abaixo está interessante, mas pode não estar tão didático</p>
+<section id="o-problema" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="o-problema"><span class="header-section-number">3.1.1</span> O Problema</h3>
+<p>Considere o código abaixo:</p>
+<div id="cell-4" class="cell" data-execution_count="126">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>l1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(l1 <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([i <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> l1])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+[2, 4, 6, 8, 10]</code></pre>
+</div>
+</div>
+<p>A lista não é multiplicada “termo-a-termo”, que chato… Porque?</p>
+<p>Considere a lista <code>[1, "a", 3, (1, 2)]</code>, como você faria a multiplicação termo-a-termo? Não é óbvio.</p>
+<p>O problema é que listas não precisam ser <strong>homogêneas</strong>, seus elementos podem ser de tipos diferentes. Como uma mesma operação é definida de maneiras diferentes para cada tipo – ou as vezes, nem definida está –, não dá para fazer uma operação termo-a-termo.</p>
+</section>
+<section id="vetores" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="vetores"><span class="header-section-number">3.1.2</span> Vetores</h3>
+<p>Vamos ter que considerar um novo tipo de coleção, os <strong>vetores</strong>!</p>
+<p>A palavra vetor tem várias definições diferentes, nesta aula, em termos simplistas (!!), pensem em um vetor como uma coleção <strong>homogênea</strong> de dados.</p>
+<p>Note que, para ser homogênea, todos os elementos devem ser do mesmo tipo. Tendo essa restrição, conseguimos aplicar <strong>operações vetorizadas</strong>, termo-a-termo, muito mais rápidas que usando um loop/comprehension.</p>
+<p>Note que vetores não podem conter vetores (pois estes tem o tipo “array”). Ainda assim, vetores podem ser multi-dimensionais. Pense que são coleções meramente organizadas em linhas/colunas.</p>
+<p>Vamos adquirir o conhecimento aplicado sobre vetores em breve.</p>
+<section id="exemplos" class="level4" data-number="3.1.2.1">
+<h4 data-number="3.1.2.1" class="anchored" data-anchor-id="exemplos"><span class="header-section-number">3.1.2.1</span> Exemplos</h4>
+<p>Veja exemplos abaixo, e se poderão ou não ser entendidos como arrays:</p>
+<ul>
+<li><code>[1]</code> poderá.</li>
+<li><code>[1, 2]</code> poderá.</li>
+<li><code>[1, "a"]</code> não poderá, tem elementos de tipos diferentes.</li>
+<li><code>[1, [1, 2]]</code> não poderá, tem elementos de tipos diferentes (inteiro e uma coleção).</li>
+</ul>
+<p>Alguns exemplos mais complexos:</p>
+<ul>
+<li><code>[[1, 2], [3, 4]]</code> poderá! Arrays podem “conter si mesmos”, mas, especialmente, entenda isso como arrays podem ser “organizados em múltiplas dimensões”. No caso, seria um array bidimensional, uma matriz com linhas e colunas.</li>
+<li><code>[[1, 2], [3, 4, 5]]</code> não poderá! Essa é outra novidade, os arrays devem ser “retangulares”, dentro de cada dimensão, todos os elementos devem ter o memso tamanho. Isso ficará mais claro a diante.</li>
+<li>E <code>[[1, 2], [3, "a"]]</code>? Não poderá. Tudo dentro de um array tem que ter o mesmo tipo. Também podemos pensar que, dentro de uma dimensão, tudo deve poder ser entendida como um array.</li>
+</ul>
+<p>Ok, então, um array é um caso específico de uma lista, é uma lista com duas restrições:</p>
+<ul>
+<li>Todos os elementos devem ter o mesmo “tipo”.</li>
+<li>Deve ser retangulares.</li>
+</ul>
+</section>
+<section id="utilidade-dos-vetores" class="level4" data-number="3.1.2.2">
+<h4 data-number="3.1.2.2" class="anchored" data-anchor-id="utilidade-dos-vetores"><span class="header-section-number">3.1.2.2</span> Utilidade dos Vetores</h4>
+<p>Porque isso é útil? O que ganhamos com essa perda de generalização?</p>
+<p>Na vida real, muitas vezes nos deparamos com esse tipo de dado. Em bases de dado, normalmente cada coluna é uma variável, uma coleção de valores de um mesmo tipo. Além disso, são incontáveis os lugares onde matrizes aparecem, e não apenas as bidimensionais.</p>
+<p>Criar um framework que seja especializado nesses casos gera três benefícios principais:</p>
+<ul>
+<li>O clássico trade-off especialização-qualificação, o numpy é <strong>muito</strong> eficiente em realizar operações com esse tipo de dado. E o essa é uma das maiores propagandas que o numpy faz.
+<ul>
+<li>Inclusive, por trás dos panos, a nível técnico, arrays são objetos bem diferentes de listas.</li>
+</ul></li>
+<li>A criação de ferramentas especialmente intuitivas e úteis para o contexto.</li>
+<li>Facilitação do escopo, fica muito mais simples e intuitivo elencar as ferramentas que queremos ter para trabalhar.
+<ul>
+<li>Pense em como buscar as ferramentas relevantes para limpar uma base de dados, na documentação dos métodos de listas e bibliotecas math, stat, etc. Versus buscar as ferramentas na documentação do numpy.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="dataframes" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="dataframes"><span class="header-section-number">3.1.3</span> Dataframes</h3>
+<p>Com o conhecimento de o que são vetores, fica fácil de pensar que é muito comum que o nosso dado de interesse seja um conjunto de vetores.</p>
+<p>A palavra dataframe tem várias definições diferentes, nesta aula, em termos simplistas (!!), ela significa uma coleção de vetores (todos do mesmo tamanho).</p>
+<p>Vamos adquirir o conhecimento aplicado sobre dataframes em breve.</p>
+</section>
 </section>
 <section id="numpy" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="numpy"><span class="header-section-number">3.2</span> Numpy</h2>
+<p><strong>Adicionar/Editar:</strong> Texto (enxuto, objetivo) sobre características básicas do Numpy</p>
+<p><strong>Adicionar/Editar:</strong> Existem muuuitas funções do Numpy. O material da aula passada está bom, mas organizar as funções nos "tipos de operação" (a estrutura abaixo) facilitará o aprendizado</p>
+<p><strong>Adicionar/Editar:</strong> tem que checar na documentação do numpy se não há outras funções/métodos importantes, que queremos falar sobre. Com certeza, tem funções que mereceriam estar pelo menos linkadas aqui</p>
+<p>O que é Numpy? De acordo com o <a href="https://numpy.org/doc/stable/index.html">site oficial</a>:</p>
+<blockquote class="blockquote">
+<p>NumPy is the fundamental package for scientific computing in Python. It is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.</p>
+</blockquote>
+<p>Antes de tudo, vamos <a href="https://numpy.org/install/">instalar</a> e carregar a biblioteca:</p>
+<div id="cell-12" class="cell" data-execution_count="127">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Obs: exemplo de eficiência de operações vetorizadas no Numpy:</p>
+<div id="cell-14" class="cell" data-execution_count="128">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1000000</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.arange(n)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>l1 <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(n))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit a1 <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit [x <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> l1]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.89 ms ± 139 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+78.9 ms ± 1.25 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)</code></pre>
+</div>
+</div>
 <section id="criação-e-características" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="criação-e-características"><span class="header-section-number">3.2.1</span> Criação e Características</h3>
+<p>Vamos começar vendo a “cara” dos arrays:</p>
+<div id="cell-17" class="cell" data-execution_count="129">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>]])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>a3 <span class="op">=</span> np.array([[[<span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">9</span>], [<span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">3</span>]], [[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>], [<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]]])</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> [a1, a2, a3]: <span class="bu">print</span>(a, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1 1 1] 
+
+[[1 0 1]
+ [3 4 1]] 
+
+[[[1 7 9]
+  [5 9 3]]
+
+ [[3 2 1]
+  [4 5 6]]] 
+</code></pre>
+</div>
+</div>
+<p><strong>Adicionar/Editar:</strong> salvar na pasta assets/img e colocar aqui na sintaxe de markdown</p>
+<p><img src="https://www.plus2net.com/python/images/np-dimensions.jpg" width="400"></p>
+<p>Note que começamos a “contar” pelo vetor, depois pelas linhas, depois pelas matrizes, etc.</p>
+<p>Existem várias maneiras de criar vetores. Listá-los seria muita decoreba, então veja-as em <a href="#numpy-criação-de-vetores">Extras</a>.</p>
+<section id="características" class="level4" data-number="3.2.1.1">
+<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="características"><span class="header-section-number">3.2.1.1</span> Características</h4>
+<p><strong>Adicionar/Editar:</strong> range, shape, type(), dtype</p>
+<p><strong>Adicionar/Editar:</strong> .copy (ver seção "Variáveis, Novamente" da aula passada!) .tolist</p>
 </section>
-<section id="subsetting" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">3.2.2</span> Subsetting</h3>
 </section>
-<section id="operações" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="operações"><span class="header-section-number">3.2.3</span> Operações</h3>
-<p>!! Texto de pausa !!</p>
+<section id="tipos-de-arrays" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="tipos-de-arrays"><span class="header-section-number">3.2.2</span> Tipos de arrays</h3>
+<p>Mais cedo, falamos que todos os elementos de um arrays tem sempre o mesmo “tipo”. Em termos simplificados, o nome normalmente associado à “tipo” é <em>dtype</em>.</p>
+<p>Um elemento (um “escalar”) pode ter vários tipos, mas os mais comuns são:</p>
+<ul>
+<li><code>int_</code>: números inteiros (<em>integer</em>).</li>
+<li><code>float_</code>: números de ponto flutuante (<em>floating-point</em>). O tipo padrão.</li>
+<li><code>bool_</code>: valores booleanos (<code>True</code> ou <code>False</code>).</li>
+<li><code>str_</code>: <em>strings</em> de texto.</li>
+<li>E outros menos utilizados: <code>complex_</code>: números complexos, <code>object_</code>: objetos Python genéricos, <code>datetime64</code>: datas e horários, <code>timedelta64</code>: diferenças entre datas e horários, <code>category</code>: categorias ou rótulos.</li>
+</ul>
+<p>Veja alguns comentários técnicos na seção <a href="#mais-sobre-tipos">Mais Sobre Tipos</a>.</p>
+<section id="coerção-de-tipos" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="coerção-de-tipos"><span class="header-section-number">3.2.2.1</span> Coerção de Tipos</h4>
+<p>Mas e se eu tentar criar o array <code>[1, "a"]</code>? O numpy usa <em>coerção</em>, ele converte todos os elementos a um mesmo tipo, de acordo com uma lista de prioridade. De maneira simples, <em>int</em> → <em>float</em> → <em>string</em>. Você também pode converter um array para outro tipo usando o método <code>x.astype()</code>. Veja exemplos abaixo.</p>
+<div id="cell-23" class="cell" data-execution_count="130">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.array([[<span class="dv">1</span>,<span class="dv">2</span>], [<span class="fl">3.0</span>, <span class="dv">4</span>]]), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.array([[<span class="dv">1</span>,<span class="dv">2</span>], [<span class="fl">3.0</span>, <span class="st">"4.0"</span>]]), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.array([[<span class="dv">1</span>,<span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]], dtype <span class="op">=</span> np.complex_), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.array([[<span class="dv">1</span>,<span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]).astype(<span class="bu">str</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1. 2.]
+ [3. 4.]] 
+
+[['1' '2']
+ ['3.0' '4.0']] 
+
+[[1.+0.j 2.+0.j]
+ [3.+0.j 4.+0.j]] 
+
+[['1' '2']
+ ['3' '4']] 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="mais-informações" class="level4" data-number="3.2.2.2">
+<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="mais-informações"><span class="header-section-number">3.2.2.2</span> Mais Informações</h4>
+<p>Para mais informações sobre arrays, como funcionam, como são salvos na memória, veja <a href="https://numpy.org/doc/stable/reference/arrays.html">API Ref. → Array objects</a>. Cuidado, muitos temas técnicos e desnecessários (para o momento).</p>
+<p>Especialmente, foram ignorados dois tópicos de arrays:</p>
+<ul>
+<li>Os <em>masked arrays</em>, arrays com valores faltantes, <a href="https://numpy.org/doc/stable/reference/maskedarray.html">API Ref. → Array objects → Masked arrays</a>.</li>
+<li>E os <em>datetime arrays</em>, arrays de datas, <a href="https://numpy.org/doc/stable/reference/arrays.datetime.html">API Ref. → Array objects → Datetimes and Timedeltas</a>.</li>
+</ul>
+</section>
+</section>
+<section id="operações-vetorizadas" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="operações-vetorizadas"><span class="header-section-number">3.2.3</span> Operações Vetorizadas</h3>
+<p>Lembre-se que o ponto mais importante é a vetorização. O numpy define “funções universais”, funções que podem ser aplicadas de forma vetorizadas.</p>
+<p>Listar as funções seria muita decoreba, veja-as em <a href="#numpy-operações-vetorizadas">Extras</a>. Abaixo, explicamos algumas das mais úteis.</p>
+<p><strong>Adicionar/Editar:</strong> Selecinar as que achar mais úteis e explicá-las BREVEMENTE</p>
+</section>
+<section id="subset" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="subset"><span class="header-section-number">3.2.4</span> Subset</h3>
+<p>A referência básica está em <a href="https://numpy.org/doc/stable/user/basics.indexing.html">User guide → Indexing on ndarrays</a>.</p>
+<p>A indexação de arrays é feita de forma similar à listas, com <code>a1[algo]</code>. A maioria das técnicas disponíveis para listas está disponível aqui também.</p>
+<p>Essa parte é bem útil, porque lógicas similares de indexação podem ser utilizadas no pandas e em listas.</p>
+<section id="subseting-básico" class="level4" data-number="3.2.4.1">
+<h4 data-number="3.2.4.1" class="anchored" data-anchor-id="subseting-básico"><span class="header-section-number">3.2.4.1</span> Subseting Básico</h4>
+<p>Com uma dimensão, é simples. Conseguimos utilizar a técnica de indexes negativos.</p>
+<div id="cell-28" class="cell" data-execution_count="131">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[<span class="dv">0</span>])</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1 2 3 4 5 6 7 8 9] 
+
+1
+9</code></pre>
+</div>
+</div>
+<p>E com duas dimensões? Agora, temos que informar o que queremos pegar de cada dimensão, <code>a2[algo1, algo2]</code>:</p>
+<div id="cell-30" class="cell" data-execution_count="132">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a2, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a2[<span class="dv">0</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1 2 3]
+ [4 5 6]
+ [7 8 9]] 
+
+2</code></pre>
+</div>
+</div>
+<p>E se eu quiser selecionar mais do que um elemento? Aqui, também é possível utilizar a técnica de slicing <code>:</code>.</p>
+<div id="cell-32" class="cell" data-execution_count="133">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[<span class="dv">1</span>:<span class="dv">3</span>])</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[<span class="dv">1</span>:])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[:<span class="dv">2</span>])</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2 3]
+[2 3 4 5 6 7 8 9]
+[1 2]
+[1 2 3 4 5 6 7 8 9]</code></pre>
+</div>
+</div>
+<p>Com duas dimensões é a mesma ideia, lembrando que precisamos falar o que queremos pegar de ambas as dimensões, as possibilidades aumentam.</p>
+<div id="cell-34" class="cell" data-execution_count="134">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a2[<span class="dv">0</span>, <span class="dv">0</span>:<span class="dv">2</span>])</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a2[<span class="dv">0</span>:<span class="dv">2</span>, <span class="dv">1</span>])</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a2[<span class="dv">1</span>:, :])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1 2]
+[2 5]
+[[4 5 6]
+ [7 8 9]]</code></pre>
+</div>
+</div>
+<p>Com <em>n</em> dimensões é a mesma ideia, com uma entrada em <code>[]</code> para cada dimensão.</p>
+<p>Se tiver curiosidade, veja dois truques usando <code>...</code> e <code>None</code> nos índices <a href="https://numpy.org/doc/stable/user/basics.indexing.html#dimensional-indexing-tools">aqui</a>.</p>
+<div id="cell-36" class="cell" data-execution_count="135">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>a3 <span class="op">=</span> np.arange(<span class="dv">3</span><span class="op">**</span><span class="dv">3</span>).reshape(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a3[<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">0</span>])</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a3[<span class="dv">0</span>, :, :])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>24
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]</code></pre>
+</div>
+</div>
+<p>Quando você ficar pica, vai descobrir que dá para omitir dimensões, como abaixo. Mas por enquanto, não inventa, coloque um “algo” para cada dimensão, nem que o “algo” seja “selecione tudo” (<code>:</code>).</p>
+<div id="cell-38" class="cell" data-execution_count="136">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a3[<span class="dv">0</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[[ 0  1  2]
+  [ 3  4  5]
+  [ 6  7  8]]
+
+ [[ 9 10 11]
+  [12 13 14]
+  [15 16 17]]
+
+ [[18 19 20]
+  [21 22 23]
+  [24 25 26]]]</code></pre>
+</div>
+</div>
+<p>Note que essa noção do subset deixa claro qual é a “ordem” dos componentes de um array multidimensional. Isto é, quando pedimos <code>for i in a3</code>, o que será passado para <code>i</code>? Cada elemento? Cada coluna, cada linha? cada matriz?</p>
+<div id="cell-40" class="cell" data-execution_count="137">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> mat <span class="kw">in</span> a3:</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> mat:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> row: <span class="bu">print</span>(item, end <span class="op">=</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 </code></pre>
+</div>
+</div>
+<p>Vemos que, do array tridimensional <code>a3</code>, <code>i</code> são as sub-matrizes, <code>j</code> são as linhas de uma sub-matriz, e <code>i</code> os elementos de cada linha. Isto é, a ordem é da maior/última/mais alta dimensão para a menor/mais baixa.</p>
+</section>
+<section id="filter" class="level4" data-number="3.2.4.2">
+<h4 data-number="3.2.4.2" class="anchored" data-anchor-id="filter"><span class="header-section-number">3.2.4.2</span> Filter</h4>
+<p>E se os índices que você quer obter estão em uma coleção? Podemos utilizar coleções de inteiros ou booleanos para acessar índices também!</p>
+<div id="cell-43" class="cell" data-execution_count="138">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[np.array([<span class="dv">1</span>, <span class="dv">2</span>])]) <span class="co">#a1[[1, 2]]</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[np.array([<span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>])])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2 3]
+[1 4 8]</code></pre>
+</div>
+</div>
+<p>Note que para booleanos, o índice-coleção precisa ser do mesmo tamanho da dimensão relevante.</p>
+<p>O legal, é que da para utilizar isso para criar <em>filtros</em>:</p>
+<div id="cell-45" class="cell" data-execution_count="139">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1[a1 <span class="op">+</span> <span class="dv">1</span> <span class="op">&gt;</span> <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2 3 4 5 6 7 8 9]</code></pre>
+</div>
+</div>
+<p>Existem muitas outras técnicas utilizando essas ferramentas. Veja mais <a href="https://numpy.org/doc/stable/user/basics.indexing.html#advanced-indexing">aqui</a>.</p>
+<p>Falamos apenas sobre um tipo de operação, “subset”. Exitem vários outros que valem a pena saber, veja mais em <a href="#numpy-outros-tipos-de-operações">Extras</a>.</p>
+</section>
+</section>
+<section id="repeated-operations" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="repeated-operations"><span class="header-section-number">3.2.5</span> Repeated Operations</h3>
+<p><strong>Adicionar/Editar:</strong> np.where, for loops, fazer referência às funções universais, mais alguma coisa?</p>
+<p><strong>Fim!</strong></p>
+<p>Pronto! Vocês aprenderam o básico de numpy! Agora, podemos aplicar esse novo jeito de pensar para bases de dados, e conhecer a biblioteca especializada nisso, o pandas. Especialmente, relembre do que aprendemos, sobre a maneira de se pensar em dados vetorizados.</p>
+<p>Lembre de ver os temas <a href="#extras">extras</a> depois.</p>
+<p><strong>Adicionar/Editar:</strong> Escolha uma frase remetendo pausa e tire print de alguma arte dela em https://patorjk.com/software/taag/. Exemplo:</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/pause/georgia11.png" class="img-fluid figure-img"></p>
+<figcaption>😎</figcaption>
+</figure>
+</div>
+<hr>
 </section>
 </section>
 <section id="pandas" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="pandas"><span class="header-section-number">3.3</span> Pandas</h2>
+<p><strong>Adicionar/Editar:</strong> Texto (enxuto, objetivo) sobre características básicas do Pandas. O texto da aula antiga está grande demais</p>
+<p><strong>Adicionar/Editar:</strong> Existem muuuitas funções do Pandas. O material da aula passada está bom, mas organizar as funções nos "tipos de operação" (a estrutura abaixo) facilitará o aprendizado</p>
+<p><strong>Adicionar/Editar:</strong> tem que checar na documentação do pandas se não há outras funções/métodos importantes, que queremos falar sobre. Com certeza, tem funções que mereceriam estar pelo menos linkadas aqui</p>
+<div id="cell-52" class="cell" data-execution_count="140">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="criação-e-características-1" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="criação-e-características-1"><span class="header-section-number">3.3.1</span> Criação e Características</h3>
+<p>Antes de falar sobre dataframes, o Pandas tem seu próprio objeto de vetor (porque sim), o <code>pd.Series</code>, mas é bem parecido com um <code>np.array</code> de uma dimensão.</p>
+<div id="cell-55" class="cell" data-execution_count="141">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">3</span>]))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">"d"</span>, <span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"c"</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0    4
+1    7
+2   -5
+3    3
+dtype: int64
+d    4
+b    7
+a   -5
+c    3
+dtype: int64</code></pre>
+</div>
+</div>
+<p><strong>Adicionar/Editar:</strong> criação de dataframes falar dos vários métodos (e qual é mais útil), com base em dicionários, em arrays/listas, em arquivos (criar um aquivo de exemplo em assets/materials)</p>
+<p><strong>Adicionar/Editar:</strong> características: shape, types, info, head, tail, dtypes, shape</p>
+<p><strong>Adicionar/Editar:</strong> .copy() ver aula passada!</p>
 </section>
-<section id="subset" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="subset"><span class="header-section-number">3.3.2</span> Subset</h3>
+<section id="subset-1" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="subset-1"><span class="header-section-number">3.3.2</span> Subset</h3>
+<section id="de-colunas" class="level4" data-number="3.3.2.1">
+<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="de-colunas"><span class="header-section-number">3.3.2.1</span> De Colunas</h4>
+<p><strong>Adicionar/Editar:</strong> .columns, ['key'], .key, [[key1, key2]]</p>
 </section>
-<section id="operate" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="operate"><span class="header-section-number">3.3.3</span> Operate</h3>
+<section id="de-linhas" class="level4" data-number="3.3.2.2">
+<h4 data-number="3.3.2.2" class="anchored" data-anchor-id="de-linhas"><span class="header-section-number">3.3.2.2</span> De Linhas</h4>
+<p><strong>Adicionar/Editar:</strong> head, tail, sample,</p>
+<p><strong>Adicionar/Editar:</strong> [filtro] e .query</p>
 </section>
-<section id="reshape" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="reshape"><span class="header-section-number">3.3.4</span> Reshape</h3>
-</section>
-<section id="combine" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="combine"><span class="header-section-number">3.3.5</span> Combine</h3>
-</section>
-<section id="aggregate" class="level3" data-number="3.3.6">
-<h3 data-number="3.3.6" class="anchored" data-anchor-id="aggregate"><span class="header-section-number">3.3.6</span> Aggregate</h3>
+<section id="ambos-juntos" class="level4" data-number="3.3.2.3">
+<h4 data-number="3.3.2.3" class="anchored" data-anchor-id="ambos-juntos"><span class="header-section-number">3.3.2.3</span> Ambos Juntos</h4>
+<p><strong>Adicionar/Editar:</strong> loc, iloc</p>
+<p><strong>Adicionar/Editar:</strong> apenas fazer referencia (linkar) sobre it e iat</p>
 </section>
 </section>
-<section id="recapitulando" class="level2 unnumered" data-number="3.4">
-<h2 class="unnumered anchored" data-number="3.4" data-anchor-id="recapitulando"><span class="header-section-number">3.4</span> Recapitulando</h2>
+<section id="operatecreate" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="operatecreate"><span class="header-section-number">3.3.3</span> Operate/Create</h3>
+<p><strong>Adicionar/Editar:</strong> criar/deletar/alterar colunas</p>
+<p><strong>Adicionar/Editar:</strong> criar/deletar/alterar linhas</p>
+<p><strong>Adicionar/Editar:</strong> apenas fazer referencia sobre criar/deletar/alterar células</p>
+<p><strong>Adicionar/Editar:</strong> lidar com dados NA</p>
 </section>
-<section id="extras" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="extras"><span class="header-section-number">3.5</span> Extras</h2>
-<section id="temas-avançados-em-numpy" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="temas-avançados-em-numpy"><span class="header-section-number">3.5.1</span> Temas Avançados em Numpy</h3>
+<section id="reorder" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="reorder"><span class="header-section-number">3.3.4</span> Reorder</h3>
+<p><strong>Adicionar/Editar:</strong> mais algo?</p>
+<p>Linhas:</p>
+<pre><code>df1.sort_values(by='cases', ascending=False)</code></pre>
+<p>Colunas:</p>
+<pre><code>df1.reindex(columns=['year', 'cases', 'population', 'country'])</code></pre>
 </section>
-<section id="temas-avançados-em-pandas" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="temas-avançados-em-pandas"><span class="header-section-number">3.5.2</span> Temas Avançados em Pandas</h3>
+<section id="rename" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="rename"><span class="header-section-number">3.3.5</span> Rename</h3>
+<p>Linhas:</p>
+<pre><code>df1.rename({0: 'Row1', 1: 'Row2', 2: 'Row3', 3: 'Row4', 4: 'Row5', 5: 'Row6'})</code></pre>
+<p>Colunas:</p>
+<pre><code>df1.rename(columns={'cases': 'new_cases', 'population': 'new_population'}, inplace=False)</code></pre>
+<p>Assim como na parte de Numpy, alguns tipos de operações mais avançados não foram tratados aqui. Veja-os em <a href="#pandas-outros-tipos-de-operações">Extras</a>. Parte deles serão tratados nas próximas aulas.</p>
+</section>
+<section id="repeated-operations-1" class="level3" data-number="3.3.6">
+<h3 data-number="3.3.6" class="anchored" data-anchor-id="repeated-operations-1"><span class="header-section-number">3.3.6</span> Repeated Operations</h3>
+<div class="double-hrule">
+
+</div>
+</section>
+</section>
+<section id="recapitulando" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="recapitulando">Recapitulando</h2>
+<p><strong>Adicionar/Editar:</strong> Adicionar texto de recapitulando. Em parágrafos, primeiro sobre os principais objetivos de aprendizagem, depois sobre os conceitos teóricos aprendidos, e por fim, dos conceitos "decoreba" aprendidos</p>
+</section>
+<section id="extras" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="extras"><span class="header-section-number">3.4</span> Extras</h2>
+<section id="numpy-criação-de-vetores" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="numpy-criação-de-vetores"><span class="header-section-number">3.4.1</span> Numpy: Criação de Vetores</h3>
+<section id="vetores-placeholder" class="level4" data-number="3.4.1.1">
+<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="vetores-placeholder"><span class="header-section-number">3.4.1.1</span> Vetores Placeholder</h4>
+<p>Também podemos criar arrays com valores comuns, temos várias funções, como:</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.empty.html">numpy.empty</a>: cria um array vazio com a forma especificada.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html">numpy.ones</a>: cria um array preenchido com uns.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">numpy.zeros</a>: cria um array preenchido com zeros.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.full.html">numpy.full</a>: cria um array preenchido com um valor constante.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.eye.html">numpy.eye</a>: cria uma matriz identidade.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">numpy.linspace</a>: cria um array com valores espaçados uniformemente dentro de um intervalo.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html">numpy.arange</a>: cria um array com valores espaçados uniformemente dentro de um intervalo especificado.</li>
+</ul>
+<div id="cell-69" class="cell" data-execution_count="142">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Empty: </span><span class="ch">\n</span><span class="st">"</span>, np.empty((<span class="dv">2</span>, <span class="dv">3</span>)), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ones: </span><span class="ch">\n</span><span class="st">"</span>, np.ones((<span class="dv">2</span>, <span class="dv">3</span>)), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Zeros: </span><span class="ch">\n</span><span class="st">"</span>, np.zeros((<span class="dv">2</span>, <span class="dv">3</span>)), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Full: </span><span class="ch">\n</span><span class="st">"</span>, np.full((<span class="dv">2</span>, <span class="dv">3</span>), <span class="dv">5</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Eye: </span><span class="ch">\n</span><span class="st">"</span>, np.eye(<span class="dv">3</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Linspace: </span><span class="ch">\n</span><span class="st">"</span>, np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, num<span class="op">=</span><span class="dv">5</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Arange: </span><span class="ch">\n</span><span class="st">"</span>, np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Empty: 
+ [[1.48539705e-313 1.06099790e-313 6.36598738e-314]
+ [4.24399158e-314 8.48798316e-314 1.27319747e-313]] 
+
+Ones: 
+ [[1. 1. 1.]
+ [1. 1. 1.]] 
+
+Zeros: 
+ [[0. 0. 0.]
+ [0. 0. 0.]] 
+
+Full: 
+ [[5 5 5]
+ [5 5 5]] 
+
+Eye: 
+ [[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]] 
+
+Linspace: 
+ [ 0.   2.5  5.   7.5 10. ] 
+
+Arange: 
+ [0 2 4 6 8] 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="vetores-aleatórios" class="level4" data-number="3.4.1.2">
+<h4 data-number="3.4.1.2" class="anchored" data-anchor-id="vetores-aleatórios"><span class="header-section-number">3.4.1.2</span> Vetores Aleatórios</h4>
+<p>O numpy tem uma parte da biblioteca focada na geração de números aleatórios, <a href="https://numpy.org/doc/stable/reference/random/index.html">numpy.random</a>. Se tiver curiosidade, leia mais sobre como computadores geram <a href="https://www.revista-programar.info/artigos/pseudorandom-number-generators-prngs/">números pseudo-aleatórios</a>.</p>
+<p>Todas as distribuições que você pensar podem ser geradas pelo numpy:</p>
+<ul>
+<li>Uniforme: <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.uniform.html">numpy.random.uniform</a>.
+<ul>
+<li>Uniforme 0-1: <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.random.html">numpy.random.random</a>.</li>
+<li>Uniforme discreta A-B: <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.integers.html">numpy.random.integers</a>.</li>
+</ul></li>
+<li>Binomial: <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.binomial.html">numpy.random.binomial</a>.</li>
+<li>Normal: <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.normal.html">numpy.random.normal</a>.</li>
+<li>Poisson: <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.poisson.html">numpy.random.poisson</a>.</li>
+<li>Samplear um array: <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.choice.html">numpy.random.choice</a>.</li>
+</ul>
+</section>
+<section id="vetores-importados" class="level4" data-number="3.4.1.3">
+<h4 data-number="3.4.1.3" class="anchored" data-anchor-id="vetores-importados"><span class="header-section-number">3.4.1.3</span> Vetores Importados</h4>
+<p>Podemos salvar arrays em arquivos, usando funções como:</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.save.html">numpy.save</a>: salva como um “arquivo array” “.npy”.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.savetxt.html">numpy.savetxt</a>: salva como um arquivo CSV, adequado apenas para arrays 1D e 2D.</li>
+<li><a href="https://docs.python.org/3/library/pickle.html">A biblioteca pickle</a>: uma bilbioteca que consegue “conservar” qualquer objeto do python, mas pode ser demorado.</li>
+</ul>
+<p>Similarmente, podemos importar arquivos, com funções <code>numpy.load</code> e <code>numpy.loadtxt</code>.</p>
+<p>Por fim, é comum converter outros objetos em arrays. Veja as funções <a href="https://numpy.org/doc/stable/reference/generated/numpy.asarray.html">numpy.asarray</a> e <a href="https://pandas.pydata.org/pandas-docs/version/0.24.0rc1/api/generated/pandas.Series.to_numpy.html">pandas.Series.to_numpy</a>.</p>
+<p><strong>Adicionar/Editar:</strong> É esse tipo de comentário com referências para mais conteúdo que deve ser criado com mais frequência, e nas outras aulas!!</p>
+<p>Para mais informação sobre criação de arrays, veja <a href="https://numpy.org/doc/stable/reference/routines.array-creation.html">API Ref. → Routines → Array creation</a>:</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/routines.array-creation.html#from-shape-or-value">Criando por forma e valor</a>.</li>
+<li><a href="https://numpy.org/doc/stable/reference/routines.array-creation.html#from-existing-data">Criando por dados</a>, e <a href="https://numpy.org/doc/stable/reference/routines.io.html">API Ref. → Routines → I/O</a>.</li>
+<li><a href="https://numpy.org/doc/stable/reference/routines.array-creation.html#numerical-ranges">Criando por ranges</a>.</li>
+<li><a href="https://numpy.org/doc/stable/reference/routines.array-creation.html#building-matrices">Criando matrizes</a>.</li>
+</ul>
+</section>
+</section>
+<section id="numpy-mais-sobre-tipos" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="numpy-mais-sobre-tipos"><span class="header-section-number">3.4.2</span> Numpy: Mais Sobre Tipos</h3>
+<p>Na realidade, embora exista o conceito de “número inteiro”, e o Python só defina um tipo de dado <em>integer</em>, existem muitas maneiras de representar um número na memória do computador. O numpy se importa com isso, e existem vários tipos para cada um dos conceitos acima.</p>
+<ul>
+<li>Por conta disso, o dtype pode aparecer com nomes diferentes como <em>int64</em>.</li>
+<li>Se você for muito nerd, talvez isso importe para o seu projeto. Para escolher um tipo específico use a função <code>np.array</code> com o argumento <code>dtype = ...</code>. Leia mais sobre isso <a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#arrays-scalars-built-in">aqui</a>.</li>
+<li>O tipo de um array <code>x</code> pode ser descoberto com <code>x.dtype</code> e <code>x.dtype.name</code>.</li>
+</ul>
+</section>
+<section id="numpy-operações-vetorizadas" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="numpy-operações-vetorizadas"><span class="header-section-number">3.4.3</span> Numpy: Operações Vetorizadas</h3>
+<section id="operações-aritméticas" class="level4" data-number="3.4.3.1">
+<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="operações-aritméticas"><span class="header-section-number">3.4.3.1</span> Operações Aritméticas</h4>
+<p><strong>Adicionar/Editar:</strong> falar sobre min/max, +*-/, mean/median/var/std, sum/prod, cumsum/cumprod, argmax/argmin, round</p>
+<p>Veja mais em <a href="https://numpy.org/doc/stable/reference/routines.math.html">API Ref. → Routines → Mathematical functions</a>.</p>
+<div id="cell-76" class="cell" data-execution_count="143">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>a1, a2 <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]), np.array([<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>])</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.subtract(a1, a2), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#a1 + a2</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.divide(a1, a2), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#a1 * a2</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.exp(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.sqrt(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.sin(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.log(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[-3 -3 -3] 
+
+[0.25 0.4  0.5 ] 
+
+[ 2.71828183  7.3890561  20.08553692] 
+
+[1.         1.41421356 1.73205081] 
+
+[0.84147098 0.90929743 0.14112001] 
+
+[0.         0.69314718 1.09861229] 
+</code></pre>
+</div>
+</div>
+<p>Também considere as constantes abaixo. Mais informações em <a href="https://numpy.org/doc/stable/reference/constants.html">API Ref. → Constants</a>.</p>
+<div id="cell-78" class="cell" data-execution_count="144">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>np.pi, np.e, np.nan, np.inf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="144">
+<pre><code>(3.141592653589793, 2.718281828459045, nan, inf)</code></pre>
+</div>
+</div>
+</section>
+<section id="operações-matriciais" class="level4" data-number="3.4.3.2">
+<h4 data-number="3.4.3.2" class="anchored" data-anchor-id="operações-matriciais"><span class="header-section-number">3.4.3.2</span> Operações Matriciais</h4>
+<p>Veja mais em <a href="https://numpy.org/doc/stable/reference/routines.linalg.html">API Ref. → Routines → Linear algebra</a>.</p>
+<div id="cell-80" class="cell" data-execution_count="145">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>a1, a2 <span class="op">=</span> np.array([(<span class="dv">1</span>,<span class="dv">2</span>), (<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>)]), np.array([(<span class="dv">4</span>,<span class="dv">5</span>), (<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">6</span>)]) <span class="co"># Note o uso, indiferenciável, de tuplas</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1 <span class="op">*</span> a2, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.dot(a1, a2), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#a1 @ a2 (produto escalar)</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linalg.matrix_power(a1, <span class="dv">3</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#(potência de matriz)</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linalg.det(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#(determinante)</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linalg.inv(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#(matriz inversa)</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linalg.norm(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#(norma)</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linalg.eig(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#(autovalores e autovertores)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 4 10]
+ [ 4 18]] 
+
+[[-4 -7]
+ [ 8 13]] 
+
+[[  3  10]
+ [ -5 -17]] 
+
+-1.0 
+
+[[ 3.  2.]
+ [-1. -1.]] 
+
+3.872983346207417 
+
+EigResult(eigenvalues=array([ 0.41421356, -2.41421356]), eigenvectors=array([[ 0.95968298, -0.50544947],
+       [-0.28108464,  0.86285621]])) 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="operações-com-strings" class="level4" data-number="3.4.3.3">
+<h4 data-number="3.4.3.3" class="anchored" data-anchor-id="operações-com-strings"><span class="header-section-number">3.4.3.3</span> Operações com Strings</h4>
+<p>Veja mais em <a href="https://numpy.org/doc/stable/reference/routines.char.html">API Ref. → Routines → String operations</a>.</p>
+<div id="cell-82" class="cell" data-execution_count="146">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>a1, a2 <span class="op">=</span> np.array([<span class="st">'olá'</span>, <span class="st">'oi'</span>, <span class="st">'oopa'</span>]), np.array([<span class="st">', tudo bem?'</span>, <span class="st">', bem?'</span>, <span class="st">', bão?'</span>])</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.char.add(a1, a2), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.char.multiply(a1, [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.char.capitalize(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.char.count(a1, <span class="st">'o'</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.char.find(a1, <span class="st">'o'</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['olá, tudo bem?' 'oi, bem?' 'oopa, bão?'] 
+
+['oláoláolá' 'oi' 'oopaoopa'] 
+
+['Olá' 'Oi' 'Oopa'] 
+
+[1 1 2] 
+
+[0 0 0] 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="operações-lógicasde-comparação" class="level4" data-number="3.4.3.4">
+<h4 data-number="3.4.3.4" class="anchored" data-anchor-id="operações-lógicasde-comparação"><span class="header-section-number">3.4.3.4</span> Operações Lógicas/de Comparação</h4>
+<p>Veja mais em <a href="https://numpy.org/doc/stable/reference/routines.logic.html">API Ref. → Routines → Logic functions</a>. Também veja operações de sets em <a href="https://numpy.org/doc/stable/reference/routines.set.html">API Ref. → Routines → Set functions</a>.</p>
+<div id="cell-84" class="cell" data-execution_count="147">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>a1, a2 <span class="op">=</span> np.array([(<span class="dv">1</span>,<span class="dv">2</span>), (<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>)]), np.array([(<span class="dv">4</span>,<span class="dv">5</span>), (<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">6</span>)])</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.greater(a1, a2), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#a1 &gt; a2</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((a1 <span class="op">==</span> a2).<span class="bu">any</span>(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#note the usage of ()</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.logical_or(a1 <span class="op">&gt;</span> <span class="dv">1</span>, a2 <span class="op">&lt;</span> <span class="dv">0</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>) <span class="co">#a1 &gt; 1 or a2 &lt; 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[False False]
+ [ True  True]] 
+
+False 
+
+[[False  True]
+ [ True  True]] 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="operações-estatísticas" class="level4" data-number="3.4.3.5">
+<h4 data-number="3.4.3.5" class="anchored" data-anchor-id="operações-estatísticas"><span class="header-section-number">3.4.3.5</span> Operações Estatísticas</h4>
+<p>Veja mais em <a href="https://numpy.org/doc/stable/reference/routines.statistics.html">API Ref. → Routines → Statistics</a>.</p>
+<div id="cell-86" class="cell" data-execution_count="148">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100000</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> a1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">100000</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.median(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.std(a1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.quantile(a1, <span class="fl">0.25</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.corrcoef(a1, a2), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.0014274762281511 
+
+0.0025126008047063083 
+
+0.9979381079716622 
+
+-0.6661109489960002 
+
+[[1.         0.89446592]
+ [0.89446592 1.        ]] 
+</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="numpy-outros-tipos-de-operações" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="numpy-outros-tipos-de-operações"><span class="header-section-number">3.4.4</span> Numpy: Outros Tipos de Operações</h3>
+<section id="operatecreate-1" class="level4" data-number="3.4.4.1">
+<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="operatecreate-1"><span class="header-section-number">3.4.4.1</span> Operate/Create</h4>
+<p>Veja os funções:</p>
+<ul>
+<li><code>append()</code>, <code>insert()</code>, e <code>delete()</code>.</li>
+</ul>
+<p><strong>Adicionar/Editar:</strong> criar/deletar/alterar elementos (faltam funções abaixo)</p>
+</section>
+<section id="reorder-1" class="level4" data-number="3.4.4.2">
+<h4 data-number="3.4.4.2" class="anchored" data-anchor-id="reorder-1"><span class="header-section-number">3.4.4.2</span> Reorder</h4>
+<p><strong>Adicionar/Editar:</strong> .arrange, .sort, .argsort</p>
+</section>
+<section id="reshape" class="level4" data-number="3.4.4.3">
+<h4 data-number="3.4.4.3" class="anchored" data-anchor-id="reshape"><span class="header-section-number">3.4.4.3</span> Reshape</h4>
+<p>Veja as funções/métodos:</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.resize.html"><code>.resize()</code></a> e <a href="https://numpy.org/doc/stable/reference/generated/numpy.reshape.html"><code>reshape()</code></a>: para alterar a forma de um array, passando a nova forma como uma tupla.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.transpose.html"><code>transpose()</code></a>: transpor arrays.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html"><code>.flatten()</code></a> e <a href="https://numpy.org/doc/stable/reference/generated/numpy.ravel.html"><code>.ravel()</code></a>: achatar arrays.</li>
+</ul>
+</section>
+<section id="combine-separate-e-unite" class="level4" data-number="3.4.4.4">
+<h4 data-number="3.4.4.4" class="anchored" data-anchor-id="combine-separate-e-unite"><span class="header-section-number">3.4.4.4</span> Combine, Separate e Unite</h4>
+<p>Veja as funções:</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html"><code>concatenate()</code></a>.</li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.vstack.html"><code>vstack()</code></a>, e <a href="https://numpy.org/doc/stable/reference/generated/numpy.hstack.html"><code>hstack()</code></a>.</li>
+</ul>
+<p>Em oposição, podemos dividir arrays:</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.hsplit.html"><code>.hsplit()</code></a> e <a href="https://numpy.org/doc/stable/reference/generated/numpy.vsplit.html"><code>.vsplit()</code></a>.</li>
+</ul>
+</section>
+</section>
+<section id="numpy-funções-universais" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="numpy-funções-universais"><span class="header-section-number">3.4.5</span> Numpy: Funções Universais</h3>
+<p>Existe um último tópico interessante, mas mais avançado. As funções do numpy são bem poderosas e flexíveis. É possível:</p>
+<ul>
+<li>Aplicá-las para cada dimensão separadamente – usando o argumento <code>axis=</code>.</li>
+<li>Filtrar dimensões para não aplicar – usando o argumento <code>where=</code></li>
+<li>Aplicar de modo a “acumular” ou “reduzir” o resultado – usando os métodos <code>.accumulate()</code> e <code>.reduce()</code>.</li>
+</ul>
+<p>Aprendam sobre esses tópicos em <a href="https://numpy.org/doc/stable/reference/ufuncs.html">Api Ref. ⭢ Universal functions</a>. Adicionalmente, Também vejam algumas táticas avançadas em <a href="https://numpy.org/doc/stable/reference/routines.functional.html">Api Ref. ⭢ Routines ⭢ Functional programming</a>.</p>
+<p>Abaixo apresento alguns exemplos sem contexto nenhum.</p>
+<div id="cell-93" class="cell" data-execution_count="149">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>np.add.accumulate(a1)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>np.add.<span class="bu">reduce</span>(a1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="149">
+<pre><code>6</code></pre>
+</div>
+</div>
+<div id="cell-94" class="cell" data-execution_count="150">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>], [<span class="dv">4</span>,<span class="dv">5</span>]])</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.add.accumulate(a2, axis <span class="op">=</span> <span class="dv">0</span>))</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.add.<span class="bu">reduce</span>(a2, axis <span class="op">=</span> <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1 2]
+ [5 7]]
+[5 7]</code></pre>
+</div>
+</div>
+<div id="cell-95" class="cell" data-execution_count="152">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>where1 <span class="op">=</span> [<span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>]</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>where2 <span class="op">=</span> [[<span class="va">True</span>, <span class="va">False</span>], [<span class="va">False</span>, <span class="va">True</span>]]</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.add.<span class="bu">reduce</span>(a1, <span class="dv">0</span>, where <span class="op">=</span> where1), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.add.<span class="bu">reduce</span>(a2, <span class="dv">0</span>, where <span class="op">=</span> where2), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3 
+
+[1 5] 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="pandas-outros-tipos-de-operações" class="level3" data-number="3.4.6">
+<h3 data-number="3.4.6" class="anchored" data-anchor-id="pandas-outros-tipos-de-operações"><span class="header-section-number">3.4.6</span> Pandas: Outros Tipos de Operações</h3>
+<div id="cell-97" class="cell" data-execution_count="153">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alguns exemplos:</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>tables_links <span class="op">=</span> {</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df1'</span>: <span class="st">'https://raw.githubusercontent.com/tidyverse/tidyr/c6c126a61f67a10b5ab9ce6bb1d9dbbb7a380bbd/data-raw/table1.csv'</span>,</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df2'</span>: <span class="st">'https://raw.githubusercontent.com/tidyverse/tidyr/c6c126a61f67a10b5ab9ce6bb1d9dbbb7a380bbd/data-raw/table2.csv'</span>,</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df3'</span>: <span class="st">'https://raw.githubusercontent.com/tidyverse/tidyr/c6c126a61f67a10b5ab9ce6bb1d9dbbb7a380bbd/data-raw/table3.csv'</span>,</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df4a'</span>: <span class="st">'https://raw.githubusercontent.com/tidyverse/tidyr/c6c126a61f67a10b5ab9ce6bb1d9dbbb7a380bbd/data-raw/table4a.csv'</span>,</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df4b'</span>: <span class="st">'https://raw.githubusercontent.com/tidyverse/tidyr/c6c126a61f67a10b5ab9ce6bb1d9dbbb7a380bbd/data-raw/table4b.csv'</span>,</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df5'</span>: <span class="st">'https://raw.githubusercontent.com/tidyverse/tidyr/c6c126a61f67a10b5ab9ce6bb1d9dbbb7a380bbd/data-raw/table6.csv'</span></span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> tables_links.keys():</span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">globals</span>()[i] <span class="op">=</span> pd.read_csv(tables_links[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="reshape-1" class="level4" data-number="3.4.6.1">
+<h4 data-number="3.4.6.1" class="anchored" data-anchor-id="reshape-1"><span class="header-section-number">3.4.6.1</span> Reshape</h4>
+<p><strong>Adicionar/Editar:</strong> Mais informaçõa</p>
+<p>Wide to long (melt):</p>
+<div id="cell-100" class="cell" data-execution_count="154">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df4a)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>pd.melt(df4a, id_vars <span class="op">=</span> [<span class="st">"country"</span>], var_name <span class="op">=</span> <span class="st">"year"</span>, value_name <span class="op">=</span> <span class="st">"cases"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       country    1999    2000
+0  Afghanistan     745    2666
+1       Brazil   37737   80488
+2        China  212258  213766</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="154">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">cases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Afghanistan</td>
+<td>1999</td>
+<td>745</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Brazil</td>
+<td>1999</td>
+<td>37737</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>China</td>
+<td>1999</td>
+<td>212258</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Afghanistan</td>
+<td>2000</td>
+<td>2666</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Brazil</td>
+<td>2000</td>
+<td>80488</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>China</td>
+<td>2000</td>
+<td>213766</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Long to wide (pivot)</p>
+<div id="cell-102" class="cell" data-execution_count="155">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df2)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>pd.pivot(df2, index <span class="op">=</span> [<span class="st">"country"</span>, <span class="st">"year"</span>], columns <span class="op">=</span> <span class="st">"type"</span>, values <span class="op">=</span> <span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        country  year        type       count
+0   Afghanistan  1999       cases         745
+1   Afghanistan  1999  population    19987071
+2   Afghanistan  2000       cases        2666
+3   Afghanistan  2000  population    20595360
+4        Brazil  1999       cases       37737
+5        Brazil  1999  population   172006362
+6        Brazil  2000       cases       80488
+7        Brazil  2000  population   174504898
+8         China  1999       cases      212258
+9         China  1999  population  1272915272
+10        China  2000       cases      213766
+11        China  2000  population  1280428583</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="155">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">cases</th>
+<th data-quarto-table-cell-role="th">population</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">Afghanistan</td>
+<td data-quarto-table-cell-role="th">1999</td>
+<td>745</td>
+<td>19987071</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2000</td>
+<td>2666</td>
+<td>20595360</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">Brazil</td>
+<td data-quarto-table-cell-role="th">1999</td>
+<td>37737</td>
+<td>172006362</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2000</td>
+<td>80488</td>
+<td>174504898</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">China</td>
+<td data-quarto-table-cell-role="th">1999</td>
+<td>212258</td>
+<td>1272915272</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2000</td>
+<td>213766</td>
+<td>1280428583</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="separate-e-unite" class="level4" data-number="3.4.6.2">
+<h4 data-number="3.4.6.2" class="anchored" data-anchor-id="separate-e-unite"><span class="header-section-number">3.4.6.2</span> Separate e Unite</h4>
+<p>Separar:</p>
+<div id="cell-105" class="cell" data-execution_count="156">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df3, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>df3[[<span class="st">"cases"</span>, <span class="st">"population"</span>]] <span class="op">=</span> df3[<span class="st">"rate"</span>].<span class="bu">str</span>.split(<span class="st">"/"</span>, expand <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> df3.drop(<span class="st">"rate"</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       country  year               rate
+0  Afghanistan  1999       745/19987071
+1  Afghanistan  2000      2666/20595360
+2       Brazil  1999    37737/172006362
+3       Brazil  2000    80488/174504898
+4        China  1999  212258/1272915272
+5        China  2000  213766/1280428583 
+
+       country  year   cases  population
+0  Afghanistan  1999     745    19987071
+1  Afghanistan  2000    2666    20595360
+2       Brazil  1999   37737   172006362
+3       Brazil  2000   80488   174504898
+4        China  1999  212258  1272915272
+5        China  2000  213766  1280428583</code></pre>
+</div>
+</div>
+<p>Unir:</p>
+<div id="cell-107" class="cell" data-execution_count="157">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df5, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>df5[<span class="st">"year"</span>] <span class="op">=</span> df5[<span class="st">"century"</span>] <span class="op">+</span> df5[<span class="st">"year"</span>]</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>df5 <span class="op">=</span> df5.drop(<span class="st">"century"</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       country  century  year               rate
+0  Afghanistan       19    99       745/19987071
+1  Afghanistan       20     0      2666/20595360
+2       Brazil       19    99    37737/172006362
+3       Brazil       20     0    80488/174504898
+4        China       19    99  212258/1272915272
+5        China       20     0  213766/1280428583 
+
+       country  year               rate
+0  Afghanistan   118       745/19987071
+1  Afghanistan    20      2666/20595360
+2       Brazil   118    37737/172006362
+3       Brazil    20    80488/174504898
+4        China   118  212258/1272915272
+5        China    20  213766/1280428583</code></pre>
+</div>
+</div>
+</section>
+<section id="combine" class="level4" data-number="3.4.6.3">
+<h4 data-number="3.4.6.3" class="anchored" data-anchor-id="combine"><span class="header-section-number">3.4.6.3</span> Combine</h4>
+<p><strong>Adicionar/Editar:</strong> Mais explicação. explicar os tipos de merge (left, inner, outer)</p>
+<p>Veja a função: - <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html?highlight=concat#pandas.concat"><code>.concat()</code></a></p>
+<p>Veja as funções abaixo para <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">unir dataframes</a> de maneiras diferentes:</p>
+<p><strong>Standard Joins:</strong></p>
+<ul>
+<li><a href=""><code>.merge()</code></a></li>
+</ul>
+<p><strong>Filtering Joints:</strong></p>
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isin.html?highlight=isin#pandas.DataFrame.isin"><code>.isin()</code></a></li>
+</ul>
+</section>
+<section id="aggregate" class="level4" data-number="3.4.6.4">
+<h4 data-number="3.4.6.4" class="anchored" data-anchor-id="aggregate"><span class="header-section-number">3.4.6.4</span> Aggregate</h4>
+
+
+</section>
 </section>
 </section>
 

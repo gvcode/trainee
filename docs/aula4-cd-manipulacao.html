@@ -185,13 +185,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ciência-de-dados" id="toc-ciência-de-dados" class="nav-link active" data-scroll-target="#ciência-de-dados"><span class="header-section-number">4.1</span> Ciência de Dados</a>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">5</span> Introdução</a>
   <ul class="collapse">
-  <li><a href="#introdução-e-projetos" id="toc-introdução-e-projetos" class="nav-link" data-scroll-target="#introdução-e-projetos"><span class="header-section-number">4.1.1</span> Introdução e Projetos</a></li>
-  <li><a href="#data-wrangle-e-tidy-data" id="toc-data-wrangle-e-tidy-data" class="nav-link" data-scroll-target="#data-wrangle-e-tidy-data"><span class="header-section-number">4.1.2</span> Data Wrangle e Tidy Data</a></li>
+  <li><a href="#ciência-de-dados" id="toc-ciência-de-dados" class="nav-link" data-scroll-target="#ciência-de-dados"><span class="header-section-number">5.1</span> Ciência de Dados</a>
+  <ul class="collapse">
+  <li><a href="#a-ciência-de-dados" id="toc-a-ciência-de-dados" class="nav-link" data-scroll-target="#a-ciência-de-dados"><span class="header-section-number">5.1.1</span> A Ciência de Dados</a></li>
+  <li><a href="#as-etapas-de-um-projeto" id="toc-as-etapas-de-um-projeto" class="nav-link" data-scroll-target="#as-etapas-de-um-projeto"><span class="header-section-number">5.1.2</span> As etapas de um projeto</a></li>
+  <li><a href="#data-wrangle-e-tidy-data" id="toc-data-wrangle-e-tidy-data" class="nav-link" data-scroll-target="#data-wrangle-e-tidy-data"><span class="header-section-number">5.1.3</span> Data Wrangle e Tidy Data</a></li>
+  <li><a href="#tidy-1" id="toc-tidy-1" class="nav-link" data-scroll-target="#tidy-1"><span class="header-section-number">5.1.4</span> Tidy</a></li>
+  <li><a href="#transform-1" id="toc-transform-1" class="nav-link" data-scroll-target="#transform-1"><span class="header-section-number">5.1.5</span> Transform</a></li>
   </ul></li>
-  <li><a href="#data-wrangle-com-pandas" id="toc-data-wrangle-com-pandas" class="nav-link" data-scroll-target="#data-wrangle-com-pandas"><span class="header-section-number">4.2</span> Data Wrangle com Pandas</a></li>
+  <li><a href="#data-wrangle-com-pandas" id="toc-data-wrangle-com-pandas" class="nav-link" data-scroll-target="#data-wrangle-com-pandas"><span class="header-section-number">5.2</span> Data Wrangle com Pandas</a></li>
   <li><a href="#recapitulando" id="toc-recapitulando" class="nav-link" data-scroll-target="#recapitulando">Recapitulando</a></li>
+  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">5.3</span> Extras</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -217,25 +224,199 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>!! Introdução da aula !!</p>
-<section id="ciência-de-dados" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="ciência-de-dados"><span class="header-section-number">4.1</span> Ciência de Dados</h2>
-<section id="introdução-e-projetos" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="introdução-e-projetos"><span class="header-section-number">4.1.1</span> Introdução e Projetos</h3>
+<section id="introdução" class="level1 unumbered" data-number="5">
+<h1 class="unumbered" data-number="5"><span class="header-section-number">5</span> Introdução</h1>
+<p><strong>Adicionar/Editar:</strong> Motivação da aula</p>
+<p><strong>Adicionar/Editar:</strong> TOC dos temas da aula (pra ajudar os alunos a se acharem na aula)</p>
+<p><strong>Adicionar/Editar:</strong> Texto (enxuto, objetivo) com os objetivos de aprendizagem principais (o que, principalmente, os alunos tem que sair dessa aula sabendo)</p>
+<p><strong>Adicionar/Editar:</strong> Ao longo da aula: adicionar mais referências, especialmente sobre onde expandir os conhecimentos sobre cada tema</p>
+<p><strong>Adicionar/Editar:</strong> comentar sobre como agora, vamos aplicar o modo de pensar da aula passada, de saber os "tipos de operações existentes", e desenvolver a habilidade de olhar pra um dataset, e saber quais operações aplicar</p>
+<p>Esta aula marca uma divisão no curso de trainee. Até agora, vocês estavam aprendendo várias ferramentas úteis, mas sem um objetivo específico além de simplesmente aprender a programar em Python. Nesta aula, vamos apresentar o objetivo, vocês irão aprender a realizar “projetos de Ciência de Dados”.</p>
+<section id="ciência-de-dados" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="ciência-de-dados"><span class="header-section-number">5.1</span> Ciência de Dados</h2>
+<section id="a-ciência-de-dados" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="a-ciência-de-dados"><span class="header-section-number">5.1.1</span> A Ciência de Dados</h3>
+<p>A Ciência de Dados é um campo gigante, que nasceu via uma demanda de expandir a estatística para vias de “learn from data”, “more emphasis on data preparation and presentation rather than statistical modeling”, e “emphasis on prediction rather than inference”. Atualmente, o termo não é super bem definido, e o campo tem muita intersecção com outras disciplinas.</p>
+<p>De acordo com a Wikipedia:</p>
+<blockquote class="blockquote">
+<p>Data science is an interdisciplinary academic field that uses statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from data.</p>
+</blockquote>
+<p>Fontes: <a href="https://www.tandfonline.com/doi/full/10.1080/10618600.2017.1384734">“50 Years of Data Science” (2017)</a> e <a href="https://en.wikipedia.org/wiki/Data_science">Wikipedia</a>.</p>
 </section>
-<section id="data-wrangle-e-tidy-data" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="data-wrangle-e-tidy-data"><span class="header-section-number">4.1.2</span> Data Wrangle e Tidy Data</h3>
-<p>!! Texto de pausa !!</p>
+<section id="as-etapas-de-um-projeto" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="as-etapas-de-um-projeto"><span class="header-section-number">5.1.2</span> As etapas de um projeto</h3>
+<p>Mais interessante que ficar tentando definir a disciplina, vamos entendê-la na prática. Como a aula é minha, e eu faço o que eu quiser, vou utilizar a explicação do livro <a href="https://r4ds.had.co.nz/index.html">“R for Data Science”</a>.</p>
+<p>Um projeto comum, no geral, se parece como abaixo. Veja uma breve explicação de cada tópico.</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png" height="200"></p>
+<section id="importing" class="level4" data-number="5.1.2.1">
+<h4 data-number="5.1.2.1" class="anchored" data-anchor-id="importing"><span class="header-section-number">5.1.2.1</span> Importing</h4>
+<p>A primeira etapa é a importação. Alguns comentários:</p>
+<ul>
+<li>Os dados podem vir de várias fontes, como arquivos locais, bancos de dados, APIs (application programming interface), ou de sites (via web scrapping).</li>
+<li>Os dados podem estar em vários formatos como CSV, Excel, JSON, entre outros. É interessante ter um conhecimento básico de como cada um funciona.</li>
+<li>Cada tipo de fonte tem uma maneira diferente de se interagir, e cada formato exige sua própria função. Para os casos mais simples, o pandas (e qualquer outra biblioteca de dataframes), tem funções para I/O.</li>
+</ul>
+<p>Não vamos entrar em detalhes nesse tema. Não é algo super extenso nem complexo, e existem muitas referências online. Uma das mais completas que achei foi <a href="https://realpython.com/pandas-read-write-files/">esse tutorial da RealPython</a>.</p>
+</section>
+<section id="tidy" class="level4" data-number="5.1.2.2">
+<h4 data-number="5.1.2.2" class="anchored" data-anchor-id="tidy"><span class="header-section-number">5.1.2.2</span> Tidy</h4>
+<p>A próxima etapa é arrumar, <em>tidy</em>, os dados. Vamos falar sobre isso com mais detalhe, mas existe uma noção bem específica do que são dados arrumados, <em>tidy data</em>.</p>
+<p>As três próximas etapas existem dentro de um ciclo.</p>
+</section>
+<section id="transform" class="level4" data-number="5.1.2.3">
+<h4 data-number="5.1.2.3" class="anchored" data-anchor-id="transform"><span class="header-section-number">5.1.2.3</span> Transform</h4>
+<p>Mesmo com dados já arrumados, ainda temos o interesse de transformá-los, para conseguir obter insights novos da mesma base de dados. Na aula de hoje, vamos dar alguns exemplos de interesses, e este tema ficará mais claro.</p>
+<p>Visualizar e modelar os dados trará novos insights e novas demandas, de modo que estamos constantemente transformando os dados para criar novas visualizações e modelagens.</p>
+<p><em>Tidy</em> e <em>transform</em> juntos são chamados de <em>data wrangling</em>.</p>
+</section>
+<section id="visualize" class="level4" data-number="5.1.2.4">
+<h4 data-number="5.1.2.4" class="anchored" data-anchor-id="visualize"><span class="header-section-number">5.1.2.4</span> Visualize</h4>
+<p>Aqui, serei preguiçoso, o texto do Hadley Wickham é muito bom:</p>
+<blockquote class="blockquote">
+<p>Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you’re asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don’t scale particularly well because they require a human to interpret them.</p>
+</blockquote>
+</section>
+<section id="model" class="level4" data-number="5.1.2.5">
+<h4 data-number="5.1.2.5" class="anchored" data-anchor-id="model"><span class="header-section-number">5.1.2.5</span> Model</h4>
+<p>Um modelo é, em termos simplificados e a depender do contexto, um conjunto de hipóteses sobre o mundo – sobre o processo gerador dos dados –, acrescido com um método matemático e computacional de estimar esse processo.</p>
+<blockquote class="blockquote">
+<p>Models are a fundamentally mathematical or computational tool, so they generally scale well. (…) But every model makes assumptions, and by its very nature a model cannot question its own assumptions. That means a model cannot fundamentally surprise you.</p>
+</blockquote>
+</section>
+<section id="comunication" class="level4" data-number="5.1.2.6">
+<h4 data-number="5.1.2.6" class="anchored" data-anchor-id="comunication"><span class="header-section-number">5.1.2.6</span> Comunication</h4>
+<p>O último passo é comunicação. As linguagens de programação provém ferramentas para expor seus resultados. O próprio Jupyter Notebook onde esta aula foi escrita é um exemplo disso. Mas existem muitas outras ferramentas mais avançadas para criar reports, livros, páginas na web, aplicativos, etc. No curso de trainee, não iremos cobrir essa etapa com detalhe.</p>
+<p>Por fim, dos últimos comentários. Primeiro, e a programação?</p>
+<blockquote class="blockquote">
+<p>Surrounding all these tools is programming. Programming is a cross-cutting tool that you use in every part of the project. You don’t need to be an expert programmer to be a data scientist, but learning more about programming pays off because becoming a better programmer allows you to automate common tasks, and solve new problems with greater ease.</p>
+</blockquote>
+<p>E o que falta?</p>
+<p>No curso do trainee iremos explicar todas as etapas (fora comunicação), mas é só isso que você precisará? Não, cada projeto exige seu conhecimento específico, em cada tema, cada disciplina, existem conceitos próprios que entrarão em alguma das etapas aqui descritas. Mas tudo bem, o importante é vocês saberem a base, e conseguirão ir atrás do adicional por conta própria.</p>
+<p>O caminho é o seguinte:</p>
+<ul>
+<li>Na aula de hoje, aprenderemos as etapas de tidy e transform.</li>
+<li>Na aula 5, aprenderemos a etapa visualize.</li>
+<li>Na aula 6, aprenderemos a etapa model.</li>
+<li>Por fim, na aula 7, juntaremos tudo, aprendendo como fazer um projeto completo. Adicionalmente, aprenderemos como organizar um script para tal.</li>
+</ul>
 </section>
 </section>
-<section id="data-wrangle-com-pandas" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="data-wrangle-com-pandas"><span class="header-section-number">4.2</span> Data Wrangle com Pandas</h2>
-<p>!! <a href="https://drive.google.com/file/d/1VZQdPhCVgatuJxwFHgmUVGAN6TcJwyOw/view?usp=sharing">vide o PPT</a> !!</p>
+<section id="data-wrangle-e-tidy-data" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="data-wrangle-e-tidy-data"><span class="header-section-number">5.1.3</span> Data Wrangle e Tidy Data</h3>
+</section>
+<section id="tidy-1" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="tidy-1"><span class="header-section-number">5.1.4</span> Tidy</h3>
+<section id="tidy-data" class="level4" data-number="5.1.4.1">
+<h4 data-number="5.1.4.1" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">5.1.4.1</span> Tidy data</h4>
+<p>Dados podem ser representados de várias maneiras, veja os exemplos abaixo. Nenhuma delas é necessariamente melhor que as outras, são organizações diferentes.</p>
+<p><img src="https://imgur.com/XA7JWwS.png" height="400"></p>
+<p><img src="https://imgur.com/nN0ouP9.png" height="400"></p>
+<p>Para ciência de dados, será útil utilizar uma organização específica, chamada de “tidy dataset”. Três regras a definem:</p>
+<ul>
+<li>Cada variável deve ter sua própria coluna.</li>
+<li>Cada observação deve ter sua própria linha.</li>
+<li>Cada valor deve ter sua própria célula.</li>
+</ul>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" height="200"></p>
+<p>Quais são os benefícios de organizar dados assim?</p>
+<ul>
+<li>A consistência de utilizar uma mesma organização, independente de qual, é muito útil, especialmente porque facilita entender as ferramentas que trabalharão com ela.</li>
+<li>A arrumação tidy é intuitiva, e é utilizada de maneira muito natural nas ferramentas, muitaz vezes vetorizadas, de visualização e modelagem.</li>
+</ul>
+</section>
+<section id="arrumando-datasets" class="level4" data-number="5.1.4.2">
+<h4 data-number="5.1.4.2" class="anchored" data-anchor-id="arrumando-datasets"><span class="header-section-number">5.1.4.2</span> Arrumando datasets</h4>
+<p>Agora que já entendemos o que é tidy data, podemos adquirir a habilidade de olhar para um dataset e, sabendo onde queremos chegar, elencar quais são as alterações a serem feitas – “remover esta linha”, “dividir essa coluna no meio”.</p>
+<p>Após elencar quais alterações devem ser feitas, é simples fazer a ponte de quais <em>manipulações de dados você quer fazer</em> – “subset linhas” e “separar colunas”.</p>
+<p>Por fim, só falta relembrar como é o código que aplica essa manipulação. Essa é a parte mais simples! É só voltar na aula passada, pesquisar na internet, <em>ver no chat</em>, ou perguntar para o seu amigo preferido!</p>
+<p>Tendo as duas primeiras habilidades, você tem tudo o que precisa para pesquisar, e não há problema nenhum em ter que pesquisar, o problema é ter que pesquisar , e não saber como!. Agora, se você só sabe a terceira, você não precisa pesquisar, mas <em>não sabe o que você não precisa pesquisar</em>, o que não é especialmente útil.</p>
+<p>Se você quiser ficar insano no pandas, rever a aula passada três vezes por dia, deitado numa banheira congelada, será ótimo, você ficará eficiênte muito rápidamente. Mas não precisa, essa eficiência vem com o tempo, e o mais importante é saber a lógica de “o que precisa alterar” e “quais são as manipulações que existem”.</p>
+<p>Ok, sem mais delongas, vamos aprender a elencar alterações, vamos ver uns exemplos <a href="assets\materials\manipulacao.pptx">vide o PPT</a>.</p>
+<p>Qual foi a receitinha de bolo que aprendemos? (hmm bolo 😋). Recebemos um dataset, e:</p>
+<ul>
+<li>Arrumar os dados para o formato data frame.
+<ul>
+<li>Todas as colunas são homogêneas?
+<ul>
+<li>Remover linhas “ruins”, converter valores.</li>
+</ul></li>
+<li>Todas as colunas são do mesmo tamanho?
+<ul>
+<li>Remover linhas “ruins”.</li>
+</ul></li>
+</ul></li>
+<li>Arrumar os dados para o formato tidy.
+<ul>
+<li>Toda coluna é uma variável?
+<ul>
+<li>Remover colunas “ruins”.</li>
+<li>Separar/unir colunas colunas.</li>
+</ul></li>
+<li>Toda linha é uma observação?
+<ul>
+<li>Quais são as variáveis que definem uma observação?</li>
+<li>Pivot e melt.</li>
+</ul></li>
+<li>Toda célula é um valor?
+<ul>
+<li>Transformar dados “ruins” em NA.</li>
+<li>Lidar com dados NA.</li>
+</ul></li>
+</ul></li>
+<li>Tenho mais de um dataset? Deixá-los tidy e então realizaram algum merge.</li>
+</ul>
+</section>
+</section>
+<section id="transform-1" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="transform-1"><span class="header-section-number">5.1.5</span> Transform</h3>
+<p>Após arrumarmos um dataset, ainda aplicaremos transformações com base nas demandas da fase de visualização e modelagem.</p>
+<ul>
+<li>Manipular linhas.
+<ul>
+<li>Sorting.</li>
+<li>Sampling.</li>
+<li>Filtrar observações.</li>
+</ul></li>
+<li>Transformar/criar colunas:
+<ul>
+<li>Alterar a unidade de uma variável.</li>
+<li>Normalizar variáveis.</li>
+<li>Agrupar as categorias de uma variável categórica.</li>
+<li>Corrigir/formatar texto de variáveis string.</li>
+<li>Manipular datas.</li>
+<li>Criar novas colunas a partir de operações com múltiplas outras Exemplos: salário semanal * semanas trabalhadas; idade ao quadrado.</li>
+<li>Criar uma coluna para ajudar em um plot.</li>
+</ul></li>
+</ul>
+<p>Todas essas operações são factíveis de serem feitas com base na aula passada de pandas. Vocês verão muitos exemplos dessa etapa na aula 6.</p>
+<p><strong>Adicionar/Editar:</strong> Escolha uma frase remetendo pausa e tire print de alguma arte dela em https://patorjk.com/software/taag/. Exemplo:</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/pause/georgia11.png" class="img-fluid figure-img"></p>
+<figcaption>😎</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+</section>
+<section id="data-wrangle-com-pandas" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="data-wrangle-com-pandas"><span class="header-section-number">5.2</span> Data Wrangle com Pandas</h2>
+<p><strong>Adicionar/Editar:</strong> Adicionar uns exemplos de data wrangle, especialmente usando as operações que não foram ensinadas na aula passada (reshape, separate/unite, e combine)</p>
+<div class="double-hrule">
+
+</div>
 </section>
 <section id="recapitulando" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="recapitulando">Recapitulando</h2>
+<p><strong>Adicionar/Editar:</strong> Adicionar texto de recapitulando. Em parágrafos, primeiro sobre os principais objetivos de aprendizagem, depois sobre os conceitos teóricos aprendidos, e por fim, dos conceitos "decoreba" aprendidos</p>
+</section>
+<section id="extras" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="extras"><span class="header-section-number">5.3</span> Extras</h2>
+<p><strong>Adicionar/Editar:</strong> tem que ver o que vem pra ca. talvez mais exemplos?</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
