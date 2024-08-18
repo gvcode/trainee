@@ -20,7 +20,7 @@ book:
     - aula8-outros.ipynb
     - references.qmd
 
-bibliography: references.bib
+bibliography: assets/references.bib
 
 format:
   html:

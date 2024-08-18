@@ -4,7 +4,7 @@
     "href": "aula1-python1.html",
     "title": "1  Introdução ao Python I",
     "section": "",
-    "text": "1.1 Sintaxe",
+    "text": "1.1 Porque Python?",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
@@ -13,8 +13,8 @@
     "objectID": "aula1-python1.html#sintaxe",
     "href": "aula1-python1.html#sintaxe",
     "title": "1  Introdução ao Python I",
-    "section": "",
-    "text": "1.1.1 Scripts\n\n\n1.1.2 Sintaxe Básica",
+    "section": "1.2 Sintaxe",
+    "text": "1.2 Sintaxe\n\n\n1.2.1 Scripts\nUm script é um arquivo de texto com instruções a serem executadas por um computador que antes traduzirá o arquivo para linguagem de máquina.\nUm script é um texto instrucional como qualquer outro, escrito em um tipo de linguagem especial, “de programação”, ou “código”, mas é um texto, quase como uma receita de bolo de cenoura.\nComo em qualquer linguagem, temos um vocabulário à disposição, um conjunto de palavras (ou tokens) existentes, organizadas em categorias como substantivos, adjetivos, etc. Nós combinamos as palavras em frases (ou statements) para descrever as instruções. Por fim, organizamos o texto em parágrafos (ou blocks), conjuntos de frases que devem ser lidas juntas, para definir a estrutura e facilitar o entendimento do texto.\n\n\n\n1.2.2 Sintaxe Básica\nA sintaxe dentro do Python é muito semelhante com a linguagem humana. O programa “lê” de cima para baixo, da esqueda para a direita de forma sequencial!\nNote ao longo dos programas: espaços, quebras de linha, tabs, comentários…\n\n#Vamos fazer essa soma!\n\nsoma = 2 + 2 # soma bem facil...\nsoma2=2+2\n\nprint(soma, soma2)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
@@ -23,8 +23,8 @@
     "objectID": "aula1-python1.html#variáveis",
     "href": "aula1-python1.html#variáveis",
     "title": "1  Introdução ao Python I",
-    "section": "1.2 Variáveis",
-    "text": "1.2 Variáveis",
+    "section": "1.3 Variáveis",
+    "text": "1.3 Variáveis\n\nAs variáveis no python são bem parecidas com as variáveis da matemática. Serve como caixinhas que carregam algo dentro e, sempre que o programa ler ela, entenderá o seu conteúdo.\nx = \"julia\"  #toda vez que o programa ler x, lerá a string julia\ny = 5        #toda vez que o programa ler y, lerá o número inteiro 5\nz = 2.5      #toda vez que o programa ler z, lerá o número float 2,5\nTenha em mente ao nomear uma variável que: - Não se pode usar os termos reservados;\n\nNomes de variáveis podem conter apenas letras, números e underscores(_). Podem começar com uma letra ou um underscore, mas não com um número;\nEspaços não são permitidos em nomes de variáveis (usa-se underscores para separa as palavras);\nDicas: nomes de variáveis devem ser concisos, porém descritivos.\n\nNa prática, quando escrevemos essas varíaveis, números e strings em células de código, observamos diferentes cores que indicam o que o python está enxergando.\nTermos reservados são termos que já possuem um “significado” para o Python, então não podemos usa-los como variáveis.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
@@ -33,8 +33,8 @@
     "objectID": "aula1-python1.html#tipos-de-dados",
     "href": "aula1-python1.html#tipos-de-dados",
     "title": "1  Introdução ao Python I",
-    "section": "1.3 Tipos de Dados",
-    "text": "1.3 Tipos de Dados\n!! Texto pausa !!",
+    "section": "1.4 Tipos de Dados",
+    "text": "1.4 Tipos de Dados\n\n\n\n1.4.1 String\nUma string é um “desenho”, onde o programa não enxerga nenhum valor numérico mas consegue diferir os “desenhos” entre si. Seu símbolo é ’ ’ ou ” “, indicando ao programa que é uma string. Um número pode ter valor numérico (int ou float por exemplo) ou não (str).\nObs: o python é uma linguagem extremamente sensível, então a string “julia” e a string “Julia” não são iguais para ele.\n\"Julia\"\n\"luana\"\n\"123456\"\nUma ferramenta que vocês usarão e que “respiram” strings é o len().\n“Len” é a breviação para a palavra Length, ou seja, comprimento, e é exatamente o que ele mede: essa função retorna o número de caractéres de uma string.\nObs: os ESPAÇOS contam como caracteres.\nlen(\"julia cruz\") --&gt; retorna o número 10 (um inteiro)\n\n\n1.4.2 Inteiro\nOs inteiros são números que não são strings e não possuem valor depois da vígula, ou seja, são números inteiros :D. Usados em expressões matemáticas para contas.\n5\n6\n12\n1000\n\n\n1.4.3 Inteiro\nSão semelhantes aos números inteiros porém considera e demanda valores depois da vírgula, mesmo que seja 0. Se misturam com os inteiros em equações matemáticas.\n1.0\n2.3\n45.002\n1000.0\n\n\n1.4.4 Booleano\nUm valor booleano é um tipo de dado que pode representar apenas dois estados distintos: verdadeiro ou falso. É fundamental em muitos aspectos da programação e da lógica, pois permite tomar decisões com base em condições.\nverdadeiro = True\nfalso = False",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
@@ -43,8 +43,18 @@
     "objectID": "aula1-python1.html#operadores",
     "href": "aula1-python1.html#operadores",
     "title": "1  Introdução ao Python I",
-    "section": "1.4 Operadores",
-    "text": "1.4 Operadores",
+    "section": "1.5 Operadores",
+    "text": "1.5 Operadores\n\n\n\n1.5.1 Operadores Aritiméticos\nOs operadores aritméticos são usados para realizar operações matemáticas entre operandos.\n\n\n\n\nimage.png\n\n\n\nprint(2+2)\n\n\nprint(2*5 - 7)\n\n\nprint(4%2)\n\n\nprint(3%2)\n\n\ndivisao_inteira = 10 // 6\nprint(divisao_inteira, 10/6)\n\n\n1.5.1.1 Ordem de Precedência\n\n# Parenteses\nexpressao_1 = ((2 + 5) * 3)\nprint(expressao_1)\n\nexpressao_2 = (2 + 5 * 3)\nprint(expressao_2)\n\nexpressao_3 = (1 + 5 ** 2)\nprint(expressao_3)\n\n\nprint(((2*3)**3)/7)\n\n\n\n\n1.5.2 Operadores lógicos\nOs operadores lógicos são usados alguma relação entre operandos. Quando utilizados, eles retornam valores booleanos (True ou False).\n\n\n\n\nimage.png",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
+    ]
+  },
+  {
+    "objectID": "aula1-python1.html#operadores-de-atribuição",
+    "href": "aula1-python1.html#operadores-de-atribuição",
+    "title": "1  Introdução ao Python I",
+    "section": "1.6 Operadores de Atribuição",
+    "text": "1.6 Operadores de Atribuição\nOs operadores de atribuição são usados para atibuir valores a variáveis\n\n\n\nnumero = 5\nnumero += 1\nprint(numero)\n\n\nnumero = 3\nnumero -= 1\nprint(numero)\n\n\nnumero = 7\nnumero *= 5\nprint(numero)\n\n\nnumero = 9\nnumero /= 5\nprint(numero)\n\n\nnumero = 5\nnumero %= 2\nprint(numero)\n\n\n\n\n\nImagem da pausa",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
@@ -53,8 +63,8 @@
     "objectID": "aula1-python1.html#control-flow",
     "href": "aula1-python1.html#control-flow",
     "title": "1  Introdução ao Python I",
-    "section": "1.5 Control Flow",
-    "text": "1.5 Control Flow",
+    "section": "1.7 Control Flow",
+    "text": "1.7 Control Flow\n\n\n\n1.7.1 Condicionais\n\n1.7.1.1 if\n\n\n1.7.1.2 if else\n\n\n1.7.1.3 if elif else\n\n\n\n1.7.2 Loops\n\n1.7.2.1 while\n\n\n1.7.2.2 for\n\n\n\n1.7.3 Keywords\n\n1.7.3.1 break\n\n\n1.7.3.2 continue",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
@@ -63,8 +73,8 @@
     "objectID": "aula1-python1.html#funções",
     "href": "aula1-python1.html#funções",
     "title": "1  Introdução ao Python I",
-    "section": "1.6 Funções",
-    "text": "1.6 Funções",
+    "section": "1.8 Funções",
+    "text": "1.8 Funções\n\n\n\n1.8.1 Sintaxe e Definição\n\n\n1.8.2 Argumentos\n\n\n\n\n1.8.3 Funções Anônimas",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
@@ -83,8 +93,8 @@
     "objectID": "aula1-python1.html#extras",
     "href": "aula1-python1.html#extras",
     "title": "1  Introdução ao Python I",
-    "section": "1.7 Extras",
-    "text": "1.7 Extras\n\n1.7.1 Tópicos Adicionais em Funções\n\n1.7.1.1 *args e **kwargs\n\n\n1.7.1.2 Environments\n\n\n\n1.7.2 Condições",
+    "section": "1.9 Extras",
+    "text": "1.9 Extras\n\n\n1.9.1 Tópicos Adicionais em Funções\n\n1.9.1.1 *args e **kwargs\n\nO operador * e ** são operadores de “desempacotamento”. Transformam uma lista em vários argumentos “soltos”. Suponha que você tenha uma lista de argumentos que quer passar para uma função, no lugar de pegar cada elemento da lista individualmente, você pode usar *:\n\nargs = [1, 2, 3]\n\nprint(1, 2, 3) #resultado quisto\nprint(args[0], args[1], args[2]) #pior\nprint(*args) #melhor\n\nO operador ** é similar, mas transforma um dicionário em vários argumentos nomeados:\n\nargs = (1, 2, 3)\nkwargs = {'sep': '-', 'end': '!\\n'}\n\nprint(1, 2, 3, sep = '-', end = '!\\n') #resultado quisto\nprint(args[0], args[1], args[2], sep = kwargs['sep'], end = kwargs['end']) #pior\nprint(*args, **kwargs) #melhor\n\nTambém podemos fazer a operação inversa, criar uma função que receba um número desconhecido de argumentos (soltos/desempacotados). Podemos preceder qualquer nome de argumento com * ou **, e eles coletarão argumentos não utilizados, e os empacotarão em uma tuple e dicionário, respectivamente.\n\ndef f(a, *args):\n  print(args)\n\nprint(f(4, 1, 2, 3)) # a = 4 !!!\n\ndef g(a, **kwargs):\n  print(kwargs)\n\ng(4, um = 1, dois = 2, tres = 3)\n\nIsso é útil porque a partir disso, podemos utilizar esses argumetos com base nos métodos de dicionário e tuples. Ou, podemos desempacotar e passá-los diretamente à outras funções:\n\ndef my_sum(*args):\n    result = 0\n    for x in args:\n        result += x\n    print(result)\n\nmy_sum(1, 2, 3, 4, 5, 6)\n\ndef my_print(*args, **kwargs):\n  print(*args, **kwargs)\n\nmy_print('oi', 'olá', sep = ', ', end = '!')\n\n\ndef calcular_imc(*args, **kwargs):\n    resultados = []\n\n    for i, pessoa in enumerate(args):\n        peso = kwargs.get(f'peso{i}', None)\n        altura = kwargs.get(f'altura{i}', None)\n\n        if peso is None or altura is None:\n            print(f\"Faltam dados para a pessoa {i+1}. Peso e altura são necessários.\")\n            continue\n\n        if peso &lt;= 0 or altura &lt;= 0:\n            print(f\"Valores inválidos para a pessoa {i+1}. Peso e altura devem ser positivos.\")\n            continue\n\n        imc = peso / (altura ** 2)\n        resultados.append(imc)\n\n    return resultados\n\nimcs = calcular_imc(1,2,3, peso0=60, altura0=1.7, peso1=70, altura1=1.75, peso2=80, altura2=1.8)\nprint(imcs)\n\n\n\n1.9.1.2 Ambientes e Busca de Valores\n\n\na = 1\nb = 2\nc = 3\nd = 4\n\ndef fun(a, **kargs):\n    b = 20\n    return [a, b, c, d]\n\nfun(a = 10, c = 30)\n\n\ndef fun(a, **kargs):\n    b = 20\n    return [a, b, c, d, e]\n\nfun(a = 10, c = 30)\n\n\n\n\n1.9.2 Erros/Exceções\n\n1.9.2.0.1 Tipos de exceções\nReferência: https://docs.python.org/3/library/warnings.html, https://www.tutorialsteacher.com/python/error-types-in-python\nExistem vários motivos diferentes para um script não rodar, é importante saber os mais comuns para ajudar na hora de investigar o que está de errado com um código.\n\nErro de sintaxe: SyntaxError, IndentationError, TabError\nErro de falta de memória: MemoryError, OverflowError\nErro de referência: IndexError, KeyError, NameError\nErro de operação: ZeroDivisionError, TypeError\nErro de lógica: o python realiza o código, mas não faz o que você queria que ele fizesse\nExceções: “o python sabe o que fazer com o código mas não consegue realizar a ação quista”\nAvisos: não interrompem o código, mas indicam que algo pode estar errado\n\n\n\n1.9.2.0.2 Como lidar com exceções?\nReferência: https://www.w3schools.com/python/python_try_except.asp\nAvisar ao utilizador do código que houve algum erro específico:\n\ntry:\n    juros = int(input(\"Qual a taxa de juros desejada? \"))\n    print(\"A taxa escolhida foi {0}%.\".format(juros))\nexcept:\n    print(\"A taxa de juros deve ser um número\")\n\nEm um loop, indicar que um dos itens não funcionou, mas realizar a operação para o resto dos itens:\n\nimport requests\n\npaginas = []\nurlList = ['https://finance.yahoo.com/quote/PETR4.SA', 'urlquebrado.com', 'https://finance.yahoo.com/quote/VALE3.SA']\n\nfor url in urlList:\n    try:\n        request = requests.get(url)\n        result = f\"result - {url}\" #algo com os dados da página\n        paginas.append(result)\n    except:\n        paginas.append(\"NA\")\n        print(f\"A página {url} não pode ser lida\")\n\npaginas",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução ao Python I</span>"
     ]
