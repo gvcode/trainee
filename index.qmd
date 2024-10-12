@@ -6,48 +6,48 @@ Esse material foi 100% escrito pelos veteranos da entidade, e está sendo otimiz
 
 ## Aulas
 
-**Introdução ao Python I (30/set a 4/out)**
+**Introdução ao Python I**
 
 - O que é um script; sintaxe; variáveis; tipos de dados.
 - Operadores; control flow; funções.
-- Extra: *args; condições (try except).
+- Extra: f-strings; condições (try except).
 
-**Introdução ao Python II (7/out a 11/out)**
+**Introdução ao Python II**
 
 - Programação orientada ao objeto.
 - Coleções (list, dict, tuple, set); subsetting e métodos.
 - Iteráveis loops, comprehension, e enumerate, filter, zip, e map.
-- Extra: funções úteis, f-strings
+- Extra: *args; funções úteis.
 
-**Introdução ao Python III (14/out a 18/out)**
+**Introdução ao Python III**
 
 - Numpy: arrays e vetorização; operações e subsetting.
 - Pandas: dataframes; operações.
 - Extra: tópicos avançados em Numpy e Pandas.
 
-**Ciência de Dados: Manipulação (21/out a 25/out)**
+**Ciência de Dados: Manipulação**
 
 - Introdução à ciência de dados; o que é processamento de dados.
 - Como arrumar dados com Pandas.
 
-**Ciência de Dados: Visualização (28/out a 1/nov)**
+**Ciência de Dados: Visualização**
 
 - O que é visualização de dados.
 - Sumarização com Pandas; Gráficos com o Matplotlib.
 - Extra: seaborn e outras bibliotecas; gráficos avançados.
 
-**Ciência de Dados: Modelagem  (4/nov a 8/nov)**
+**Ciência de Dados: Modelagem**
 
 - O que é modelagem de dados.
 - Aula teórica sobre modelos de machine learning.
 
-**Ciência de Dados: Projetos (11/nov a 15/nov)**
+**Ciência de Dados: Projetos**
 
 - Etapas e exemplo de um script de ciência de dados.
 - Funções de modelagem.
 - Extra: apresentar trabalho.
 
-**Outros Temas em Programação (18/nov a 22/nov)**
+**Outros Temas em Programação**
 
 - Git e Github.
 - Boas práticas de programação (python’s pep8).

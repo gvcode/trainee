@@ -15,14 +15,14 @@ book:
   chapters:
     - index.qmd
     - aula1-python1.ipynb
-    - aula2-python2.ipynb
-    - aula3-python3.ipynb
-    - aula4-cd-manipulacao.ipynb
-    - aula5-cd-visualizacao.ipynb
-    - aula6-cd-modelagem.ipynb
-    - aula7-cd-projetos.ipynb
-    - aula8-outros.ipynb
-    - references.qmd
+    #- aula2-python2.ipynb
+    #- aula3-python3.ipynb
+    #- aula4-cd-manipulacao.ipynb
+    #- aula5-cd-visualizacao.ipynb
+    #- aula6-cd-modelagem.ipynb
+    #- aula7-cd-projetos.ipynb
+    #- aula8-outros.ipynb
+    #- references.qmd
 
 bibliography: assets/references.bib
 
@@ -35,5 +35,5 @@ format:
 execute:
   cache: true
 
-filters:
-  - assets/view_html_comments.lua # deixar visível os comentários para professores. Renderizar o livro sem isso quando o trainee começar
+#filters:
+#  - assets/view_html_comments.lua # deixar visível os comentários para professores. Renderizar o livro sem isso quando o trainee começar
