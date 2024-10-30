@@ -16,7 +16,7 @@ book:
     - index.qmd
     - aula1-python1.ipynb
     - aula2-python2.ipynb
-    #- aula3-python3.ipynb
+    - aula3-python3.ipynb
     #- aula4-cd-manipulacao.ipynb
     #- aula5-cd-visualizacao.ipynb
     #- aula6-cd-modelagem.ipynb
