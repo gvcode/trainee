@@ -8,7 +8,7 @@
 
 <meta name="description" content="Livro Quarto do curso de trainee da GVCode">
 
-<title>4&nbsp; CD: Visualização – GVCode Trainee</title>
+<title>5&nbsp; CD: Visualização – GVCode Trainee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./aula6-cd-modelagem.html" rel="next">
-<link href="./aula3-python3.html" rel="prev">
+<link href="./aula4-cd-manipulacao.html" rel="prev">
 <link href="./assets/icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./aula5-cd-visualizacao.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CD: Visualização</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./aula5-cd-visualizacao.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CD: Visualização</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,14 +178,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./aula4-cd-manipulacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CD: Manipulação</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./aula5-cd-visualizacao.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CD: Visualização</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CD: Visualização</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aula6-cd-modelagem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aula7-cd-projetos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CD: Projetos</span></span></a>
   </div>
 </li>
     </ul>
@@ -198,34 +210,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">5</span> Introdução</a>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">6</span> Introdução</a>
   <ul class="collapse">
-  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualização-de-dados"><span class="header-section-number">5.1</span> Visualização de Dados</a>
+  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualização-de-dados"><span class="header-section-number">6.1</span> Visualização de Dados</a>
   <ul class="collapse">
-  <li><a href="#índice" id="toc-índice" class="nav-link" data-scroll-target="#índice"><span class="header-section-number">5.1.1</span> Índice</a></li>
+  <li><a href="#índice" id="toc-índice" class="nav-link" data-scroll-target="#índice"><span class="header-section-number">6.1.1</span> Índice</a></li>
   </ul></li>
-  <li><a href="#sumarização-com-pandas" id="toc-sumarização-com-pandas" class="nav-link" data-scroll-target="#sumarização-com-pandas"><span class="header-section-number">5.2</span> Sumarização com Pandas</a>
+  <li><a href="#sumarização-com-pandas" id="toc-sumarização-com-pandas" class="nav-link" data-scroll-target="#sumarização-com-pandas"><span class="header-section-number">6.2</span> Sumarização com Pandas</a>
   <ul class="collapse">
-  <li><a href="#sumarisando-o-dataframe-como-um-todo" id="toc-sumarisando-o-dataframe-como-um-todo" class="nav-link" data-scroll-target="#sumarisando-o-dataframe-como-um-todo"><span class="header-section-number">5.2.1</span> Sumarisando o dataframe como um todo</a></li>
-  <li><a href="#sumarisando-variáveis-categóricas" id="toc-sumarisando-variáveis-categóricas" class="nav-link" data-scroll-target="#sumarisando-variáveis-categóricas"><span class="header-section-number">5.2.2</span> Sumarisando variáveis categóricas</a></li>
-  <li><a href="#sumarisando-variáveis-contínuas" id="toc-sumarisando-variáveis-contínuas" class="nav-link" data-scroll-target="#sumarisando-variáveis-contínuas"><span class="header-section-number">5.2.3</span> Sumarisando variáveis contínuas</a></li>
-  <li><a href="#sumarisando-variáveis-discretas" id="toc-sumarisando-variáveis-discretas" class="nav-link" data-scroll-target="#sumarisando-variáveis-discretas"><span class="header-section-number">5.2.4</span> Sumarisando variáveis discretas</a></li>
-  <li><a href="#analisando-grupos-nos-dados" id="toc-analisando-grupos-nos-dados" class="nav-link" data-scroll-target="#analisando-grupos-nos-dados"><span class="header-section-number">5.2.5</span> Analisando grupos nos dados</a></li>
+  <li><a href="#sumarisando-o-dataframe-como-um-todo" id="toc-sumarisando-o-dataframe-como-um-todo" class="nav-link" data-scroll-target="#sumarisando-o-dataframe-como-um-todo"><span class="header-section-number">6.2.1</span> Sumarisando o dataframe como um todo</a></li>
+  <li><a href="#sumarisando-variáveis-categóricas" id="toc-sumarisando-variáveis-categóricas" class="nav-link" data-scroll-target="#sumarisando-variáveis-categóricas"><span class="header-section-number">6.2.2</span> Sumarisando variáveis categóricas</a></li>
+  <li><a href="#sumarisando-variáveis-contínuas" id="toc-sumarisando-variáveis-contínuas" class="nav-link" data-scroll-target="#sumarisando-variáveis-contínuas"><span class="header-section-number">6.2.3</span> Sumarisando variáveis contínuas</a></li>
+  <li><a href="#sumarisando-variáveis-discretas" id="toc-sumarisando-variáveis-discretas" class="nav-link" data-scroll-target="#sumarisando-variáveis-discretas"><span class="header-section-number">6.2.4</span> Sumarisando variáveis discretas</a></li>
+  <li><a href="#analisando-grupos-nos-dados" id="toc-analisando-grupos-nos-dados" class="nav-link" data-scroll-target="#analisando-grupos-nos-dados"><span class="header-section-number">6.2.5</span> Analisando grupos nos dados</a></li>
   </ul></li>
-  <li><a href="#banheiro" id="toc-banheiro" class="nav-link" data-scroll-target="#banheiro"><span class="header-section-number">5.3</span> BANHEIRO</a></li>
-  <li><a href="#gráficos-com-o-matplotlib" id="toc-gráficos-com-o-matplotlib" class="nav-link" data-scroll-target="#gráficos-com-o-matplotlib"><span class="header-section-number">5.4</span> Gráficos com o Matplotlib</a>
+  <li><a href="#banheiro" id="toc-banheiro" class="nav-link" data-scroll-target="#banheiro"><span class="header-section-number">6.3</span> BANHEIRO</a></li>
+  <li><a href="#gráficos-com-o-matplotlib" id="toc-gráficos-com-o-matplotlib" class="nav-link" data-scroll-target="#gráficos-com-o-matplotlib"><span class="header-section-number">6.4</span> Gráficos com o Matplotlib</a>
   <ul class="collapse">
-  <li><a href="#anatomia-e-estilo-de-programação" id="toc-anatomia-e-estilo-de-programação" class="nav-link" data-scroll-target="#anatomia-e-estilo-de-programação"><span class="header-section-number">5.4.1</span> Anatomia e Estilo de Programação</a></li>
-  <li><a href="#anatomia-de-uma-figura" id="toc-anatomia-de-uma-figura" class="nav-link" data-scroll-target="#anatomia-de-uma-figura"><span class="header-section-number">5.4.2</span> Anatomia de uma figura</a></li>
-  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots"><span class="header-section-number">5.4.3</span> Plots</a></li>
-  <li><a href="#estéticas" id="toc-estéticas" class="nav-link" data-scroll-target="#estéticas"><span class="header-section-number">5.4.4</span> Estéticas</a></li>
-  <li><a href="#tema" id="toc-tema" class="nav-link" data-scroll-target="#tema"><span class="header-section-number">5.4.5</span> Tema</a></li>
-  <li><a href="#o-estilo-da-programação" id="toc-o-estilo-da-programação" class="nav-link" data-scroll-target="#o-estilo-da-programação"><span class="header-section-number">5.4.6</span> O estilo da programação</a></li>
-  <li><a href="#plots-combinados" id="toc-plots-combinados" class="nav-link" data-scroll-target="#plots-combinados"><span class="header-section-number">5.4.7</span> Plots Combinados</a></li>
+  <li><a href="#anatomia-e-estilo-de-programação" id="toc-anatomia-e-estilo-de-programação" class="nav-link" data-scroll-target="#anatomia-e-estilo-de-programação"><span class="header-section-number">6.4.1</span> Anatomia e Estilo de Programação</a></li>
+  <li><a href="#anatomia-de-uma-figura" id="toc-anatomia-de-uma-figura" class="nav-link" data-scroll-target="#anatomia-de-uma-figura"><span class="header-section-number">6.4.2</span> Anatomia de uma figura</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots"><span class="header-section-number">6.4.3</span> Plots</a></li>
+  <li><a href="#estéticas" id="toc-estéticas" class="nav-link" data-scroll-target="#estéticas"><span class="header-section-number">6.4.4</span> Estéticas</a></li>
+  <li><a href="#tema" id="toc-tema" class="nav-link" data-scroll-target="#tema"><span class="header-section-number">6.4.5</span> Tema</a></li>
+  <li><a href="#o-estilo-da-programação" id="toc-o-estilo-da-programação" class="nav-link" data-scroll-target="#o-estilo-da-programação"><span class="header-section-number">6.4.6</span> O estilo da programação</a></li>
+  <li><a href="#plots-combinados" id="toc-plots-combinados" class="nav-link" data-scroll-target="#plots-combinados"><span class="header-section-number">6.4.7</span> Plots Combinados</a></li>
   </ul></li>
-  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">5.5</span> Extras</a>
+  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">6.5</span> Extras</a>
   <ul class="collapse">
-  <li><a href="#outros" id="toc-outros" class="nav-link" data-scroll-target="#outros"><span class="header-section-number">5.5.1</span> Outros</a></li>
+  <li><a href="#outros" id="toc-outros" class="nav-link" data-scroll-target="#outros"><span class="header-section-number">6.5.1</span> Outros</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -236,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CD: Visualização</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CD: Visualização</span></h1>
 </div>
 
 
@@ -253,16 +265,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introdução" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Introdução</h1>
+<section id="introdução" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Introdução</h1>
 <!--Motivação da aula-->
 <!--TOC dos temas da aula (pra ajudar os alunos a se acharem na aula)-->
 <!--Texto (enxuto, objetivo) com os objetivos de aprendizagem principais (o que, principalmente, os alunos tem que sair dessa aula sabendo)-->
 <!--Ao longo da aula: adicionar mais referências, especialmente sobre onde expandir os conhecimentos sobre cada tema-->
 <!--Na mesma ideia das aulas passadas, vamos explicar teoricamente o que é uma visualização (tanto como tabela ou gráfico), e depois falar sobre os "tipos" de visualizações que queremos criar-->
 <p>Como apresentado na última aula, estamos agora aprendendo a realizar um “projeto de Ciência de Dados”. Nesta aula, veremos o processo de vizualização de um dados.</p>
-<section id="visualização-de-dados" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="visualização-de-dados"><span class="header-section-number">5.1</span> Visualização de Dados</h2>
+<section id="visualização-de-dados" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="visualização-de-dados"><span class="header-section-number">6.1</span> Visualização de Dados</h2>
 <!--explicar o objetivo. brevemente falar sobre tabelas de sumarização (e seus componentes) e gráficos (e seus componentes)-->
 <p><img src="https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png" height="200"></p>
 <p>Aqui, serei preguiçoso, o texto do Hadley Wickham é muito bom:</p>
@@ -277,8 +289,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Na aula 6, aprenderemos a etapa model.</li>
 <li>Por fim, na aula 7, juntaremos tudo, aprendendo como fazer um projeto completo. Adicionalmente, aprenderemos como organizar um script para tal.</li>
 </ul>
-<section id="índice" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="índice"><span class="header-section-number">5.1.1</span> Índice</h3>
+<section id="índice" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="índice"><span class="header-section-number">6.1.1</span> Índice</h3>
 <ol type="1">
 <li>Vizualização de estatísticas descritivas de diferentes dados</li>
 <li>Elementos de um gráfico</li>
@@ -289,8 +301,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
-<section id="sumarização-com-pandas" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="sumarização-com-pandas"><span class="header-section-number">5.2</span> Sumarização com Pandas</h2>
+<section id="sumarização-com-pandas" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sumarização-com-pandas"><span class="header-section-number">6.2</span> Sumarização com Pandas</h2>
 <p>Uma maneira de visualizar dados é criar resumos, calcular estatísticas descritivas que contem informações chave sobre os dados, de maneira concisa.</p>
 <p>Estes links tem alguns tutoriais interessantes:</p>
 <ul>
@@ -516,8 +528,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="sumarisando-o-dataframe-como-um-todo" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="sumarisando-o-dataframe-como-um-todo"><span class="header-section-number">5.2.1</span> Sumarisando o dataframe como um todo</h3>
+<section id="sumarisando-o-dataframe-como-um-todo" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="sumarisando-o-dataframe-como-um-todo"><span class="header-section-number">6.2.1</span> Sumarisando o dataframe como um todo</h3>
 <!-- variáveis categóricas (sem ordenação) (como Fuel_Type ou Estado Cívil) vs variáveis contínuas (valores na reta real) -->
 <!-- variáveis discretas (valores inteiros) com poucos ou muitos valores (como uma pesquisa de satisfação de 1 a 5 ou o Seats do df) -->
 <!-- apresentar mais opções de estatísticas / visualizações -->
@@ -645,8 +657,8 @@ memory usage: 611.4+ KB</code></pre>
 </div>
 </div>
 </section>
-<section id="sumarisando-variáveis-categóricas" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="sumarisando-variáveis-categóricas"><span class="header-section-number">5.2.2</span> Sumarisando variáveis categóricas</h3>
+<section id="sumarisando-variáveis-categóricas" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="sumarisando-variáveis-categóricas"><span class="header-section-number">6.2.2</span> Sumarisando variáveis categóricas</h3>
 <p>Para variáveis categóricas sem uma ordem intrínseca, podemos ver a frequência absoluta e relativa de cada categoria.</p>
 <p>Exemplo: gênero, estado civil e tipo de produto.</p>
 <div id="cell-13" class="cell" data-outputid="a5e3fd17-9053-409b-a5d2-82de21940727">
@@ -695,8 +707,8 @@ Name: proportion, dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="sumarisando-variáveis-contínuas" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="sumarisando-variáveis-contínuas"><span class="header-section-number">5.2.3</span> Sumarisando variáveis contínuas</h3>
+<section id="sumarisando-variáveis-contínuas" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="sumarisando-variáveis-contínuas"><span class="header-section-number">6.2.3</span> Sumarisando variáveis contínuas</h3>
 <p>Para variáveis que podem assumir qualquer valor dentro da reta real, podemos olhar para a média, mediana, SD.</p>
 <p>Exemplo: renda, preço e peso.</p>
 <!-- objetivo de estatísticas comuns "quando estarei interessado em olhar pro SD, média vs mediana"  -->
@@ -746,8 +758,8 @@ Name: Price, dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="sumarisando-variáveis-discretas" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="sumarisando-variáveis-discretas"><span class="header-section-number">5.2.4</span> Sumarisando variáveis discretas</h3>
+<section id="sumarisando-variáveis-discretas" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="sumarisando-variáveis-discretas"><span class="header-section-number">6.2.4</span> Sumarisando variáveis discretas</h3>
 <p>Para variáveis que podem assumir valores inteiros específicos, olhamos para a média, moda e frequência</p>
 <p>Exemplos: número de filhos, número de produtos vendidos, índice de satisfação de 1 a 5</p>
 <div id="cell-22" class="cell" data-outputid="c900d885-c92e-4936-e5c4-4f219715c1a0">
@@ -782,8 +794,8 @@ Name: Seats, dtype: float64</code></pre>
 </div>
 <!-- violinplot -->
 </section>
-<section id="analisando-grupos-nos-dados" class="level3" data-number="5.2.5">
-<h3 data-number="5.2.5" class="anchored" data-anchor-id="analisando-grupos-nos-dados"><span class="header-section-number">5.2.5</span> Analisando grupos nos dados</h3>
+<section id="analisando-grupos-nos-dados" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="analisando-grupos-nos-dados"><span class="header-section-number">6.2.5</span> Analisando grupos nos dados</h3>
 <!-- explicar a "intenção" dessa operação, explicar o que queremos fazer "em portugues" antes de ir pro pandas -->
 <!-- falar bem mais, falar das funções de aggregate que não falamos na aula 3 -->
 <!-- summarise com operação customizada? sem ser .sum(), etc. Falar de .agg -->
@@ -969,14 +981,14 @@ dtype: object</code></pre>
 <!--Escolha uma frase remetendo pausa e tire print de alguma arte dela em https://patorjk.com/software/taag/. Exemplo:-->
 </section>
 </section>
-<section id="banheiro" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="banheiro"><span class="header-section-number">5.3</span> BANHEIRO</h2>
+<section id="banheiro" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="banheiro"><span class="header-section-number">6.3</span> BANHEIRO</h2>
 </section>
-<section id="gráficos-com-o-matplotlib" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="gráficos-com-o-matplotlib"><span class="header-section-number">5.4</span> Gráficos com o Matplotlib</h2>
+<section id="gráficos-com-o-matplotlib" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="gráficos-com-o-matplotlib"><span class="header-section-number">6.4</span> Gráficos com o Matplotlib</h2>
 <!-- cuidado pra não deixar a aula muito expositiva/densa. conteúdos de decoreba, mova para a seção de Extras -->
-<section id="anatomia-e-estilo-de-programação" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="anatomia-e-estilo-de-programação"><span class="header-section-number">5.4.1</span> Anatomia e Estilo de Programação</h3>
+<section id="anatomia-e-estilo-de-programação" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="anatomia-e-estilo-de-programação"><span class="header-section-number">6.4.1</span> Anatomia e Estilo de Programação</h3>
 <!-- Falar mais sobre os componentes de um gráfico, para setar o contexto para dividir as funções do matplotlib em "caixinhas" -->
 <!-- achar relações entre variáveis -->
 <p>O Matplotlib exibe seus dados em Figuras (por exemplo, janelas, widgets Jupyter, etc.), cada uma das quais pode conter um ou mais Eixos, uma área onde pontos podem ser especificados em termos de coordenadas x-y (ou theta-r em um gráfico polar, x-y-z em um gráfico 3D, etc.). A maneira mais simples de criar uma Figura com um Eixo é usando pyplot.subplots.</p>
@@ -990,8 +1002,8 @@ dtype: object</code></pre>
 </ul>
 <!-- explicar os links -->
 </section>
-<section id="anatomia-de-uma-figura" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="anatomia-de-uma-figura"><span class="header-section-number">5.4.2</span> Anatomia de uma figura</h3>
+<section id="anatomia-de-uma-figura" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="anatomia-de-uma-figura"><span class="header-section-number">6.4.2</span> Anatomia de uma figura</h3>
 <p><img src="https://matplotlib.org/stable/_images/anatomy.png" width="300"></p>
 <!--
 criar exemplo simples com o que pertence a o que:
@@ -1002,8 +1014,8 @@ criar exemplo simples com o que pertence a o que:
 só dps trazer isso pro matplotlib
  -->
 </section>
-<section id="plots" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="plots"><span class="header-section-number">5.4.3</span> Plots</h3>
+<section id="plots" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="plots"><span class="header-section-number">6.4.3</span> Plots</h3>
 <!-- Falar os tipos de plots quistos, e citar as funções que os criam. scatterplot, line plot, bar/colplot, histograms/violinplot, boxplot, pieplot, o que mais? -->
 <ul>
 <li>Conteúdo principal do gráfico, ou seja, os dados que queremos visualizar</li>
@@ -1011,8 +1023,8 @@ só dps trazer isso pro matplotlib
 </ul>
 <p>Tipos de gráficos: - Bar Plot: comparar categorias diferentes, principalmente com dados categóricos ou discretos. Funciona para mostrar a frequência e contagem dos valores - Scatter Plot: mostrar relação entre duas variáveis contínuas, principalmente para observar padrões, tendências e correlações entre duas variáveis - Line Plot: observar mudanças ao longo do tempo de séries de temporais, principalmente para análises de tendência e sazonalidades - Histograma: visualizar a distribuição de uma variável contínua agrupando dados em intervalos e mostra quantos dados caem em cada intervalo - Boxplot: resumir a distribuição de uma variável e destacar valores atípico, principalmente para comparar a distribuição entre várias categorias - Pie Plot: mostrar proporções ou porcentagem entre categorias - Heatmap: visualizar variáveis categóricas ou contínuas em formato de matriz, usando cores para mostrar intensidade ou frequênciacia</p>
 </section>
-<section id="estéticas" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="estéticas"><span class="header-section-number">5.4.4</span> Estéticas</h3>
+<section id="estéticas" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="estéticas"><span class="header-section-number">6.4.4</span> Estéticas</h3>
 <!-- estética do dado -->
 <!-- estéticas são os componentes visuais que tem relação direta com os dados cores, fills, markers, linetypes, etc. -->
 <!-- difícil: é nessa seção que deve-se ensinar a fazer plots com dados separados com uma legenda, pra várias estéticas diferentes -->
@@ -1023,8 +1035,8 @@ só dps trazer isso pro matplotlib
 <li>cor dos pontos ou barras, formato e tamanho dos marcadores e espessura das linhas</li>
 </ul>
 </section>
-<section id="tema" class="level3" data-number="5.4.5">
-<h3 data-number="5.4.5" class="anchored" data-anchor-id="tema"><span class="header-section-number">5.4.5</span> Tema</h3>
+<section id="tema" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="tema"><span class="header-section-number">6.4.5</span> Tema</h3>
 <!-- estética da figura -->
 <!-- temas são os componentes visuais que não tem relação com os dados: títulos, grade, cores de fundo, etc. -->
 <ul>
@@ -1033,8 +1045,8 @@ só dps trazer isso pro matplotlib
 <li>título, rótulos dos eixos, fundo, grid, legenda</li>
 </ul>
 </section>
-<section id="o-estilo-da-programação" class="level3" data-number="5.4.6">
-<h3 data-number="5.4.6" class="anchored" data-anchor-id="o-estilo-da-programação"><span class="header-section-number">5.4.6</span> O estilo da programação</h3>
+<section id="o-estilo-da-programação" class="level3" data-number="6.4.6">
+<h3 data-number="6.4.6" class="anchored" data-anchor-id="o-estilo-da-programação"><span class="header-section-number">6.4.6</span> O estilo da programação</h3>
 <div id="cell-42" class="cell" data-outputid="2d6d3565-e6d0-4005-8437-bec9ea50a1ae">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1059,8 +1071,8 @@ só dps trazer isso pro matplotlib
 </div>
 </div>
 </section>
-<section id="plots-combinados" class="level3" data-number="5.4.7">
-<h3 data-number="5.4.7" class="anchored" data-anchor-id="plots-combinados"><span class="header-section-number">5.4.7</span> Plots Combinados</h3>
+<section id="plots-combinados" class="level3" data-number="6.4.7">
+<h3 data-number="6.4.7" class="anchored" data-anchor-id="plots-combinados"><span class="header-section-number">6.4.7</span> Plots Combinados</h3>
 <!-- ensinar. talvez tbm tenha varios metodos, escolhe um -->
 <div id="cell-44" class="cell" data-outputid="6849e525-4e06-4c61-fc7b-626a5b41b1d2">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gerando dados fictícios para os gráficos</span></span>
@@ -1156,8 +1168,8 @@ só dps trazer isso pro matplotlib
 </div>
 </section>
 </section>
-<section id="extras" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="extras"><span class="header-section-number">5.5</span> Extras</h2>
+<section id="extras" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="extras"><span class="header-section-number">6.5</span> Extras</h2>
 <!--colocar as partes muito decorebas aqui-->
 <p>Principais paramêtros:</p>
 <ul>
@@ -1209,8 +1221,8 @@ só dps trazer isso pro matplotlib
 <li>‘+’: Cruz</li>
 <li>‘x’: X</li>
 </ul>
-<section id="outros" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="outros"><span class="header-section-number">5.5.1</span> Outros</h3>
+<section id="outros" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="outros"><span class="header-section-number">6.5.1</span> Outros</h3>
 <p>Biblioteca seaborn para criar gráficos mais complexos de maneira mais fácil: https://seaborn.pydata.org/</p>
 <p>Biblioteca plotline para criar gráfico dinâmica e interativos: https://plotnine.org/</p>
 <!-- falar que existem, e suas diferenças com o matplot -->
@@ -1816,13 +1828,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./aula3-python3.html" class="pagination-link" aria-label="Introdução ao Python III">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introdução ao Python III</span></span>
+      <a href="./aula4-cd-manipulacao.html" class="pagination-link" aria-label="CD: Manipulação">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CD: Manipulação</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./aula6-cd-modelagem.html" class="pagination-link" aria-label="CD: Modelagem">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

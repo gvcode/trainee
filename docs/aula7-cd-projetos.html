@@ -8,7 +8,7 @@
 
 <meta name="description" content="Livro Quarto do curso de trainee da GVCode">
 
-<title>6&nbsp; CD: Modelagem – GVCode Trainee</title>
+<title>7&nbsp; CD: Projetos – GVCode Trainee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aula7-cd-projetos.html" rel="next">
-<link href="./aula5-cd-visualizacao.html" rel="prev">
+<link href="./aula6-cd-modelagem.html" rel="prev">
 <link href="./assets/icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./aula6-cd-modelagem.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./aula7-cd-projetos.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CD: Projetos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,13 +152,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aula6-cd-modelagem.html" class="sidebar-item-text sidebar-link active">
+  <a href="./aula6-cd-modelagem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aula7-cd-projetos.html" class="sidebar-item-text sidebar-link">
+  <a href="./aula7-cd-projetos.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CD: Projetos</span></span></a>
   </div>
 </li>
@@ -168,15 +167,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">8</span> Introdução</a>
+  <ul class="collapse">
+  <li><a href="#organização-de-um-script" id="toc-organização-de-um-script" class="nav-link" data-scroll-target="#organização-de-um-script"><span class="header-section-number">8.1</span> Organização de um Script</a></li>
+  <li><a href="#big-picture" id="toc-big-picture" class="nav-link" data-scroll-target="#big-picture"><span class="header-section-number">8.2</span> Big Picture</a></li>
+  <li><a href="#exemplo-de-script" id="toc-exemplo-de-script" class="nav-link" data-scroll-target="#exemplo-de-script"><span class="header-section-number">8.3</span> Exemplo de Script</a></li>
+  <li><a href="#recapitulando" id="toc-recapitulando" class="nav-link" data-scroll-target="#recapitulando">Recapitulando</a></li>
+  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras"><span class="header-section-number">8.4</span> Extras</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CD: Projetos</span></h1>
 </div>
 
 
@@ -193,21 +205,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Esta aula é 100% teórica, sobre estatística e aprendizado de máquina.</p>
-<p>Seu material é somente <a href="assets\materials\modelagem.pptx">esta apresentação</a>.</p>
-<!--<div class="double-hrule"></div>
+<section id="introdução" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Introdução</h1>
+<!--Motivação da aula-->
+<!--TOC dos temas da aula (pra ajudar os alunos a se acharem na aula)-->
+<!--Texto (enxuto, objetivo) com os objetivos de aprendizagem principais (o que, principalmente, os alunos tem que sair dessa aula sabendo)-->
+<!--Ao longo da aula: adicionar mais referências, especialmente sobre onde expandir os conhecimentos sobre cada tema-->
+<section id="organização-de-um-script" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="organização-de-um-script"><span class="header-section-number">8.1</span> Organização de um Script</h2>
+<p>Nas aulas passadas, vocês aprenderam as etapas de um projeto de ciência de dados:</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png" height="200"></p>
+<p>Mas como nós organizamos essas etapas na prática? Normalmente nas seguintes seções:</p>
+<ul>
+<li>Introdução:
+<ul>
+<li>Descrição do problema.</li>
+<li>Descrição dos dados (fontes, questões técnicas, etc.).</li>
+<li>Setup do código (importar módulos, definir funções, etc.).</li>
+</ul></li>
+<li>Importar e arrumar:
+<ul>
+<li>Importar os dados <strong>[importar]</strong>.</li>
+<li>Transformá-los em um dataframe, especificamente um dataframe tidy <strong>[arrumar]</strong>.</li>
+<li>Lidar com NAs <strong>[arrumar]</strong>.</li>
+</ul></li>
+<li>Pré-processamento dos daods:
+<ul>
+<li>Analisar cada variável, seu tipo, valores NA/NaN, e mais:
+<ul>
+<li>Variáveis categóricas – categorias, distribuição <strong>[visualizar]</strong>..</li>
+<li>Variáveis numéricas – range, distribuição <strong>[vis.]</strong>.</li>
+</ul></li>
+<li>Corrigir problemas observados <strong>[transformar]</strong>.</li>
+</ul></li>
+<li>Análise exploratória:
+<ul>
+<li>Explorar a relação entre as variáveis, especialmente entre os x’s e os y’s.</li>
+<li>Y binário: distribuição condicional em cada x <strong>[vis.]</strong>.</li>
+<li>Y contínuo: distribuição conjunta em cada x <strong>[vis.]</strong>.</li>
+<li>Conseguir insights sobre o problema e transformar/criar variáveis para a modelagem <strong>[trans.]</strong>.</li>
+</ul></li>
+<li>Modelagem:
+<ul>
+<li>Dividir base em treino e teste, balancear os dados <strong>[trans.]</strong>.</li>
+<li>Definir os modelos e aplicá-los. Variar os hiperparâmetros <strong>[modelar]</strong>.</li>
+<li>Visualizar os resultados <strong>[vis.]</strong>.</li>
+<li>Adquirir insights, transformar os dados de acordo, e remodelar <strong>[trans.]</strong> <strong>[modelar]</strong>.</li>
+</ul></li>
+<li>Comunicar:
+<ul>
+<li>Gerar uma visualização final com os pontos principais do processo e principais resultados <strong>[vis.]</strong>.</li>
+<li>Comunicar os resultados <strong>[comunicar]</strong>.</li>
+</ul></li>
+</ul>
+<p>Note como a circularidade no organograma fica evidente.</p>
+<p>Na aula de hoje, iremos juntar tudo que vocês aprenderam nas aulas passadas, aplicando os conhecimentos em um exemplo concreto, seguindo o <em>workflow</em> acima.</p>
+<p>Essa é a aula mais importante para o trabalho final, então prestem extra atenção.</p>
+</section>
+<section id="big-picture" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="big-picture"><span class="header-section-number">8.2</span> Big Picture</h2>
+<p>Como visto na aula passada, ao abordar um problema de ciência de dados, precisamos:</p>
+<ol type="1">
+<li>Estudar a teoria por trás, “como pode ser o PGD?”</li>
+<li>Olhar agnosticamente para os dados, e repensar 1.</li>
+<li>Como escolher uma família de modelos: O que parece fazer mais sentido? O que se adapta melhor aos dados disponíveis? O que gera os ‘melhores’ resultados?</li>
+<li>Como escolher um hyperparâmetro? Da mesma forma que escolhemos a “família de modelos”</li>
+<li>Meter bronca no ciclo visualizar – transformar – modelar</li>
+</ol>
+<ul>
+<li>Semi-independente de tudo isso, fazer o data wrangle</li>
+</ul>
+</section>
+<section id="exemplo-de-script" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="exemplo-de-script"><span class="header-section-number">8.3</span> Exemplo de Script</h2>
+<p>Este exemplo será um projeto completo, portanto está em um <a href="assets\materials\project_example_old.ipynb">arquivo separado</a>.</p>
+<div class="double-hrule">
 
-## Recapitulando {.unnumbered}
+</div>
+</section>
+<section id="recapitulando" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="recapitulando">Recapitulando</h2>
+<!--Adicionar texto de recapitulando. Em parágrafos, primeiro sobre os principais objetivos de aprendizagem, depois sobre os conceitos teóricos aprendidos, e por fim, dos conceitos "decoreba" aprendidos-->
+</section>
+<section id="extras" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="extras"><span class="header-section-number">8.4</span> Extras</h2>
+<!-- pensar em extras para colocar. outros tipos/organizações de projetos? -->
 
-Adicionar texto de recapitulando. Em parágrafos, primeiro sobre os principais objetivos de aprendizagem, depois sobre os conceitos teóricos aprendidos, e por fim, dos conceitos "decoreba" aprendidos-->
-<!--## Extras
 
-No momento, nada.-->
-<!--### Detalhamento dos Modelos e Seus Hiperparâmetros
-
-Escrever -->
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -632,14 +718,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./aula5-cd-visualizacao.html" class="pagination-link" aria-label="CD: Visualização">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CD: Visualização</span></span>
+      <a href="./aula6-cd-modelagem.html" class="pagination-link" aria-label="CD: Modelagem">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CD: Modelagem</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aula7-cd-projetos.html" class="pagination-link" aria-label="CD: Projetos">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">CD: Projetos</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
